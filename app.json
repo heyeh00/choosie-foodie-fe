@@ -14,7 +14,25 @@
   },
 
   "tabBar": {
-      
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "white",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "home",
+      "iconPath": "/icons/TabBar Icons/home_white.png",
+      "selectedIconPath": "/icons/TabBar Icons/home_black.png"
+    }, {
+      "pagePath": "pages/event/event",
+      "text": "event",
+      "iconPath": "/icons/TabBar Icons/hexagon_white.png",
+      "selectedIconPath": "/icons/TabBar Icons/hexagon_black.png"
+    }, {
+      "pagePath": "pages/profile/profile",
+      "text": "profile",
+      "iconPath": "/icons/TabBar Icons/profile_white.png",
+      "selectedIconPath": "/icons/TabBar Icons/profile_black.png"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
