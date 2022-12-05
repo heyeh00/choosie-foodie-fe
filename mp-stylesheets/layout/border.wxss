@@ -1,0 +1,30 @@
+.b { border: solid 1px; }
+.bt { border-top: solid 1px; }
+.bl { border-left: solid 1px; }
+.br { border-right: solid 1px; }
+.bb { border-bottom: solid 1px; }
+
+.circle { border-radius: 50%; }
+.rounded { border-radius: 5px; }
+
+.bn { border: 0px !important; }
+.b2 { border-width: 2rpx; }
+.b4 { border-width: 4rpx; }
+.b6 { border-width: 6rpx; }
+.b8 { border-width: 8rpx; }
+.b10 { border-width: 10px; }
+
+.radius10 { border-radius: 10rpx; }
+.radius20 { border-radius: 20rpx; }
+.radius30 { border-radius: 30rpx; }
+.radius40 { border-radius: 40rpx; }
+.radius50 { border-radius: 50rpx; }
+.radius60 { border-radius: 60rpx; }
+.radius70 { border-radius: 70rpx; }
+.radius80 { border-radius: 80rpx; }
+.radius90 { border-radius: 90rpx; }
+.radius-full { border-radius: 9999rpx; }
+
+.shadow { box-shadow: 0px 10px 45px -12px rgba(216, 216, 216, 0.7); }
+.ofh { overflow: hidden; }
+.ofv { overflow: visible; }

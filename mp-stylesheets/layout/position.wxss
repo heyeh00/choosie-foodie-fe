@@ -1,0 +1,39 @@
+.t0 { top: 0; }
+.b0 { bottom: 0; }
+.l0 { left: 0; }
+.r0 { right: 0; }
+.a0 { top: 0; bottom: 0; left: 0; right: 0;}
+.fill-screen { position: fixed; top: 0; bottom: 0; left: 0; right: 0; }
+
+.sticky-t { position: sticky; top: 0; }
+.sticky-b { position: sticky; bottom: 0; }
+.sticky-l { position: sticky; bottom: 0; }
+.sticky-r { position: sticky; bottom: 0; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+.absolute-t { position: absolute; top: 0; }
+.absolute-r { position: absolute; right: 0; }
+.absolute-l { position: absolute; left: 0; }
+.absolute-b { position: absolute; bottom: 0; }
+.absolute-tr { position: absolute; top: 0; right: 0; }
+.absolute-tl { position: absolute; top: 0; left: 0 }
+.absolute-br { position: absolute; bottom: 0; right: 0 }
+.absolute-bl { position: absolute; bottom: 0; left: 0 }
+
+.ib { display: inline; }
+.dib { display: inline-block; }
+.dn { display: none;}
+
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+.z3 { z-index: 3; }
+.z4 { z-index: 4; }
+.z5 { z-index: 5; }
+.z6 { z-index: 6; }
+.z7 { z-index: 7; }
+.z8 { z-index: 8; }
+.z9 { z-index: 9; }
+.z99 { z-index: 99; }
+.z999 { z-index: 999; }

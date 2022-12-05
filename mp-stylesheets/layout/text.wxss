@@ -1,0 +1,39 @@
+/* SIZE */
+.f12 { font-size: 12rpx; }
+.f14 { font-size: 14rpx; }
+.f16 { font-size: 16rpx; }
+.f18 { font-size: 18rpx; }
+.f20 { font-size: 20rpx; }
+.f22 { font-size: 22rpx; }
+.f24 { font-size: 24rpx; }
+.f26 { font-size: 26rpx; }
+.f28 { font-size: 28rpx; }
+.f30 { font-size: 30rpx; }
+.f32 { font-size: 32rpx; }
+.f36 { font-size: 36rpx; }
+.f48 { font-size: 48rpx; }
+.f60 { font-size: 60rpx; }
+.f72 { font-size: 72rpx; }
+.f84 { font-size: 84rpx; }
+.f84 { font-size: 84rpx; }
+.f96 { font-size: 96rpx; }
+
+.fmacro { font-size:95rpx; }
+.fheader { font-size:72rpx; }
+.fsheader { font-size: 48rpx; }
+.ftheader { font-size: 36rpx;}
+.fbody { font-size: 32rpx}
+.fsbody { font-size: 26rpx;}
+.fmini { font-size: 20rpx;}
+/* WEIGHT */
+.bold { font-weight: bold;}
+.medium { font-weight: 500;}
+.text-shadow { text-shadow:0 1px 3px rgba(0,0,0,0.6);}
+/* TEXT ALIGN */
+
+.tc { text-align: center;}
+.tl { text-align: left;}
+.tr { text-align: right;}
+
+/* LINE HEIGHT */
+.lh-copy { line-height: 1.1rem;}

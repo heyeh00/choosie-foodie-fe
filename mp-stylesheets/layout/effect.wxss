@@ -1,0 +1,3 @@
+.duration3 { transition: 0.3s; }
+.duration5 { transition: 0.5s; }
+.duration7 { transition: 0.7s; }

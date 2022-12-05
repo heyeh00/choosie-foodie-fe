@@ -1,0 +1,22 @@
+.btn-unset { 
+  min-height: unset !important;
+  width: unset !important;
+  line-height: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.btn {
+  text-align:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  border-radius:0rpx;
+  background-color: var(--black);
+  color: var(--white);
+}

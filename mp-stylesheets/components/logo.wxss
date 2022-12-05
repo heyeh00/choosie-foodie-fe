@@ -1,0 +1,4 @@
+.logo {
+  width: 200rpx; 
+  height: 80rpx;
+}

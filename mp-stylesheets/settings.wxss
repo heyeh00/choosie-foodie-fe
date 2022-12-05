@@ -1,0 +1,54 @@
+@import 'fonts.wxss';
+
+page {
+  /* colors (DON'T CHANGE VARIABLE NAMES)*/
+  --pri: #FF5100;
+  --sec: #00B09A;
+  --ter: #3F2C55;
+  --white: #fff;
+  --black: #000;
+  --white: #fff;
+  --dim: #EBEBEB;
+  --greyLight: #d6d6d6;
+  --grey: #59595B;
+  --greyDark: #333333;
+  --yellow: #ffca00;
+  --orange: #F08302;
+  --red: #BA2454;
+  --redLight: #d86964;
+  --purple: #9F96AA;
+  --navy: #0f1221;
+  --blue: #242e49;
+  --blueLight: #4c5985;
+  --green: #76D5AB;
+  --tab: #6d6d6d;
+  --tabCur: #FF5100;
+  --bottomSafe: env(safe-area-inset-bottom);
+
+  /* fonts */
+  font-family: 'Raleway', sans-serif;
+
+  /* other styles */
+  box-sizing: border-box;
+
+  /* TEXT */
+  font-size: 28rpx;
+  font-weight: 300;
+  /* 100/300/500/700 */
+}
+
+.page-footer {
+  height: calc(100rpx + 20rpx + 20rpx + var(--bottomSafe)) /* tabbar height + pt & pb + safe area */
+}
+
+.safe-bottom {
+  height: var(--bottomSafe);
+}
+
+.container {
+  padding: 60rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

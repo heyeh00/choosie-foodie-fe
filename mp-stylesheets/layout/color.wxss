@@ -1,0 +1,75 @@
+/* DON'T CHANGE THE VARIABLES */
+
+/* TEXT COLORS */
+.trans { color: transparent !important; }
+.pri { color: var(--pri) !important; }
+.sec { color: var(--sec) !important; }
+.ter { color: var(--ter) !important; }
+.white { color: var(--white) !important; }
+.black { color: var(--black) !important; }
+.dim { color: var(--dim) !important; }
+.grey-light { color: var(--greyLight) !important; }
+.grey { color: var(--grey) !important; }
+.grey-dark { color: var(--greyDark) !important; }
+.yellow { color: var(--yellow) !important; }
+.teal { color: var(--teal) !important; }
+.orange { color: var(--orange) !important; }
+.red { color: var(--red) !important; }
+.red-light { color: var(--redLight) !important; }
+.purple { color: var(--purple) !important; }
+.navy { color: var(--navy) !important; }
+.blue { color: var(--blue) !important; }
+.blue-light { color: var(--blueLight) !important; }
+.green { color: var(--green) !important; }
+.tab { color: var(--tab); }
+.tab-cur { color: var(--tabCur); }
+
+/* BACKGROUND COLORS */
+.bg-trans { background-color: transparent; }
+.bg-pri { background-color: var(--pri); }
+.bg-sec { background-color: var(--sec); }
+.bg-ter { background-color: var(--ter); }
+.bg-white { background-color: var(--white); }
+.bg-dim { background-color: var(--dim); }
+.bg-grey-light { background-color: var(--greyLight); }
+.bg-grey { background-color: var(--grey); }
+.bg-grey-dark { background-color: var(--greyDark); }
+.bg-teal { background-color: var(--teal); }
+.bg-yellow { background-color: var(--yellow); }
+.bg-orange { background-color: var(--orange); }
+.bg-red { background-color: var(--red); }
+.bg-red-light { background-color: var(--redLight) }
+.bg-purple { background-color: var(--purple); }
+.bg-navy { background-color: var(--navy); }
+.bg-blue { background-color: var(--blue); }
+.bg-black { background-color: var(--black); }
+.bg-blue-light { background-color: var(--blueLight); }
+.bg-green { background-color: var(--green); }
+.bg-tab { background-color: var(--tab); }
+.bg-tab-cur { background-color: var(--tabCur); }
+
+/* BORDER COLORS */
+.b-trans { border-color: transparent; }
+.b-pri { border-color: var(--pri); }
+.b-sec { border-color: var(--sec); }
+.b-ter { border-color: var(--ter); }
+.b-white { border-color: var(--white); }
+.b-black { border-color: var(--black); }
+.b-dim { border-color: var(--dim); }
+.b-grey-light { border-color: var(--greyLight) }
+.b-grey { border-color: var(--grey); }
+.b-grey-dark { border-color: var(--greyDark); }
+.b-yellow { border-color: var(--yellow); }
+.b-orange { border-color: var(--orange); }
+.b-red { border-color: var(--red); }
+.b-purple { border-color: var(--purple); }
+.b-navy { border-color: var(--navy); }
+.b-blue { border-color: var(--blue); }
+.b-blue-light { border-color: var(--blueLight) }
+.b-green { border-color: var(--green); }
+.b-tab { border-color: var(--tab); }
+.b-tab-cur { border-color: var(--tabCur); }
+
+.opacity7 { opacity: 0.7; }
+.opacity5 { opacity: 0.5; }
+.opacity3 { opacity: 0.3; }
