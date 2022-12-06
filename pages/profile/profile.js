@@ -30,7 +30,6 @@ Page({
           success(res) {
               console.log("SUCCESS RES", res.userInfo)
               const user = {
-                // id: app.getUserId(),
                 name: res.userInfo.nickName,
                 image_url: res.userInfo.avatarUrl,
               }
@@ -39,6 +38,7 @@ Page({
               requestData(`/users/${app.getUserId()}`, { user }, "PUT").then((res) => {
                 console.log("POST PUT {DATA}", res)  
                 page.setData({ user: res.data.user })
+                app.globalData.user = res.data.user
                 console.log("PAGE DATA", page.data)
               })
           },
