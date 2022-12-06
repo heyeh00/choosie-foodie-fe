@@ -6,6 +6,6 @@
     <text>{{url}}</text>
 </view>
 
-<view class="btn">
+<view>
     <button bindtap="login">login</button>
 </view>
