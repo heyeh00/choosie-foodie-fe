@@ -1,7 +1,6 @@
 // pages/home/home.js
 import event from '@codesmiths/event';
 import { requestData } from '../../utils/requestdata';
-import { login } from '../../utils/login';
 const app = getApp()
 
 Page({
@@ -10,7 +9,6 @@ Page({
      * Page initial data
      */
     data: {
-      time: null,
       cuisines: []
     },
 
@@ -27,6 +25,7 @@ Page({
 
     getData() {
         this.setData({ user: app.globalData.user })
+        console.log("HOME USER INFO", this.data.user)
     },
 
     bindDateChange(e) {
