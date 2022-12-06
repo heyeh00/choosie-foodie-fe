@@ -22,7 +22,6 @@ Page({
         event.on('tokenReady', this, this.getData);
         requestData(`/cuisines`, {}, "GET").then((res) => {
             page.setData({ cuisines: res.data.cuisines })
-            console.log("PAGE DATA", page.data)
         })
     },
 
@@ -32,16 +31,27 @@ Page({
 
     bindDateChange(e) {
       this.setData({ date: e.detail.value })
-      console.log("DATE", this.data.date)
     },
 
     bindTimeChange(e) {
       this.setData({ time: e.detail.value })
-      console.log("TIME", this.data.time)
+    },
+
+    editCuisines(e) {
+      this.setData({ cuisines_choice: e.detail })
     },
 
     submitEvent(e) {
-      console.log("SUBMIT FORM", e.detail.value)
+      const event_info = {
+          cuisines: this.data.cuisines_choice,
+          date: this.data.date,
+          time: this.data.time, 
+      }
+      app.globalData = ({ event_info })
+      console.log("SENDING EVENT INFO", event_info)
+      wx.switchTab({
+        url: '/pages/event/event'
+      })
     },
 
     /**
