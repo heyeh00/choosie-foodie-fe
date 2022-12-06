@@ -1,18 +1,47 @@
 // pages/home/home.js
+import event from '@codesmiths/event';
+import { requestData } from '../../utils/requestdata';
+import { login } from '../../utils/login';
+const app = getApp()
+
 Page({
 
     /**
      * Page initial data
      */
     data: {
-
+      time: null
     },
 
     /**
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
+        const page = this
+        event.on('tokenReady', this, this.getData);
+        requestData(`/cuisines`, {}, "GET").then((res) => {
+            console.log(res.data)
+            page.setData({ cuisines: res.data.cuisines })
+            console.log(page.data.cuisines)
+        })
+    },
 
+    getData() {
+        this.setData({ user: app.globalData.user })
+    },
+
+    bindDateChange(e) {
+      this.setData({ date: e.detail.value })
+      console.log("DATE", this.data.date)
+    },
+
+    bindTimeChange(e) {
+      this.setData({ time: e.detail.value })
+      console.log("TIME", this.data.time)
+    },
+
+    submitEvent(e) {
+      console.log("SUBMIT FORM", e.currentTarget)
     },
 
     /**

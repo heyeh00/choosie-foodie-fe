@@ -11,5 +11,49 @@
   box-sizing: border-box;
 } 
 
+.card-m1 {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin:auto;
+    margin-bottom: 30rpx;
+    }
+
+.card-m2 {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin:auto;
+    border:1px solid #434343;
+    margin-bottom: 30rpx;
+    }
+
+.card-s {
+    width: 90%;
+    height: 200rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin:auto;
+    }
+
 .our-button {
+  text-align: center;
+  border-radius: 40rpx;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  background-color: #F7C873;
+  color: #434343;
+  border: 1rpx solid #434343; 
+}
+
+.card-l {
+  width: 90%;
+  height: 900rpx;
+  border-radius: 50rpx;
+  background-color: #FAEBCD;
+  margin: auto;
 }

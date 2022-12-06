@@ -1,5 +1,5 @@
 // app.js
-import event from '@codesmiths/event';
+import event, { emit } from '@codesmiths/event';
 import { requestData } from './utils/requestdata';
 
 App({
@@ -14,9 +14,9 @@ App({
             url: `${page.getUrl()}/login`,
             method: "POST",
             data: { code: res.code },
-            success(res) {
-                page.globalData.user = res.data.user;
-                page.globalData.header = res.header['Authorization']
+            success(loginRes) {
+                page.globalData.user = loginRes.data.user;
+                page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')
             },
             failure(errors) {
@@ -27,15 +27,15 @@ App({
     })
   },
   getUrl() {
-      return this.globalData.baseUrl;
+    return this.globalData.baseUrl;
   },
 
   getHeader() {
-      return this.globalData.header;
+    return this.globalData.header;
   },
 
   getUserId() {
-      return this.globalData.user.id;
+    return this.globalData.user.id;
   },
 
   globalData: {
