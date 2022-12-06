@@ -11,5 +11,29 @@
   box-sizing: border-box;
 } 
 
-.our-button {
-}
+.card-m1 {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin:auto;
+    margin-bottom: 30rpx;
+    }
+
+.card-m2 {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin:auto;
+    border:1px solid #434343;
+    margin-bottom: 30rpx;
+    }
+
+.card-s {
+    width: 90%;
+    height: 200rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin:auto;
+    }
