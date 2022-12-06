@@ -25,7 +25,6 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/home/home",
                     "pathName": "pages/test/test",
                     "query": "",
                     "launchMode": "default",

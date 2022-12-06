@@ -10,7 +10,8 @@ Page({
      * Page initial data
      */
     data: {
-      time: null
+      time: null,
+      cuisines: []
     },
 
     /**
@@ -20,9 +21,8 @@ Page({
         const page = this
         event.on('tokenReady', this, this.getData);
         requestData(`/cuisines`, {}, "GET").then((res) => {
-            console.log(res.data)
             page.setData({ cuisines: res.data.cuisines })
-            console.log(page.data.cuisines)
+            console.log("PAGE DATA", page.data)
         })
     },
 
@@ -41,7 +41,7 @@ Page({
     },
 
     submitEvent(e) {
-      console.log("SUBMIT FORM", e.currentTarget)
+      console.log("SUBMIT FORM", e.detail.value)
     },
 
     /**
