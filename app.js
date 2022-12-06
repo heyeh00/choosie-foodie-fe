@@ -14,9 +14,9 @@ App({
             url: `${page.getUrl()}/login`,
             method: "POST",
             data: { code: res.code },
-            success(res) {
-                page.globalData.user = res.data.user;
-                page.globalData.header = res.header['Authorization']
+            success(loginRes) {
+                page.globalData.user = loginRes.data.user;
+                page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')
             },
             failure(errors) {
