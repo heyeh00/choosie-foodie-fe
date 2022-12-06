@@ -1,6 +1,7 @@
 // pages/profile/profile.js
 import event from '@codesmiths/event';
 import { requestData } from '../../utils/requestdata';
+import { login } from '../../utils/login';
 
 const app = getApp();
 
@@ -16,9 +17,9 @@ Page({
      */
     onLoad(options) {
         if (getApp().globalData.header) {
-            this.requestData();
+            this.getData();
         } else {
-            event.on('tokenReady', this, this.requestData);
+            event.on('tokenReady', this, this.getData);
         }
     },
 
@@ -45,6 +46,10 @@ Page({
               console.log("LOGIN ERROR", errors)
           }
         })
+    },
+
+    getData() {
+        this.setData({ user: app.globalData.user })
     },
 
     /**
