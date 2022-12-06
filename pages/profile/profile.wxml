@@ -4,7 +4,7 @@
             <text>{{user.name}}</text>
         </block>
         <block wx:else>
-            <image src="/images/user.png" class="userinfo-avatar" mode="cover" />
+            <image src="/icons/TabBar Icons/profile_white.png" class="userinfo-avatar" mode="cover" />
             <button bindtap="login" type="primary" plain="true" class="mb50 login-btn">Login</button>
             <text>Somebody needs to login 🤔</text>
         </block>
