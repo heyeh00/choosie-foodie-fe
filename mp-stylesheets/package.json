@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@codesmiths/event": "^1.0.1"
+  }
+}

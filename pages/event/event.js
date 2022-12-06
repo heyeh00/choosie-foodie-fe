@@ -1,4 +1,6 @@
 // pages/event/event.js
+const app = getApp();
+
 Page({
 
     /**
@@ -22,11 +24,8 @@ Page({
 
     },
 
-    /**
-     * Lifecycle function--Called when page show
-     */
     onShow() {
-
+        
     },
 
     /**
