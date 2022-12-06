@@ -1,2 +1,11 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view>
+    <text>{{user.id}}</text>
+</view>
+<view>
+    <text>{{url}}</text>
+</view>
+
+<view class="btn">
+    <button bindtap="login">login</button>
+</view>
