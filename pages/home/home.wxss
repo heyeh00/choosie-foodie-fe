@@ -1,1 +1,5 @@
 /* pages/home/home.wxss */
+
+.picker {
+    padding: 16rpx;
+}

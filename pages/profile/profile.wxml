@@ -1,11 +1,11 @@
-<!--pages/profile/profile.wxml-->
-<view>
-    <text>{{user.id}}</text>
-</view>
-<view>
-    <text>{{url}}</text>
-</view>
-
-<view class="btn">
-    <button bindtap="login">login</button>
-</view>
+<view class="ma40 userinfo">
+        <block wx:if="{{user.image_url}}">
+            <image src="{{user.image_url}}" class="userinfo-avatar" mode="cover" />
+            <text>{{user.name}}</text>
+        </block>
+        <block wx:else>
+            <image src="/icons/TabBar Icons/profile_white.png" class="userinfo-avatar" mode="cover" />
+            <button bindtap="login" type="primary" plain="true" class="mb50 login-btn">Login</button>
+            <text>Somebody needs to login 🤔</text>
+        </block>
+    </view>
