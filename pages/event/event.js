@@ -46,7 +46,8 @@ Page({
 
     editCuisines(e) {
         this.setData({ cuisines_choice: e.detail })
-        },
+        console.log("Test")
+        }, 
 
     submitEvent(e) {
         this.setDateTime()
