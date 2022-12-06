@@ -60,7 +60,6 @@ Page({
 
     submitEvent(e) {
         this.setDateTime()
-        console.log("submit E", e.detail.value.event_name)
         if (e.detail.value.event_name === undefined) {       
         } else {
             const event_name = e.detail.value.event_name

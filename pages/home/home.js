@@ -41,8 +41,9 @@ Page({
     },
 
     submitEvent(e) {
+    //   console.log(this.data.cuisines_choice.value)
       const event_info = {
-          cuisines: this.data.cuisines_choice,
+          cuisines: this.data.cuisines_choice.value,
           date: this.data.date,
           time: this.data.time, 
       }
