@@ -1,50 +1,48 @@
-<view class="ma40 userinfo">
+<!-- <view class="ma40 userinfo">
     <block wx:if="{{user.image_url}}">
-        <image src="{{user.image_url}}" class="userinfo-avatar" mode="cover" />
+        <image src="{{user.image_url}}" class="userinfo-avatar" mode="aspectFill" />
         <text>{{user.name}}</text>
     </block>
     <block wx:else>
-        <image src="/icons/TabBar Icons/profile_white.png" class="userinfo-avatar" mode="cover" />
+        <image src="/icons/TabBar Icons/profile_white.png" class="userinfo-avatar" mode="aspectFill" />
         <button bindtap="login" type="primary" plain="true" class="mb50 login-btn">Login</button>
         <text>Somebody needs to login 🤔</text>
     </block>
-</view>
+</view> -->
 
-<view class="card">
-    <view style="display: flex; justify-content: center;">
-        <view wx:if="{{user.image_url}}">
-            <image src="{{user.image_url}}" id="panda" class="panda-pic" mode="aspectFill" />
-        </view>
-        <view wx:else>
-            <image src="icons/images/panda.png" id="panda" class="panda-pic" mode="aspectFill" />
-        </view>
-    </view>
-</view>
-    <!-- <view wx:if="{{user.name}}">
-        <view class="description" >{{pet.personality}} </view>
-    </view>
-    <block wx:else>
-        <view class="description" >No description 😢</view>
-    </block>
-    <view class="other-info">
-    <view>
-        <view class="price">￥10,000/Day</view>
-        <block wx:if="{{pet.address}}">
-            <view class="location">{{pet.address}}</view>
-        </block>
-    </view>
-    <view class = "stars" style="display: flex">
-        <view>{{pet.breed}}</view>
-        </view>
-    </view>
-    <view class="name">
-        <view class="white"  style="color:white">{{pet.name}}</view>
-    </view> 
-</view>
 
-<block wx:if="{{pet.user_id === user_id}}">
-    <view class="button" bindtap="goToIndex">Done!</view>
-</block>
-<block wx:else>
-    <view class="button" bindtap="showModal">Book!</view>
-</block> -->
+<view class="bg" style="display: flex; justify-content: center;">
+    <view wx:if="{{login}}">
+        <view class="bgcard">
+            <!-- <view wx:for="{{cards.s}}" wx:for-item="each card.s"> -->
+            <view class="card.s" wx:for="{{restaurants}}">
+                <image src="/icons/images/maotou.jpg">
+                </image>
+                <view class="card.s-infos">
+                    <text style="font-size: 15rpx;">{{item.name}}</text>
+                    <text style="font-size: 12rpx;">{{item.time}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- </view> -->
+
+
+        <view class="avatar">
+            <image scr="/icons/images/panda.jpg">
+            </image>
+        </view>
+    </view>
+
+    <view wx:else>
+        <view class="bgcard">
+            <text style="margin-top: 50rpx; margin-bottom: 300rpx;">Somebody needs to login🤔</text>
+            <button bindtap="login" class="our-button">Login</button>
+        </view>
+
+        <view class="avatar">
+            <image scr="/icons/TabBar Icons/profile_white.png">
+            </image>
+        </view>
+
+    </view>
+</view>

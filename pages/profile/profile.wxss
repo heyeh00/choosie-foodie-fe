@@ -1,1 +1,46 @@
 /* pages/profile/profile.wxss */
+
+.bg{
+    background-color:#FAEBCD ;
+    height: 100vh;
+}
+
+
+.bgcard {
+    position: relative;
+    background-color: #F8F8F8;
+    background-size: cover;
+    margin-top: 200rpx;
+    padding-top: 200rpx;
+    height: 1100rpx;
+    width: 100vw;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    position: absolute;
+    left: 50%;
+    border: 6 solid white;
+    transform: translate(-50%, 50%);
+    height: 120rpx;
+    width: 120rpx;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-product image {
+    height: 100%;
+    width: 80rpx;
+    object-fit: cover;
+  }
+
+  
+  .card.s-infos {
+    padding: 16px;
+  }
