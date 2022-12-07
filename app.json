@@ -4,7 +4,8 @@
     "pages/event/event",
     "pages/event/choose",
     "pages/event/result",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/event/confirmation"
   ],
   "window":{
     "backgroundTextStyle":"light",
