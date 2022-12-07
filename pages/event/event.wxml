@@ -4,4 +4,41 @@
         You don’t have any events yet. Create one now? 
     </view>
     <button class="our-button mt30" bindtap="goToConfirmation">Yes!</button>
+<view>
+    <form bindsubmit="submitEvent">
+        <!-- event_name 默认为 user's choosie foodie event -->
+        <view wx:if="{{reveal}}">
+            <view wx:if="{{event.name}}">
+                <input class="input" placeholder="{{event.name}}" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />
+            </view>
+            <view wx:else>
+                <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />            
+            </view>
+        </view>
+        <view wx:else>
+            <view>{{user.name}}'s choosie foodie event</view>
+        </view>
+        <button bindtap="revealForm">Edit</button>
+
+        <!-- date 需要默认已选的 -->
+        <view class="section">
+            <view>{{date}}</view>
+            <picker mode="date" value="{{date}}" start="{{event.date}}" bindchange="bindDateChange">
+                <button>Edit</button>
+            </picker>
+        </view>
+
+
+        <!-- time  需要默认为 null -->
+        <view class="section">
+            <view>{{time}}</view>
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <button>Edit</button>
+            </picker>
+        </view>
+
+        <view class="btn-area">
+            <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+        </view>
+    </form>
 </view>

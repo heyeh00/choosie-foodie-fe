@@ -1,7 +1,6 @@
 // pages/home/home.js
 import event from '@codesmiths/event';
 import { requestData } from '../../utils/requestdata';
-import { login } from '../../utils/login';
 const app = getApp()
 
 Page({
@@ -10,7 +9,7 @@ Page({
      * Page initial data
      */
     data: {
-      time: null
+      cuisines: []
     },
 
     /**
@@ -20,28 +19,39 @@ Page({
         const page = this
         event.on('tokenReady', this, this.getData);
         requestData(`/cuisines`, {}, "GET").then((res) => {
-            console.log(res.data)
             page.setData({ cuisines: res.data.cuisines })
-            console.log(page.data.cuisines)
         })
     },
 
     getData() {
         this.setData({ user: app.globalData.user })
+        console.log("HOME USER INFO", this.data.user)
     },
 
     bindDateChange(e) {
       this.setData({ date: e.detail.value })
-      console.log("DATE", this.data.date)
     },
 
     bindTimeChange(e) {
       this.setData({ time: e.detail.value })
-      console.log("TIME", this.data.time)
+    },
+
+    editCuisines(e) {
+      this.setData({ cuisines_choice: e.detail })
     },
 
     submitEvent(e) {
-      console.log("SUBMIT FORM", e.currentTarget)
+    //   console.log(this.data.cuisines_choice.value)
+      const event_info = {
+          cuisines: this.data.cuisines_choice.value,
+          date: this.data.date,
+          time: this.data.time, 
+      }
+      app.globalData = ({ event_info })
+      console.log("SENDING EVENT INFO", event_info)
+      wx.switchTab({
+        url: '/pages/event/event'
+      })
     },
 
     /**
