@@ -41,19 +41,21 @@
 .our-button {
   text-align: center;
   border-radius: 40rpx;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
+  font: normal 500 30rpx 'Raleway';
   background-color: #F7C873;
   color: #434343;
   border: 1rpx solid #434343; 
 }
 
 .card-l {
-  width: 90%;
+  width: 560rpx;
   height: 900rpx;
   border-radius: 50rpx;
   background-color: #FAEBCD;
   margin: auto;
+}
+
+.font-style {
+  font: normal 500 30rpx 'Raleway'; 
+  color: #434343;
 }

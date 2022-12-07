@@ -10,6 +10,12 @@ Page({
 
     },
 
+    goToConfirmation(e) {
+        wx.navigateTo({
+            url: '/pages/event/confirmation'
+        })
+    },
+
     /**
      * Lifecycle function--Called when page load
      */

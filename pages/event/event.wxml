@@ -1,2 +1,7 @@
 <!--pages/event/event.wxml-->
-<text>pages/event/event.wxml</text>
+<view class="vh100 bg-dim" style="padding: 500rpx 150rpx;">
+    <view class="fbody">
+        You don’t have any events yet. Create one now? 
+    </view>
+    <button class="our-button mt30" bindtap="goToConfirmation">Yes!</button>
+</view>
