@@ -38,11 +38,8 @@
             <text style="margin-top: 50rpx; margin-bottom: 300rpx;">Somebody needs to login🤔</text>
             <button bindtap="login" class="our-button">Login</button>
         </view>
-
         <view class="avatar">
-            <image scr="/icons/TabBar Icons/profile_white.png">
-            </image>
+            <image src="/icons/TabBar-Icons/profile_white.png" class="userinfo-avatar"  mode="aspectFill"/>
         </view>
-
     </view>
 </view>

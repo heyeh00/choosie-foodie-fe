@@ -14,8 +14,8 @@
     padding-top: 200rpx;
     height: 1100rpx;
     width: 100vw;
-    border-top-left-radius: 20%;
-    border-top-right-radius: 20%;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +23,8 @@
 
 .avatar {
     position: absolute;
+    background-color: green;
+    top: 100rpx;
     left: 50%;
     border: 6 solid white;
     transform: translate(-50%, 50%);
@@ -32,6 +34,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.userinfo-avatar{
+    width: 90rpx;
+    height: 90rpx;
+    display:flex;
+    align-self: center;
+    justify-content: space-around;
 }
 
 .card-product image {
