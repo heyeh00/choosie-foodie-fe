@@ -1,0 +1,48 @@
+<!--pages/event/confirmation.wxml-->
+<view class="pa100 vh100 bg-dim pt100">
+    <view class="card-l pa50">
+        <view class="card-product px20 mb50">
+            <image src="https://source.unsplash.com/random" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20 mr50"/>
+            <view class="card-info">   
+                <view class="fbody mb20">
+                    host_name
+                </view>
+                <view class="fbody">
+                    Event invitation
+                </view>
+            </view>   
+        </view>
+        <view class="line w100"></view>
+
+        <view class="flex justify-between items-center pa20 my50">
+            <view class="ftheader bold">
+                Weekend dinner with Le Wagon friends!
+            </view>
+            <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 70rpx;" />
+        </view>
+
+        <view class="flex justify-between items-center pa20">
+            <view class="flex justify-start items-center">
+                <image src="/icons/Page icons/calendar_white.png" mode="aspectFit" style="height: 70rpx; width: 70rpx;" />
+                <view class="fbody ml40">
+                    December 20th, 2022
+                </view>
+            </view>
+            <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+        </view>
+
+        
+        <view class="flex justify-between items-center pa20 mt50">
+            <view class="flex justify-start items-center">
+                <image src="/icons/Page icons/clock_white.png" mode="aspectFit" style="height: 70rpx; width: 70rpx;" />
+                <view class="fbody ml40">
+                    8:00pm
+                </view>
+            </view>
+            <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+        </view>
+    </view>
+            
+
+    <button class="our-button mt100">Confirm</button>
+</view>
