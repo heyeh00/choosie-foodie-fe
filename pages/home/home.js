@@ -119,7 +119,7 @@ Page({
       let { cuisines } = this.data
       console.log("CUISINES", cuisines)
       let cuisines_choice = this.data.cuisines_choice
-      console.log("==cuisines_choice==", cuisines_choice)
+      console.log("CUISINES CHOICE", cuisines_choice)
       let cuisine = e.currentTarget.dataset.cuisine
 
 
@@ -129,10 +129,8 @@ Page({
         // remove "any" from the array
         cuisines[0]['selected'] = false
         cuisines_choice = cuisines_choice.filter( item =>  item != "Any" )
-        console.log("IF CUISINES CHOICE", cuisines_choice)
         let item = cuisines.find(item => item.name === cuisine)  
-        console.log("IF ITEM", item)
-
+        console.log("ITEM", item)
         // if the cuisine is in the array, remove it
         if (cuisines_choice.includes(cuisine)) {
           cuisines_choice = cuisines_choice.filter( item =>  item != cuisine ) 

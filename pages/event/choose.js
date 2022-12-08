@@ -17,7 +17,7 @@ Page({
      */
     onLoad(options) {
         const page = this
-        page.setData({ event })
+        page.setData({ event_id: parseInt(options.id) })
         wx.request({
           url: `http://localhost:3000/api/v1/events/${options.id}/event_restaurants`,
           header: app.getHeader(),
@@ -28,47 +28,80 @@ Page({
         })
     },
 
+    restaurantAny(){
+        let restaurants = this.data.events
+  
+        restaurants.map(item => item.selected = false)
+        restaurants[0]['selected'] = true
+      
+        this.setData({restaurants_choice: []})
+        this.setData({restaurants})
+        
+    },
+
     chosenRestaurant(e) {
       console.log(e.currentTarget.dataset)
       let restaurants = this.data.events
-      console.log("RESTAURANTS", restaurants)
-
       let restaurants_choice = this.data.restaurants_choice
-      console.log("RESTAURANTS CHOICE", restaurants_choice)
-
       let restaurant = e.currentTarget.dataset.restaurantid
-      console.log("RESTAURANT", restaurant)
 
       // if you click on a restaurant add that array and any is deleted
       if (restaurant !== "Any" || restaurants_choice.length !== 0) {
         // remove "any" from the array
-        restaurants[0]['selected'] = false
-        // events = events.filter( item =>  item != "Any" )
+
         let item = restaurants.find(item => item.restaurant.id === restaurant)  
-        console.log("ITEM", item)
         // if the restaurant is in the array, remove it
         if (restaurants_choice.includes(restaurant)) {
             restaurants_choice = restaurants_choice.filter( item =>  item != restaurant ) 
             item.selected = false
-            console.log("IF RESTAURANTS CHOICE", restaurants_choice)
+            if (restaurants_choice.length === 0) this.restaurantAny()
         }
         else {
             item.selected = true
             restaurants_choice.push(restaurant)
-            console.log("ELSE RESTAURANTS CHOICE", restaurants_choice)
         }
         // else add it
         this.setData({restaurants_choice})
         console.log("FINAL RESTAURANTS CHOICE", this.data.restaurants_choice)
         this.setData({restaurants})
-        console.log("FINAL RESTAURANTS", this.data.restaurants)
-      } else {
-        console.log("IS ZERO")
       }
     },
 
     submitChoices(e) {
+      const submitEvents = []
+      const choices = this.data.restaurants_choice
+      console.log("CHOICES", choices)
+      const events = this.data.events
+      console.log("EVENTS", events)
       
+      events.forEach(event => {
+        if (event.selected === true) {
+          submitEvents.push(event.id)
+        }
+      })
+
+      const user = wx.getStorageSync('user')
+      const data = {
+        user_id: user.id,
+        event_id: this.data.event_id,
+        restaurants: submitEvents
+      }
+      console.log("REQUEST DATA", data)
+      wx.request({
+        url: `http://localhost:3000/api/v1/restaurant_picks`,
+        header: app.getHeader(),
+        data,
+        method: "POST",
+        success(res) {
+          console.log("CREATE RES", res)
+          wx.navigateTo({
+            url: '/pages/event/result',
+          })
+        },
+        fail(errors) {
+          console.log("ERRORS", errors)
+        }
+      })
     },
 
     /**
