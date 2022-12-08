@@ -4,3 +4,16 @@
 .picker {
     padding: 16rpx;
 }
+
+.selected {
+    border: 1rpx #434343 solid;
+    border-radius: 20rpx;
+}
+
+.not-selected{
+    border: 1rpx transparent solid;
+}
+
+.card-detail {
+    margin-right: 5rpx;
+}
