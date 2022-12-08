@@ -1,4 +1,7 @@
 // pages/event/result.js
+const app = getApp()
+
+
 Page({
 
     /**
@@ -12,7 +15,17 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
-
+      const page = this
+      page.setData({ event_id: options.id })
+      console.log("PAGE event_id", page.data.event_id)
+      wx.request({
+        url: `http://localhost:3000/api/v1/events/${page.data.event_id}`,
+        header: app.getHeader(),
+        success(res) {
+            page.setData({ restaurant: res.data.restaurant})
+            console.log("RESULT", page.data.restaurant)
+        }
+      })
     },
 
     /**

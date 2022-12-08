@@ -84,11 +84,11 @@
             <button class="our-button mt30" bindtap="goToHome">Yes!</button>      
         </view>
     </block>
+</view> -->
 
-
-    <!-- <form bindsubmit="submitEvent"> -->
-        <!-- event_name 默认为 user's choosie foodie event -->
-        <!-- <view wx:if="{{reveal}}">
+    <form bindsubmit="submitEvent">
+        event_name 默认为 user's choosie foodie event
+        <view wx:if="{{reveal}}">
             <view wx:if="{{event.name}}">
                 <input class="input" placeholder="{{event.name}}" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />
             </view>
@@ -99,19 +99,19 @@
         <view wx:else>
             <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />
         </view>
-        <button bindtap="revealForm">Edit</button> -->
+        <button bindtap="revealForm">Edit</button>
 
-        <!-- date 需要默认已选的 -->
-        <!-- <view class="section">
+        date 需要默认已选的
+        <view class="section">
             <view>{{date}}</view>
             <picker mode="date" value="{{date}}" start="{{event.date}}" bindchange="bindDateChange">
                 <button>Edit</button>
             </picker>
-        </view> -->
+        </view>
 
 
-        <!-- time  需要默认为 null -->
-        <!-- <view class="section">
+        time  需要默认为 null
+        <view class="section">
             <view>{{time}}</view>
             <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
                 <button>Edit</button>
@@ -121,5 +121,9 @@
         <view class="btn-area">
             <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
         </view>
+<<<<<<< HEAD
+    </form>
+=======
     </form> -->
 </view>
+>>>>>>> master

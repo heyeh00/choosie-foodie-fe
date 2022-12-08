@@ -82,4 +82,4 @@
     </view> -->
         <button class="our-button" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
     </view>
-    </view>
+</view>

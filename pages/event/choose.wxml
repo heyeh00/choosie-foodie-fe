@@ -1,4 +1,16 @@
 <!--pages/event/choose.wxml-->
+<!-- <view class="container">
+    <view class="card-m1" wx:for="{{events}}" wx:for-item="event" bindtap="chosenRestaurant" data-restaurantid="{{event.restaurant.id}}" data-eventid="{{event.id}}">
+        <view>{{event.restaurant.name}}</view>
+        <view>{{event.restaurant.address}}</view>
+        <view>Rating: {{event.restaurant.rating}}</view>
+        <view>{{event.restaurant.ave_price}}¥/person</view>
+    </view>
+    <view class="our-button" bindtap="submitChoices">
+        Submit
+    </view>
+</view> -->
+
 <view class="card-m2" wx:for="{{restaurants}}">
     <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill"/>
     <view class="card-m2-info">

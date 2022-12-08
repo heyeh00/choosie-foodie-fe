@@ -61,12 +61,11 @@ Page({
 
     submitEvent(e) {
         this.setDateTime()
-        // if (e.detail.value.event_name) {       
-        // } else {
-        //     const event_name = e.detail.value.event_name
-        //     this.setData({ event_name })     
-        // }
-        console.log("FINAL EVENT CREATION INFO", this.data)
+        if (e.detail.value.event_name === undefined) {       
+        } else {
+            const event_name = e.detail.value.event_name
+            this.setData({ event_name })     
+        }
         const event = {
             cuisine: this.data.cuisine,
             user_id: this.data.user.id,
@@ -80,10 +79,13 @@ Page({
           url: 'http://localhost:3000/api/v1/events',
           header: app.getHeader(),
           method: "POST",
-          data: event
-        })
-        wx.navigateTo({
-          url: '/pages/event/choose',
+          data: event,
+          success(eventCreateRes) {
+            console.log(eventCreateRes.data.event.id)
+            wx.navigateTo({
+                url: `/pages/event/choose?id=${eventCreateRes.data.event.id}`,
+            })
+          }
         })
     },
 
@@ -115,7 +117,6 @@ Page({
             page.setData({ user })
     
             page.setData({ event_name: `${user.name}'s choosie foodie event` })
-            console.log("DEFAULT EVENT NAME", page.data.event_name)
         }
 
     },
