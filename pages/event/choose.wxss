@@ -1,1 +1,33 @@
 /* pages/event/choose.wxss */
+.card-m2 {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin-top:40rpx;
+    border:1px solid #434343;
+    margin-bottom: 30rpx;
+    display:flex;
+}
+
+.card-m2-info{
+margin:30rpx;
+padding-bottom: 30rpx;
+/* display:flex; */
+}
+
+.card-m2-info-line2{
+   
+    margin: 40rpx auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.respic{
+height: 200rpx;
+width: 200rpx;
+flex-shrink: 0;
+border-radius: 10%;
+margin: 25rpx 20rpx;
+}

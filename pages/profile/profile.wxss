@@ -7,7 +7,7 @@
 
 
 .bgcard {
-    position: relative;
+
     background-color: #F8F8F8;
     background-size: cover;
     margin-top: 200rpx;
@@ -23,22 +23,33 @@
 
 .avatar {
     position: absolute;
-    background-color: green;
-    top: 100rpx;
+    background-color: white;
+    top: 0rpx;
     left: 50%;
     border: 6 solid white;
     transform: translate(-50%, 50%);
-    height: 120rpx;
-    width: 120rpx;
+    height: 200rpx;
+    width: 200rpx;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+.therealone {
+    position: absolute;
+    width: 190rpx;
+    height: 190rpx;
+    border-radius: 50%;
+    display:flex;
+    align-self: center;
+    justify-content: space-around;
+}
+
 
 .userinfo-avatar{
-    width: 90rpx;
-    height: 90rpx;
+    position: absolute;
+    width: 130rpx;
+    height: 130rpx;
     display:flex;
     align-self: center;
     justify-content: space-around;
@@ -51,6 +62,19 @@
   }
 
   
-  .card.s-infos {
-    padding: 16px;
-  }
+  .card-s-info{
+    height: 100%;
+    margin:30rpx 20rpx;
+    padding:30rpx 20rpx;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+  .respic{
+    height: 200rpx;
+    width: 200rpx;
+    flex-shrink: 0;
+    border-radius: 10%;
+    }

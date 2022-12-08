@@ -18,7 +18,10 @@
     background-color: #FAEBCD;
     margin:auto;
     margin-bottom: 30rpx;
-    }
+    font-size: 50rpx;
+    display:flex;
+    align-items: center;
+}
 
 .card-m2 {
     width: 90%;
@@ -28,15 +31,19 @@
     margin:auto;
     border:1px solid #434343;
     margin-bottom: 30rpx;
-    }
-
+    display:flex;
+    
+}
+    
 .card-s {
     width: 90%;
     height: 200rpx;
     border-radius: 50rpx;
     background-color: #FAEBCD;
-    margin:auto;
+    margin-top: 30rpx;
     margin-bottom: 30rpx;
+    align-items: center;
+    display:flex;
     }
 
 .our-button {

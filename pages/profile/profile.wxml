@@ -12,34 +12,42 @@
 
 
 <view class="bg" style="display: flex; justify-content: center;">
-    <view wx:if="{{login}}">
+
+
+    <block wx:if="{{user.image_url}}">
         <view class="bgcard">
             <!-- <view wx:for="{{cards.s}}" wx:for-item="each card.s"> -->
-            <view class="card.s" wx:for="{{restaurants}}">
+            <!-- <view class="card.s" wx:for="{{restaurants}}">
                 <image src="/icons/images/maotou.jpg">
                 </image>
-                <view class="card.s-infos">
+                <view class="card.s-info">
                     <text style="font-size: 15rpx;">{{item.name}}</text>
                     <text style="font-size: 12rpx;">{{item.time}}</text>
                 </view>
+            </view> -->
+            <view class="avatar">
+                <image class="therealone" src="{{user.image_url}}" mode="aspectFit" />
+            </view>
+
+            <view class="card-s" wx:for="{{restaurants}}">
+                <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill" />
+                <view class="card-s-info">
+                    <text style="font-weight: bold; font-size: 32rpx;">{{item.name}}</text>
+                    <text style="font-size: 28rpx;">{{item.time}}</text>
+                  
+                </view>
             </view>
         </view>
-        <!-- </view> -->
+    </block>
 
 
-        <view class="avatar">
-            <image scr="/icons/images/panda.jpg">
-            </image>
-        </view>
-    </view>
-
-    <view wx:else>
+    <block wx:else>
         <view class="bgcard">
-            <text style="margin-top: 50rpx; margin-bottom: 300rpx;">Somebody needs to login🤔</text>
-            <button bindtap="login" class="our-button">Login</button>
+            <text style="margin-top: 100rpx; margin-bottom: 200rpx; font-weight:bold; font-size:large">Somebody needs to login🤔</text>
+            <button bind:chooseavatar="login" open-type="chooseAvatar" class="our-button">Login</button>
         </view>
         <view class="avatar">
-            <image src="/icons/TabBar-Icons/profile_white.png" class="userinfo-avatar"  mode="aspectFill"/>
+            <image src="/icons/TabBar-Icons/profile_white.png" class="userinfo-avatar" mode="aspectFill" />
         </view>
-    </view>
+    </block>
 </view>
