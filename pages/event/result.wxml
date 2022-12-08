@@ -1,2 +1,4 @@
-<!--pages/event/result.wxml-->
-<text>pages/event/result.wxml</text>
+<text>{{restaurant.name}}</text>
+<text>{{restaurant.address}}</text>
+<text>{{restaurant.cuisine}}</text>
+<text>{{restaurant.rating}}</text>
