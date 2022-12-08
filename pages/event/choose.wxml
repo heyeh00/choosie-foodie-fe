@@ -11,16 +11,16 @@
     </view>
 </view> -->
 
-<view class="card-m2" wx:for="{{restaurants}}">
-    <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill"/>
+<view class="card-m2" wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
+    <!-- <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill"/> -->
     <view class="card-m2-info">
 
-        <text style="font-size: 30rpx;">{{item.name}}</text>
+        <text style="font-size: 30rpx;">{{item.restaurant.name}}</text>
 
         <view class="card-m2-info-line2">
-            <text style="font-size: 24rpx;">￥{{item.price}}/person</text>
+            <text style="font-size: 24rpx;">￥{{item.restaurant.ave_price}}/person</text>
             <view class="stars" style="display:flex">
-                <view wx:for="{{item.rating_int}}">
+                <view wx:for="{{item.restaurant.rating}}">
                     *
                     <!-- <image scr="/icons/Page-icons/star_black.png"></image> -->
                 </view>
@@ -36,16 +36,15 @@
         <view class="card-m2-info-line2">
             <view>
                 <image src="/icons/Food-Icons/cutlery.png" style="height: 30rpx; width:30rpx" mode="aspectFill"/>
-                <text >{{item.cuisine}}</text>
+                <text >{{item.restaurant.cuisine}}</text>
             </view>
-            <view>
+            <!-- <view>
                 <image src="/icons/Page-icons/pin_white.png" style="height: 30rpx; width:30rpx" mode="aspectFill"/>
                 <text>{{item.location}}</text>   
-                
-            </view>
+            </view> -->
         </view>
        
     </view>
 </view>
 
-<button bind:chooseavatar="login" open-type="chooseAvatar" class="our-button" style="margin-top: 100rpx">Submit</button>
+<button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button" style="margin-top: 100rpx">Submit</button>

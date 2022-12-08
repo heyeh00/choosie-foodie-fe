@@ -16,25 +16,26 @@
 
     <block wx:if="{{user.image_url}}">
         <view class="bgcard">
-            <!-- <view wx:for="{{cards.s}}" wx:for-item="each card.s"> -->
-            <!-- <view class="card.s" wx:for="{{restaurants}}">
-                <image src="/icons/images/maotou.jpg">
-                </image>
-                <view class="card.s-info">
-                    <text style="font-size: 15rpx;">{{item.name}}</text>
-                    <text style="font-size: 12rpx;">{{item.time}}</text>
+            <view wx:for="{{cards.s}}" wx:for-item="each card.s">
+                <view class="card.s" wx:for="{{restaurants}}">
+                    <image src="/icons/images/maotou.jpg">
+                    </image>
+                    <view class="card.s-info">
+                        <text style="font-size: 15rpx;">{{item.name}}</text>
+                        <text style="font-size: 12rpx;">{{item.time}}</text>
+                    </view>
                 </view>
-            </view> -->
-            <view class="avatar">
-                <image class="therealone" src="{{user.image_url}}" mode="aspectFit" />
-            </view>
+                <view class="avatar">
+                    <image class="therealone" src="{{user.image_url}}" mode="aspectFit" />
+                </view>
 
-            <view class="card-s" wx:for="{{restaurants}}">
-                <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill" />
-                <view class="card-s-info">
-                    <text style="font-weight: bold; font-size: 32rpx;">{{item.name}}</text>
-                    <text style="font-size: 28rpx;">{{item.time}}</text>
-                  
+                <view class="card-s" wx:for="{{restaurants}}">
+                    <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill" />
+                    <view class="card-s-info">
+                        <text style="font-weight: bold; font-size: 32rpx;">{{item.name}}</text>
+                        <text style="font-size: 28rpx;">{{item.time}}</text>
+                    
+                    </view>
                 </view>
             </view>
         </view>
@@ -44,7 +45,7 @@
     <block wx:else>
         <view class="bgcard">
             <text style="margin-top: 100rpx; margin-bottom: 200rpx; font-weight:bold; font-size:large">Somebody needs to login🤔</text>
-            <button bind:chooseavatar="login" open-type="chooseAvatar" class="our-button">Login</button>
+            <button bind:chooseavatar="login" open-type="chooseAvatar" class="our-button" bindtap="login">Login</button>
         </view>
         <view class="avatar">
             <image src="/icons/TabBar-Icons/profile_white.png" class="userinfo-avatar" mode="aspectFill" />

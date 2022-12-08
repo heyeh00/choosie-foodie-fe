@@ -60,6 +60,9 @@ Page({
     },
 
     submitEvent(e) {
+        console.log(e)
+        console.log(e.detail)
+        console.log(e.detail.value)
         this.setDateTime()
         if (e.detail.value.event_name === undefined) {       
         } else {
@@ -81,6 +84,7 @@ Page({
           method: "POST",
           data: event,
           success(eventCreateRes) {
+            console.log(eventCreateRes)
             console.log(eventCreateRes.data.event.id)
             wx.navigateTo({
                 url: `/pages/event/choose?id=${eventCreateRes.data.event.id}`,
