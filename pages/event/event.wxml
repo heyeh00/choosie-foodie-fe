@@ -84,7 +84,7 @@
             <button class="our-button mt30" bindtap="goToHome">Yes!</button>      
         </view>
     </block>
-</view> -->
+</view>
 
     <form bindsubmit="submitEvent">
         event_name 默认为 user's choosie foodie event
@@ -121,9 +121,5 @@
         <view class="btn-area">
             <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
         </view>
-<<<<<<< HEAD
     </form>
-=======
-    </form> -->
-</view>
->>>>>>> master
+<!-- </view> -->

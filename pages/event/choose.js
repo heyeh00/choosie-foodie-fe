@@ -9,9 +9,7 @@ Page({
      * Page initial data
      */
     data: {
-<<<<<<< HEAD
-      restaurants_choice: []
-=======
+        restaurants_choice: [],
         restaurants: [
             {
                 name: "毛头老爹饭店",
@@ -51,7 +49,6 @@ Page({
             }
         ]
        
->>>>>>> master
     },
 
     /**
@@ -194,44 +191,7 @@ Page({
     onShareAppMessage() {
 
     },
-<<<<<<< HEAD
-
-    // chosenRestaurant(e) {
-    //     const restaurantid = e.currentTarget.dataset.restaurantid
-    //     let events = this.data.events
-  
-    //     events.push(restaurantid)
-    //     this.setData({events})
-    //     console.log("CUMULATIVE CHOICES", this.data.events)
-    // },
-    
-    // submitChoices(e) {
-    //     const events = this.data.events
-    //     console.log("CHOICE ARRAY", events)
-    //     const count = {};
-    //     for (const element of events) {
-    //       if (count[element]) {
-    //         count[element] += 1;
-    //       } else {
-    //         count[element] = 1;
-    //       }
-    //     }
-    //     console.log("Final Counts", count)
-    //     const submitRestaurants = []
-    //     Object.keys(count).forEach(key => {
-    //       if (count[key] % 2) {
-    //         console.log("ODD", key)
-    //         submitRestaurants.push(key)
-    //       } else {
-    //         console.log("EVEN", key)
-    //       }  
-    //     })
-    //     this.setData({ submitRestaurants })
-    //     console.log("SUBMIT RESTAURANTS", this.data.submitRestaurants)
-    //   }
-=======
     countStar(rating){
         parseInt(rating.toFixed())
     }
->>>>>>> master
 })
