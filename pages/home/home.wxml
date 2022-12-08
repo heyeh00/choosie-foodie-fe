@@ -1,40 +1,85 @@
-<view class="vh100 bg-dim pa50">
-    <!-- 暂定9种菜系 -->
-    <view class="section mt50" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;"> 
-        <view
-            wx:for="{{cuisines}}"
-            wx:for-item="cuisine"
-            wx:key="key"
-            bindtap="editCuisines"
-            class="w20 text-center mb30"
-            data-cuisine="{{cuisine.name}}"
-        >
-            <view class="card-detail {{cuisine.selected ? 'selected' : 'not-selected'}}"> 
-                <image src="{{cuisine.icon}}" mode="aspectFit" style="width: 80rpx; height: 80rpx;"/>
-                <view class="fsbody">
-                    {{cuisine.name}}
-                </view>
-            </view> 
+<view class="container-form">
+        <view class="header">PLACEHOLDER</view>
+        <form bindsubmit="submitEvent">
+               
+        <!-- cuisines  后台已经会自动随机调出9种菜系 -->
+               
+        <!-- <view wx:for="{{cuisines}}" wx:key="key" class="page-section page-section-gap"> -->
+                <view class="page-section page-section-gap">
+                        <checkbox-group name="cuisines">
+                                <view class="page-section page-section-gap">
+                                        <checkbox-group bindchange="editCuisines" name="cuisines">
+                                                <label>
+                                                       
+                            <checkbox value="Any" />Any
+                                                   
+                        </label>
+                                                <label wx:for="{{cuisines}}">
+                                                       
+                            <checkbox value="{{item}}" data-cuisine="{{item}}" />{{item}}
+                                                   
+                        </label>
+                                            </checkbox-group>
+                                    </view>
+                            </checkbox-group>
+                    </view>
+               
+        <!-- date 需要默认为今天 -->
+                <view class="section">
+                        <view class="section__title">Date</view>
+                        <picker mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange">
+                                <view class="picker">Selected Date: {{date}}</view>
+                            </picker>
+                    </view>
+               
+        <!-- time  需要默认为 null -->
+                <view class="section">
+                        <view class="section__title">Choose a time</view>
+                        <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                                <view class="picker">
+                                        Selected time: {{time}}
+                                    </view>
+                            </picker>
+                    </view>
+                <view class="btn-area">
+                       
+            <!-- <button style="margin: 30rpx 0" formType="reset">Reset</button> -->
+                        <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+                   
         </view>
-    </view>
-    <!-- date: default today-->
-    <view class="section w100 h10 bg-white radius30 my60 py30 column-center">
-        <view class="fbody">Select date</view>
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-            <view class="picker">{{date}}</view>
-        </picker>
-    </view>
-    <!-- time: default now -->
-    <view class="section w100 h10 bg-white radius30 my60 py30 column-center">
-        <view class="fbody">Select time</view>
-        <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
-            <view class="picker">{{time}}</view>
-        </picker>
-    </view>
-    <!-- price range -->
-    <!-- <view class="section w100 h10 bg-white radius30 my40 py30 column-center">
+           
+    </form>
+    <view class="vh100 bg-dim pa50">
+        <!-- 暂定9种菜系 -->
+        <view class="section mt50" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+            <view wx:for="{{cuisines}}" wx:for-item="cuisine" wx:key="key" bindtap="editCuisines" class="w20 text-center mb30" data-cuisine="{{cuisine.name}}">
+                <view class="card-detail {{cuisine.selected ? 'selected' : 'not-selected'}}">
+                    <image src="{{cuisine.icon}}" mode="aspectFit" style="width: 80rpx; height: 80rpx;" />
+                    <view class="fsbody">
+                        {{cuisine.name}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- date: default today-->
+        <view class="section w100 h10 bg-white radius30 my60 py30 column-center">
+            <view class="fbody">Select date</view>
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+                <view class="picker">{{date}}</view>
+            </picker>
+        </view>
+        <!-- time: default now -->
+        <view class="section w100 h10 bg-white radius30 my60 py30 column-center">
+            <view class="fbody">Select time</view>
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
+                <view class="picker">{{time}}</view>
+            </picker>
+        </view>
+        <!-- price range -->
+        <!-- <view class="section w100 h10 bg-white radius30 my40 py30 column-center">
         <view class="fbody">Select price range</view>
        
     </view> -->
-    <button class="our-button" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
-</view>
+        <button class="our-button" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
+    </view>
+    </view>

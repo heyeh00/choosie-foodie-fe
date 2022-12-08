@@ -10,6 +10,7 @@ Page({
      * Page initial data
      */
     data: {
+        // user: app.globalData.user,
         restaurants: [
             {
                 name: "毛头老爹饭店",
@@ -58,45 +59,55 @@ Page({
         }
     },
 
-    login(e) {
-        const page = this
-        wx.getUserProfile({
-          desc: 'get users pic and name',
-          success(res) {
-              console.log("SUCCESS RES", res.userInfo)
-              const user = {
-                name: res.userInfo.nickName,
-                image_url: res.userInfo.avatarUrl,
-              }
-              console.log("PRE PUT {DATA}", user)
+    onChooseAvatar(e){
+        console.log('TEST')
+        const { avatarUrl } = e.detail
+        this.setData({avatarUrl})
+    },
 
-              requestData(`/users/${app.getUserId}`, { user }, "PUT").then((res) => {
-                console.log("POST PUT {DATA}", res)  
-                page.setData({ user: res.data.user })
-                app.globalData.user = res.data.user
-                console.log("PAGE DATA", page.data)
-              })
-          },
-          fail(errors) {
-              console.log("LOGIN ERROR", errors)
+    login(e) {
+        const userId = wx.getStorageSync('user')
+        const avatarUrl  = e.detail.avatarUrl
+        this.setData({avatarUrl})
+        const page = this
+        const user = { image_url: e.detail.avatarUrl }
+        wx.request({
+          url: `http://localhost:3000/api/v1/users/${userId.id}`,
+          headers: app.getHeader(),
+          method: "PUT",
+          data: { user },
+          success(res) {
+              this.setData({user: res.data.user})
           }
         })
+
+        // requestData(`/users/${app.getUserId}`, { user }, "PUT").then((res) => {
+        //     console.log("POST PUT {DATA}", res)  
+        //     page.setData({ user: res.data.user })
+        //     app.globalData.user = res.data.user
+        //     console.log("PAGE DATA", page.data)
+        // })
+        //   },
+        //   fail(errors) {
+        //       console.log("LOGIN ERROR", errors)
+        //   }
+        // })
     },
 
     getData() {
         this.setData({ user: app.globalData.user })
-    //     const page = this
-    //     wx.request({
-    //         url: 'http://localhost:3000/api/v1/restaurants',
-    //         success(res) {
-    //             console.log("get all restaurants", res)
-    //             if (res.statusCode !== 200) return
-    //             // 将获取到的数据保存在dataObject中
-    //             page.setData({ restaurants: res.data.restaurants.reverse() })
-    //             // 设置marker
-    //             page.onSetMarkers(res.data.restaurants)
-    //         }
-    //     })
+        const page = this
+        wx.request({
+            url: 'http://localhost:3000/api/v1/restaurants',
+            success(res) {
+                console.log("get all restaurants", res)
+                if (res.statusCode !== 200) return
+                // 将获取到的数据保存在dataObject中
+                page.setData({ restaurants: res.data.restaurants.reverse() })
+                // 设置marker
+                page.onSetMarkers(res.data.restaurants)
+            }
+        })
     },
 
 

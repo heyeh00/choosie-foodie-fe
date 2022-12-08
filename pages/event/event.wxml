@@ -90,7 +90,7 @@
             </view>
         </view>
         <view wx:else>
-            <view>{{user.name}}'s choosie foodie event</view>
+            <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />
         </view>
         <button bindtap="revealForm">Edit</button> -->
 
