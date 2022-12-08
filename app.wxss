@@ -50,7 +50,7 @@
 
 .card-l {
   width: 560rpx;
-  height: 900rpx;
+  /* height: 900rpx; */
   border-radius: 50rpx;
   background-color: #FAEBCD;
   margin: auto;

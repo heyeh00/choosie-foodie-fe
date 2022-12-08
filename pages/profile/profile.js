@@ -97,7 +97,10 @@ Page({
     //             page.onSetMarkers(res.data.restaurants)
     //         }
     //     })
+<<<<<<< HEAD
         console.log("PROFILE JS USER ID", this.data.user.id)
+=======
+>>>>>>> master
     },
 
 

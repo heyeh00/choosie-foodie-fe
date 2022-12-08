@@ -22,22 +22,6 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
-        const page = this
-
-        const date = app.globalData.event_info.date
-        page.setData({ date })
-
-        const time = app.globalData.event_info.time
-        page.setData({ time })
-
-        const cuisine = app.globalData.event_info.cuisines
-        page.setData({cuisine})
-
-        const user = wx.getStorageSync('user')
-        page.setData({ user })
-
-        page.setData({ event_name: `${user.name}'s choosie foodie event` })
-        console.log("DEFAULT EVENT NAME", page.data.event_name)
     },
 
     revealForm(e) {
@@ -87,6 +71,9 @@ Page({
           method: "POST",
           data: event
         })
+        wx.navigateTo({
+          url: '/pages/event/choose',
+        })
     },
 
     /**
@@ -97,6 +84,28 @@ Page({
     },
 
     onShow() {
+        const page = this
+        console.log(app.globalData)
+        const myEvent = app.globalData.event_info;
+
+        page.setData({myEvent})
+        if (myEvent !== undefined) {
+
+            const date = app.globalData.event_info.date
+            page.setData({ date })
+    
+            const time = app.globalData.event_info.time
+            page.setData({ time })
+    
+            const cuisine = app.globalData.event_info.cuisines
+            page.setData({cuisine})
+    
+            const user = wx.getStorageSync('user')
+            page.setData({ user })
+    
+            page.setData({ event_name: `${user.name}'s choosie foodie event` })
+            console.log("DEFAULT EVENT NAME", page.data.event_name)
+        }
 
     },
 

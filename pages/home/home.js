@@ -9,23 +9,89 @@ Page({
      * Page initial data
      */
     data: {
-      cuisines: []
+      cuisines: [
+        {
+          name: 'Any',
+          icon: "/icons/Food Icons/food.png",
+          selected: true
+        },
+        {
+          name: "Korean",
+          icon: "/icons/Food Icons/bibimbap.png",
+          selected: false
+        },
+        {
+          name: 'Indian',
+          icon: "/icons/Food Icons/masala-dosa.png",
+          selected: false
+
+        },
+        {
+          name: 'Italian',
+          icon: "/icons/Food Icons/pasta.png",
+          selected: false
+        },   
+        {
+          name: 'Japanese',
+          icon: "/icons/Food Icons/ramen.png",
+          selected: false
+        },     
+        {
+          name: 'Spanish',
+          icon: "/icons/Food Icons/seafood.png",
+          selected: false
+        },   
+        {
+          name: 'Mexican',
+          icon: "/icons/Food Icons/tacos.png",
+          selected: false
+        },   
+        {
+          name: 'Thai',
+          icon: "/icons/Food Icons/thai-food.png",
+          selected: false
+        },
+        {
+          name: 'Vegetarian',
+          icon: "/icons/Food Icons/vegetable.png",
+          selected: false
+        },
+        {
+          name: 'Hotpot',
+          icon: "/icons/Food Icons/hot-pot.png",
+          selected: false
+        }
+
+      ]
     },
+    goToEvent(e) {
+      wx.switchTab({
+        url: '/pages/event/event',
+      })
+  },
 
     /**
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
         const page = this
-        event.on('tokenReady', this, this.getData);
-        requestData(`/cuisines`, {}, "GET").then((res) => {
-            page.setData({ cuisines: res.data.cuisines })
-        })
+        event.on('tokenReady', page, page.getData);
+        // requestData(`/cuisines`, {}, "GET").then((res) => {
+        //     console.log('res from cuisines GET', res.data)
+        //     page.setData({ cuisines: res.data.cuisines })
+        // })
+        page.setData(
+          {
+            date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
+            time: `${new Date().getHours()}:${new Date().getMinutes()}`
+          }
+        )
+
     },
 
     getData() {
         this.setData({ user: app.globalData.user })
-        console.log("HOME USER INFO", this.data.user)
+        // console.log("HOME USER INFO", this.data.user)
     },
 
     bindDateChange(e) {
@@ -36,14 +102,60 @@ Page({
       this.setData({ time: e.detail.value })
     },
 
+    cuisineAny(){
+      let { cuisines } = this.data
+
+      cuisines.map(item => item.selected = false)
+      cuisines[0]['selected'] = true
+    
+      this.setData({cuisines_choice: []})
+      this.setData({cuisines})
+      
+    },
+
     editCuisines(e) {
-      this.setData({ cuisines_choice: e.detail })
+      console.log('haha',e)
+      let { cuisines } = this.data
+
+      let cuisines_choice = this.data.cuisines_choice
+      let cuisine = e.currentTarget.dataset.cuisine
+
+
+      // if you click on a cuisine add that array and any is deleted
+      if (cuisine !== "Any" || cuisines_choice.length !== 0) {
+        // remove "any" from the array
+        cuisines[0]['selected'] = false
+        cuisines_choice = cuisines_choice.filter( item =>  item != "Any" )
+        let item = cuisines.find(item => item.name === cuisine)  
+        // if the cuisine is in the array, remove it
+        if (cuisines_choice.includes(cuisine)) {
+          cuisines_choice = cuisines_choice.filter( item =>  item != cuisine ) 
+          item.selected = false
+          if (cuisines_choice.length === 0) this.cuisineAny()
+        }
+        else {
+          item.selected = true
+          cuisines_choice.push(cuisine)
+        }
+        // else add it
+        this.setData({cuisines_choice})
+        this.setData({cuisines})
+      }
+      
+      if (cuisine === "Any") this.cuisineAny()
+      
+      
+
+
+      // else we create a cuisines array and push that cusines
+
+      
     },
 
     submitEvent(e) {
     //   console.log(this.data.cuisines_choice.value)
       const event_info = {
-          cuisines: this.data.cuisines_choice.value,
+          cuisines: this.data.cuisines_choice,
           date: this.data.date,
           time: this.data.time, 
       }
@@ -65,7 +177,7 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
-
+      this.cuisineAny()
     },
 
     /**

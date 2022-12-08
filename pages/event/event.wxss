@@ -1,1 +1,5 @@
 /* pages/event/event.wxss */
+.line{
+    height: 1rpx;
+    background-color: #434343;
+    }
