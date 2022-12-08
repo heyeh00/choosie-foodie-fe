@@ -55,7 +55,6 @@ Page({
             const event_name = e.detail.value.event_name
             this.setData({ event_name })     
         }
-        console.log("FINAL EVENT CREATION INFO", this.data)
         const event = {
             cuisines: this.data.cuisine,
             user_id: this.data.user.id,
@@ -69,7 +68,10 @@ Page({
           url: 'http://localhost:3000/api/v1/events',
           header: app.getHeader(),
           method: "POST",
-          data: event
+          data: event,
+          success(eventCreateRes) {
+            wx.setStorageSync('event', eventCreateRes.data.event)
+          }
         })
         wx.navigateTo({
           url: '/pages/event/choose',
@@ -104,7 +106,6 @@ Page({
             page.setData({ user })
     
             page.setData({ event_name: `${user.name}'s choosie foodie event` })
-            console.log("DEFAULT EVENT NAME", page.data.event_name)
         }
 
     },
