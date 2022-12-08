@@ -1,4 +1,24 @@
 /* pages/event/choose.wxss */
+.card-m1 {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin-top:40rpx;
+    border:1px solid #FAEBCD;
+    margin-bottom: 30rpx;
+    display:flex;
+}
+
+.selected {
+    border: 1rpx #434343 solid;
+    border-radius: 20rpx;
+}
+
+.not-selected{
+    border: 1rpx transparent solid;
+}
+
 .card-m2 {
     width: 90%;
     height: 250rpx;
