@@ -8,17 +8,17 @@
                     <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20 mr50"/>
                     <view class="card-info">   
                         <view class="fbody mb20">
-                            <!-- <view wx:if="{{reveal}}"> -->
-                                <!-- <view wx:if="{{event.name}}">
+                            <view wx:if="{{reveal}}">
+                                <view wx:if="{{event.name}}">
                                     
-                                </view> -->
-                                <!-- <view wx:else> -->
-                                    <!-- <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />             -->
-                                 <!-- </view> -->
-                            <!-- </view>
-                            <view wx:else> -->
+                                </view>
+                                <view wx:else>
+                                    <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />            
+                                 </view>
+                            </view>
+                            <view wx:else>
                                 <view class="fbody bold">{{user.name}}'s</view>
-                            <!-- </view> -->
+                            </view>
                         </view>
                         <view class="fbody">
                             Choosie Foodie Event invitation
@@ -65,9 +65,7 @@
                 </view>
             </picker>
         </view>
-    </view>
-                
-
+        </view>
         <button class="our-button mt100" bindtap="submitEvent">Confirm</button>
     </block>
     <!-- Direct user to home page to create event -->
@@ -86,7 +84,7 @@
     </block>
 </view>
 
-    <form bindsubmit="submitEvent">
+    <!-- <form bindsubmit="submitEvent">
         event_name 默认为 user's choosie foodie event
         <view wx:if="{{reveal}}">
             <view wx:if="{{event.name}}">
@@ -121,5 +119,5 @@
         <view class="btn-area">
             <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
         </view>
-    </form>
+    </form> -->
 <!-- </view> -->
