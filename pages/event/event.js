@@ -84,6 +84,7 @@ Page({
           method: "POST",
           data: event,
           success(eventCreateRes) {
+            console.log(eventCreateRes)
             console.log(eventCreateRes.data.event.id)
             wx.navigateTo({
                 url: `/pages/event/choose?id=${eventCreateRes.data.event.id}`,

@@ -79,16 +79,20 @@ Page({
     },
 
     chosenRestaurant(e) {
+      console.log(e.currentTarget)
       console.log(e.currentTarget.dataset)
       let restaurants = this.data.events
+      console.log("EVENT RESTAURANTS", restaurants)
       let restaurants_choice = this.data.restaurants_choice
+      console.log(restaurants_choice)
       let restaurant = e.currentTarget.dataset.restaurantid
+      console.log(restaurant)
 
       // if you click on a restaurant add that array and any is deleted
       if (restaurant !== "Any" || restaurants_choice.length !== 0) {
         // remove "any" from the array
 
-        let item = restaurants.find(item => item.restaurant.id === restaurant)  
+        let item = restaurants.find(item => item.restaurant.id === restaurant)
         // if the restaurant is in the array, remove it
         if (restaurants_choice.includes(restaurant)) {
             restaurants_choice = restaurants_choice.filter( item =>  item != restaurant ) 
