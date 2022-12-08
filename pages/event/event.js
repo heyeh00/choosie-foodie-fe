@@ -70,11 +70,11 @@ Page({
           method: "POST",
           data: event,
           success(eventCreateRes) {
-            wx.setStorageSync('event', eventCreateRes.data.event)
+            console.log(eventCreateRes.data.event.id)
+            wx.navigateTo({
+                url: `/pages/event/choose?id=${eventCreateRes.data.event.id}`,
+            })
           }
-        })
-        wx.navigateTo({
-          url: '/pages/event/choose',
         })
     },
 

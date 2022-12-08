@@ -1,2 +1,13 @@
 <!--pages/event/choose.wxml-->
-<text>pages/event/choose.wxml</text>
+<view class="container">
+    <view class="card-m1" wx:for="{{events}}" wx:for-item="event" bindtap="chosenRestaurant" data-restaurantid="{{event.restaurant.id}}" data-eventid="{{event.id}}">
+        <view>{{event.restaurant.name}}</view>
+        <view>{{event.restaurant.address}}</view>
+        <view>Rating: {{event.restaurant.rating}}</view>
+        <view>{{event.restaurant.ave_price}}¥/person</view>
+    </view>
+    <view class="our-button" bindtap="submitChoices">
+        Submit
+    </view>
+</view>
+
