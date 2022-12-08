@@ -28,3 +28,4 @@
 .h20 { height: 20%; }
 .h10 { height: 10%; }
 .vh100 { height: 100vh; }
+.vh65 { height: 65vh;}
