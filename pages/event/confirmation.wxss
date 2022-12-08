@@ -1,0 +1,10 @@
+/* pages/event/confirmation.wxss */
+.card-product {
+    display: flex;
+    align-items: center;
+}
+
+.line{
+    height: 1rpx;
+    background-color: #434343;
+    }

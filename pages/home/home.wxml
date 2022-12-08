@@ -2,10 +2,15 @@
     <view class="header">PLACEHOLDER</view>
     <form bindsubmit="submitEvent">
         <!-- cuisines  后台已经会自动随机调出9种菜系 -->
-        <view wx:for="{{cuisines}}" class="page-section page-section-gap">
+        <view wx:for="{{cuisines}}" wx:key="key" class="page-section page-section-gap">
             <checkbox-group name="cuisines">
+        <view class="page-section page-section-gap">
+            <checkbox-group bindchange="editCuisines" name="cuisines">
                 <label>
-                    <checkbox value="cuisines" />{{item}}
+                    <checkbox value="Any"/>Any
+                </label>
+                <label wx:for="{{cuisines}}">
+                    <checkbox value="{{item}}" data-cuisine="{{item}}" />{{item}}
                 </label>
             </checkbox-group>
         </view>
