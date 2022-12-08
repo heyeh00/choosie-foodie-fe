@@ -81,6 +81,9 @@ Page({
           method: "POST",
           data: event
         })
+        wx.navigateTo({
+          url: '/pages/event/choose',
+        })
     },
 
     /**
