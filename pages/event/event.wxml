@@ -1,69 +1,76 @@
 <!--pages/event/event.wxml-->
-<!-- <view class="vh100 vw bg-dim pt100 fixed" >
+<view class="vh100 vw bg-dim pt100 fixed" >
+    <!-- Show event confirmation page if event exist -->
     <block wx:if="{{date || time || cuisine}}">
         <view class="card-l pa50 vh65 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">
-                    <image src="https://source.unsplash.com/random" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20 mr50"/>
+                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20 mr50"/>
                     <view class="card-info">   
                         <view class="fbody mb20">
-                            <view wx:if="{{reveal}}">
-                                <view wx:if="{{event.name}}">
+                            <!-- <view wx:if="{{reveal}}"> -->
+                                <!-- <view wx:if="{{event.name}}">
                                     
-                                </view>
-                                <view wx:else>
-                                    <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />            
-                                 </view>
-                            </view>
-                            <view wx:else>
-                                <view>{{user.name}}'s</view>
-                            </view>
+                                </view> -->
+                                <!-- <view wx:else> -->
+                                    <!-- <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />             -->
+                                 <!-- </view> -->
+                            <!-- </view>
+                            <view wx:else> -->
+                                <view class="fbody bold">{{user.name}}'s</view>
+                            <!-- </view> -->
                         </view>
                         <view class="fbody">
-                            Choosie Foodie event
+                            Choosie Foodie Event invitation
                         </view>
                     </view>   
                 </view>
-                <view class="line w100"></view>
-
-                <view class="flex justify-between items-center pa20 my50">
-                    <view class="ftheader bold">
-                        {{user.name}}'s Choosie Foodie event
-                    </view>
-                    <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx; margin-left: 30rpx;" />
+            <view class="line w100"></view>
+            <!-- Event name -->
+            <view class="flex justify-between items-center pa20 my50" >
+                <view class="ftheader bold">
+                    <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter event name here"
+                    value="{{ event.name }}"
+                    bindinput="setEventName"
+                    />
                 </view>
-
+                <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx; margin-left: 30rpx;" />
+            </view>
+            <!-- Date -->
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
                 <view class="flex justify-between items-center pa20">
                     <view class="flex justify-start items-center">
-                        <image src="/icons/Page icons/calendar_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+                        <image src="/icons/Page icons/calendar_white.png" mode="aspectFit" style="height: 67rpx; width: 67rpx;" />
                         <view class="fbody ml40">
-                            <picker mode="date" value="{{date}}" bindchange="bindDateChange">
                                 <view class="picker">{{date}}</view>
-                            </picker>
                         </view>
                     </view>
                     <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
                 </view>
+            </picker>
 
-                
+            <!-- Time -->
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
                 <view class="flex justify-between items-center pa20 mt50">
                     <view class="flex justify-start items-center">
                         <image src="/icons/Page icons/clock_white.png" mode="aspectFit" style="height: 70rpx; width: 70rpx;" />
                         <view class="fbody ml40">
-                            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
                                 <view class="picker">{{time}}</view>
-                            </picker>
                         </view>
                     </view>
                     <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
                 </view>
-            </view>
+            </picker>
         </view>
+    </view>
                 
 
-        <button class="our-button mt100">Confirm</button>
+        <button class="our-button mt100" bindtap="submitEvent">Confirm</button>
     </block>
-
+    <!-- Direct user to home page to create event -->
     <block wx:else>  
         <view class="vh100 px50">
             <view style="margin-top: 40%; margin-left: 20%;">
@@ -74,7 +81,7 @@
                     Create one now? 
                 </view>
             </view>
-            <button class="our-button mt30" bindtap="goToConfirmation">Yes!</button>      
+            <button class="our-button mt30" bindtap="goToHome">Yes!</button>      
         </view>
     </block>
 </view> -->
@@ -90,7 +97,7 @@
             </view>
         </view>
         <view wx:else>
-            <view>{{user.name}}'s choosie foodie event</view>
+            <input class="input" placeholder="{{user.name}}'s choosie foodie event" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />
         </view>
         <button bindtap="revealForm">Edit</button>
 
@@ -114,4 +121,9 @@
         <view class="btn-area">
             <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
         </view>
+<<<<<<< HEAD
     </form>
+=======
+    </form> -->
+</view>
+>>>>>>> master

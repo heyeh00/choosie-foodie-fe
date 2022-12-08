@@ -12,9 +12,9 @@ Page({
         reveal: false
     },
 
-    goToConfirmation(e) {
-        wx.navigateTo({
-            url: '/pages/event/confirmation'
+    goToHome(e) {
+        wx.switchTab({
+            url: '/pages/home/home'
         })
     },
 
@@ -34,6 +34,17 @@ Page({
   
     bindTimeChange(e) {
         this.setData({ time: e.detail.value })
+    },
+
+    setEventName(e){
+        console.log(e.detail.value)
+        let event_name = this.data.event_name
+        if (e.detail.value.length === 0) {
+            event_name =  "Choosie Foodie Event"
+        } else {
+            event_name = e.detail.value
+        }
+        this.setData({event_name})
     },
 
     setDateTime() {
@@ -56,7 +67,7 @@ Page({
             this.setData({ event_name })     
         }
         const event = {
-            cuisines: this.data.cuisine,
+            cuisine: this.data.cuisine,
             user_id: this.data.user.id,
             datetime: this.data.datetime,
             event_name: this.data.event_name

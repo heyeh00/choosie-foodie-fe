@@ -15,10 +15,11 @@ App({
             method: "POST",
             data: { code: res.code },
             success(loginRes) {
-                // console.log("LOGIN RES", loginRes)
+                console.log("LOGIN RES", loginRes)
+                
                 page.globalData.user = loginRes.data.user;
                 if (wx.getStorageSync('user').length === 0) wx.setStorageSync('user', loginRes.data.user)
-                // console.log("SET USER TO GLOBALDATA", page.globalData.user)
+                console.log("SET USER TO GLOBALDATA", page.globalData.user)
                 page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')
             },
