@@ -9,68 +9,60 @@ Page({
      * Page initial data
      */
     data: {
-      cuisines: [
+    cuisines: [
         {
-          name: 'Any',
-          icon: "/icons/Food-Icons/food.png",
-          selected: true
+            name: 'Any',
+            icon: "/icons/Food-Icons/Any.png",
+            selected: true
         },
         {
-          name: "Korean",
-          icon: "/icons/Food-Icons/bibimbap.png",
-          selected: false
+            name: "Korean",
+            icon: "/icons/Food-Icons/Korean.png",
+            selected: false
         },
         {
-          name: 'Indian',
-          icon: "/icons/Food-Icons/masala-dosa.png",
-          selected: false
+            name: 'Indian',
+            icon: "/icons/Food-Icons/Indian.png",
+            selected: false
 
         },
         {
-          name: 'Italian',
-          icon: "/icons/Food-Icons/pasta.png",
-          selected: false
+            name: 'Italian',
+            icon: "/icons/Food-Icons/Italian.png",
+            selected: false
         },   
         {
-          name: 'Japanese',
-          icon: "/icons/Food-Icons/ramen.png",
-          selected: false
+            name: 'Japanese',
+            icon: "/icons/Food-Icons/Japanese.png",
+            selected: false
         },     
         {
-          name: 'Spanish',
-          icon: "/icons/Food-Icons/seafood.png",
-          selected: false
+            name: 'Spanish',
+            icon: "/icons/Food-Icons/Spanish.png",
+            selected: false
         },   
         {
-          name: 'Mexican',
-          icon: "/icons/Food-Icons/tacos.png",
-          selected: false
+            name: 'Mexican',
+            icon: "/icons/Food-Icons/Mexican.png",
+            selected: false
         },   
         {
-          name: 'Thai',
-          icon: "/icons/Food-Icons/thai-food.png",
-          selected: false
+            name: 'Thai',
+            icon: "/icons/Food-Icons/Thai.png",
+            selected: false
         },
         {
-          name: 'Vegetarian',
-          icon: "/icons/Food-Icons/vegetable.png",
-          selected: false
+            name: 'Vegetarian',
+            icon: "/icons/Food-Icons/Vegetarian.png",
+            selected: false
         },
         {
-          name: 'Hotpot',
-          icon: "/icons/Food-Icons/hot-pot.png",
-          selected: false
+            name: 'Hotpot',
+            icon: "/icons/Food-Icons/Hotpot.png",
+            selected: false
         }
 
-      ],
-
-      // cuisines: [
-      //     {
-      //       name: 'Any',
-      //       icon: "/icons/Food Icons/food.png",
-      //       selected: true
-      //     }
-      // ]
+        ],
     },
     goToEvent(e) {
       wx.switchTab({
@@ -124,12 +116,8 @@ Page({
     },
 
     editCuisines(e) {
-      console.log('haha',e)
-      console.log("THIS.DATA", this.data)
       let { cuisines } = this.data
-      console.log("CUISINES", cuisines)
       let cuisines_choice = this.data.cuisines_choice
-      console.log("CUISINES CHOICE", cuisines_choice)
       let cuisine = e.currentTarget.dataset.cuisine
 
 
@@ -172,7 +160,7 @@ Page({
           date: this.data.date,
           time: this.data.time, 
       }
-      app.globalData = ({ event_info })
+      app.globalData['event_info'] = event_info
       console.log("SENDING EVENT INFO", event_info)
       wx.switchTab({
         url: '/pages/event/event'

@@ -23,6 +23,8 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
+        const page = this
+        console.log("EVENT JS", page.data)
     },
 
     revealForm(e) {
@@ -62,7 +64,7 @@ Page({
 
     submitEvent(e) {
         wx.showLoading({
-          title: 'Creting Event',
+          title: 'Creating Event',
         })
         const page = this
         page.setDateTime()
@@ -82,7 +84,7 @@ Page({
         //     console.log(res)
         // })
         wx.request({
-          url: 'http://localhost:3000/api/v1/events',
+          url: `${app.globalData.baseUrl}/api/v1/events`,
           header: app.getHeader(),
           method: "POST",
           data: event,
@@ -101,6 +103,9 @@ Page({
 
             }
             
+          },
+          fail(errors) {
+            console.log("ERROR", errors)
           }
 
         })
@@ -134,7 +139,8 @@ Page({
             const cuisine = app.globalData.event_info.cuisines
             page.setData({cuisine})
     
-            const user = wx.getStorageSync('user')
+            // const user = wx.getStorageSync('user')
+            const user = app.globalData.user
             page.setData({ user })
     
             page.setData({ event_name: `${user.name}'s choosie foodie event` })

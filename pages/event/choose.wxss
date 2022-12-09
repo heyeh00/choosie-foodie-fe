@@ -1,13 +1,19 @@
 /* pages/event/choose.wxss */
+
+.container-choose {
+    padding: 50rpx 0;
+}
+
 .card-m1 {
     width: 90%;
     height: 250rpx;
     border-radius: 50rpx;
-    background-color: #FAEBCD;
-    margin-top:40rpx;
-    border:1px solid #FAEBCD;
+    margin-top:30rpx;
     margin-bottom: 30rpx;
-    display:flex;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.34);
 }
 
 .selected {
@@ -19,35 +25,49 @@
     border: 1rpx transparent solid;
 }
 
-.card-m2 {
-    width: 90%;
-    height: 250rpx;
-    border-radius: 50rpx;
-    background-color: #FAEBCD;
-    margin-top:40rpx;
-    border:1px solid #434343;
-    margin-bottom: 30rpx;
-    display:flex;
+.card-pic {
+    width: 180rpx;
+    height: 180rpx;
+    margin: 24rpx;
 }
 
-.card-m2-info{
-margin:30rpx;
-padding-bottom: 30rpx;
-/* display:flex; */
+.info {
+    margin: 16rpx;
+    width: 50%;
 }
 
-.card-m2-info-line2{
-   
-    margin: 40rpx auto;
-    display:flex;
+.info-text {
+    font-size: medium;
+    margin: 8rpx;
+}
+
+.title {
+    font-size: larger;
+}
+
+.rating {
+    display: flex;
+    align-items: baseline;
+    margin-top: 8rpx;
+}
+
+.star-pic {
+    height: 28rpx;
+    width: 28rpx;
+}
+
+.last-info-row {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
+}
+
+.cuisine {
+    display: flex;
     align-items: center;
 }
 
-.respic{
-height: 200rpx;
-width: 200rpx;
-flex-shrink: 0;
-border-radius: 10%;
-margin: 25rpx 20rpx;
+.cuisine-pic {
+    height: 30rpx;
+    width: 30rpx;
 }

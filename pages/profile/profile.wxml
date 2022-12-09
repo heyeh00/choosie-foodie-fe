@@ -15,9 +15,12 @@
 
 
     <block wx:if="{{user.image_url}}">
+        <view>
+            <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
+        </view>
         <view class="bgcard">
-            <view wx:for="{{cards.s}}" wx:for-item="each card.s">
-                <view class="card.s" wx:for="{{restaurants}}">
+            <view wx:for="{{cards.s}}" wx:for-item="each" class="card-s">
+                <view class="card-s" wx:for="{{restaurants}}">
                     <image src="/icons/images/maotou.jpg">
                     </image>
                     <view class="card.s-info">
@@ -34,7 +37,6 @@
                     <view class="card-s-info">
                         <text style="font-weight: bold; font-size: 32rpx;">{{item.name}}</text>
                         <text style="font-size: 28rpx;">{{item.time}}</text>
-                    
                     </view>
                 </view>
             </view>
