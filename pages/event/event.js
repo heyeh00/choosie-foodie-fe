@@ -9,7 +9,8 @@ Page({
      * Page initial data
      */
     data: {
-        reveal: false
+        reveal: false,
+        eventCreated: false,
     },
 
     goToHome(e) {
@@ -60,6 +61,7 @@ Page({
     },
 
     submitEvent(e) {
+<<<<<<< HEAD
         console.log(e)
         console.log(e.detail)
         console.log(e.detail.value)
@@ -69,11 +71,24 @@ Page({
             const event_name = e.detail.value.event_name
             this.setData({ event_name })     
         }
+=======
+        wx.showLoading({
+          title: 'Creting Event',
+        })
+        const page = this
+        page.setDateTime()
+        // if (e.detail.value.event_name) {       
+        // } else {
+        //     const event_name = e.detail.value.event_name
+        //     page.setData({ event_name })     
+        // }
+        console.log("FINAL EVENT CREATION INFO", page.data)
+>>>>>>> xiaomei
         const event = {
-            cuisine: this.data.cuisine,
-            user_id: this.data.user.id,
-            datetime: this.data.datetime,
-            event_name: this.data.event_name
+            cuisine: page.data.cuisine,
+            user_id: page.data.user.id,
+            datetime: page.data.datetime,
+            event_name: page.data.event_name
         }
         // requestData(`/events`, { event }, "POST").then((res) => {
         //     console.log(res)
@@ -83,6 +98,7 @@ Page({
           header: app.getHeader(),
           method: "POST",
           data: event,
+<<<<<<< HEAD
           success(eventCreateRes) {
             console.log(eventCreateRes)
             console.log(eventCreateRes.data.event.id)
@@ -90,7 +106,29 @@ Page({
                 url: `/pages/event/choose?id=${eventCreateRes.data.event.id}`,
             })
           }
+=======
+          success(res) {
+            console.log('res from event CREATE: ',res)
+            if (res.statusCode === 200) {
+                wx.hideLoading()
+                wx.showToast({
+                  title: 'Created',
+                  duration: 1000
+                })
+                page.setData({
+                    eventCreated: true,
+                    eventId: res.data.event.id
+                })
+
+            }
+            
+          }
+
+>>>>>>> xiaomei
         })
+        // wx.navigateTo({
+        //   url: '/pages/event/choose',
+        // })
     },
 
     /**
@@ -157,6 +195,9 @@ Page({
      * Called when user click on the top right corner to share
      */
     onShareAppMessage() {
-
+        return {
+            title: this.data.event_name,
+            path: "pages/event/choose"
+        }
     }
 })

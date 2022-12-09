@@ -1,6 +1,48 @@
 
+<<<<<<< HEAD
     <form bindsubmit="submitEvent">
         <view wx:if="{{reveal}}">
+=======
+            <!-- Time -->
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
+                <view class="flex justify-between items-center pa20 mt50">
+                    <view class="flex justify-start items-center">
+                        <image src="/icons/Page icons/clock_white.png" mode="aspectFit" style="height: 70rpx; width: 70rpx;" />
+                        <view class="fbody ml40">
+                                <view class="picker">{{time}}</view>
+                        </view>
+                    </view>
+                    <image src="/icons/Page icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+                </view>
+            </picker>
+        </view>
+    </view>
+                
+
+        <button wx:if="{{!eventCreated}}" class="our-button btn-confirm mt100" bindtap="submitEvent">Confirm</button>
+        <button wx:if="{{eventCreated}}" class="our-button mt100" open-type="share">Share</button>
+
+    </block>
+    <!-- Direct user to home page to create event -->
+    <block wx:else>  
+        <view class="vh100 px50">
+            <view style="margin-top: 40%; margin-left: 20%;">
+                <view class="fbody">
+                    You don’t have any events yet. 
+                </view>
+                <view class="fbody">
+                    Create one now? 
+                </view>
+            </view>
+            <button class="our-button mt30" bindtap="goToHome">Yes!</button>      
+        </view>
+    </block>
+
+
+    <!-- <form bindsubmit="submitEvent"> -->
+        <!-- event_name 默认为 user's choosie foodie event -->
+        <!-- <view wx:if="{{reveal}}">
+>>>>>>> xiaomei
             <view wx:if="{{event.name}}">
                 <input class="input" placeholder="{{event.name}}" style="margin-bottom: 30rpx;" type="text" id="name" name="event_name" value="{{event.name}}" />
             </view>
