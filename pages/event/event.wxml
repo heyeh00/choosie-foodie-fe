@@ -20,7 +20,7 @@
                                 <!-- <view class="fbody bold">{{user.name}}'s</view> -->
                             <!-- </view> -->
                         </view>
-                        <view class="fbody">
+                        <view class="fbody text-center">
                             Choosie Foodie Event invitation
                         </view>
                     </view>   
@@ -53,7 +53,7 @@
             </picker>
 
             <!-- Time -->
-            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
                 <view class="flex justify-between items-center pa20 mt50">
                     <view class="flex justify-start items-center">
                         <image src="/icons/Page-icons/clock_white.png" mode="aspectFit" style="height: 70rpx; width: 70rpx;" />
