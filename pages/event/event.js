@@ -10,7 +10,7 @@ Page({
      */
     data: {
         reveal: false,
-        eventCreated: false,
+        // eventCreated: false,
     },
 
     goToHome(e) {
@@ -123,6 +123,7 @@ Page({
 
     onShow() {
         const page = this
+        page.setData({ eventCreated: false})
         console.log(app.globalData)
         const myEvent = app.globalData.event_info;
 
