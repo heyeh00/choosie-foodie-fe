@@ -1,48 +1,38 @@
+<wx:key wx:for="{{events}}" wx:for-item="event">
+    {{event.selected}}
+</wx:key>
 
-<!-- <view class="container">
-    <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}" wx:for="{{events}}" wx:for-item="event" bindtap="chosenRestaurant" data-restaurantid="{{event.restaurant.id}}" data-eventid="{{event.id}}">
-        <view>{{event.restaurant.name}}</view>
-        <view>{{event.restaurant.address}}</view>
-        <view>Rating: {{event.restaurant.rating}}</view>
-        <view>{{event.restaurant.ave_price}}¥/person</view>
-    </view>
-    <view class="our-button" bindtap="submitChoices">
-        Submit
-    </view>
-</view> -->
-    
-
-<view wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
-    <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
-    
-        <!-- <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill"/> -->
-        <!-- <image src="/icons/Food-Icons/{{item.restaurant.cuisine}}.png" style="width: 100rpx; height: 100rpx;" mode=""/> -->
-        <view class="card-m2-info">
-            <text style="font-size: 30rpx; margin-bottom: 30rpx;">{{item.restaurant.name}}</text>
-            <view class="stars" style="display:flex">
-                    <view>rating</view>
-                    <view wx:for="{{item.restaurant.rating}}">
-                        <image src="/icons/Page-icons/star_black.png" style="width: 20rpx; height: 20rpx;"></image>
-                    </view>
-                </view> 
-            <view class="card-m2-info-line2">
-                <view style="font-size: 24rpx;">￥{{item.restaurant.ave_price}}/person</view>
-            </view>
-        
-            <view class="card-m2-info-line2">
-                <view>
-                    <image src="/icons/Food-Icons/cutlery.png" style="height: 30rpx; width:30rpx" mode="aspectFill"/>
-                    <text >{{item.restaurant.cuisine}}</text>
-                </view>
-                <!-- <view>
-                    <image src="/icons/Page-icons/pin_white.png" style="height: 30rpx; width:30rpx" mode="aspectFill"/>
-                    <text>{{item.location}}</text>   
-                </view> -->
-            </view>
-        
-        </view>
-    
-    </view>
+<view bindtap="test">
+    <button>TRIGGER</button>
 </view>
+<wx:key wx:if="{{test_item.selected}}">
+    <text>{{test_item}}</text>
+    <text>{{test_item.selected}}</text>
+</wx:key>
 
-<!-- <button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button" style="margin-top: 100rpx">Submit</button> -->
+<view class="container-choose">
+    <wx:key wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
+        <!-- <view>{{item.selected}}</view> -->
+        <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
+            <image class="card-pic" src="/icons/Food-Icons/{{item.restaurant.cuisine}}.png" mode=""/>
+            <view class="info">
+                <view class="title">{{item.restaurant.name}}</view>
+                <view class="rating">
+                    <view class="info-text">rating</view>
+                    <wx:key wx:for="{{item.restaurant.rating}}">
+                        <image class="star-pic" src="/icons/Page-icons/star_black.png"></image>
+                    </wx:key>
+                </view> 
+                <view class="last-info-row">
+                    <view class="info-text">￥{{item.restaurant.ave_price}} person</view>
+                    <view class="cuisine">
+                        <image class="cuisine-pic" src="/icons/Food-Icons/Any.png" mode=""/>
+                        <text class="info-text">{{item.restaurant.cuisine}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </wx:key>
+
+    <button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button" style="margin-top: 50rpx">Submit</button>
+</view>

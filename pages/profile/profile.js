@@ -70,18 +70,21 @@ Page({
         wx.getUserProfile({
             desc: 'need avatar',
             success(res) {
-                console.log(res.userInfo)
-                const userInfo = page.data.user
-                const avatarUrl  = res.userInfo.avatarUrl
-                const user = { image_url: avatarUrl }
-                console.log(user)
+                console.log("PROFILE REQUEST 1 USER", res.userInfo)
+                const userInfo = page.data.user.id
+                console.log("userInfo", userInfo)
+                const user = {
+                    name: res.userInfo.nickName,
+                    image_url: res.userInfo.avatarUrl
+                }
+                console.log("PROFILE USER", user)
                 wx.request({
-                    url: `${app.globalData.baseUrl}/api/v1/users/${userInfo.id}`,
+                    url: `${app.globalData.baseUrl}/api/v1/users/${page.data.user.id}`,
                     headers: app.getHeader(),
                     method: "PUT",
                     data: { user },
                     success(res) {
-                        console.log("REQUEST", res)
+                        console.log("PROFILE REQUEST 2 USER", res)
                         app.globalData.user = res.data.user
                         page.setData({user: res.data.user})
                     }
@@ -92,6 +95,7 @@ Page({
 
     getData() {
         this.setData({ user: app.globalData.user })
+        console.log("PROFILE JS PAGE DATA", this.data)
         const page = this
         wx.request({
             url: `${app.globalData.baseUrl}/api/v1/restaurants`,

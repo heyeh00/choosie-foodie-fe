@@ -68,8 +68,8 @@
     </view>
                 
 
-        <button wx:if="{{!eventCreated}}" class="our-button btn-confirm mt100" bindtap="submitEvent">Confirm</button>
-        <button wx:if="{{eventCreated}}" class="our-button mt100" open-type="share">Share</button>
+        <button wx:if="{{!eventCreated}}" class="our-button mt100" bindtap="submitEvent">Confirm</button>
+        <button wx:if="{{eventCreated}}" class="our-button-inverse mt100" open-type="share">Share</button>
 
     </block>
     <!-- Direct user to home page to create event -->

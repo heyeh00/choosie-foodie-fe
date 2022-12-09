@@ -40,61 +40,60 @@ App({
   },
 
   globalData: {
-    // baseUrl: 'http://localhost:3000',
-    baseUrl: 'https://choosie-foodie.shanghaiwogeng.com',
+    baseUrl: 'http://localhost:3000',
+    // baseUrl: 'https://choosie-foodie.shanghaiwogeng.com',
     cuisines: [
         {
           name: 'Any',
-          icon: "/icons/Food-Icons/tteok.png",
+          icon: "/icons/Food-Icons/Any.png",
           selected: true
         },
         {
           name: "Korean",
-          icon: "/icons/Food-Icons/bibimbap.png",
+          icon: "/icons/Food-Icons/Korean.png",
           selected: false
         },
         {
           name: 'Indian',
-          icon: "/icons/Food-Icons/masala-dosa.png",
+          icon: "/icons/Food-Icons/Indian.png",
           selected: false
 
         },
         {
           name: 'Italian',
-          icon: "/icons/Food-Icons/pasta.png",
+          icon: "/icons/Food-Icons/Italian.png",
           selected: false
         },   
         {
           name: 'Japanese',
-          icon: "/icons/Food-Icons/ramen.png",
+          icon: "/icons/Food-Icons/Japanese.png",
           selected: false
         },     
         {
           name: 'Spanish',
-          icon: "/icons/Food-Icons/seafood.png",
+          icon: "/icons/Food-Icons/Spanish.png",
           selected: false
         },   
         {
           name: 'Mexican',
-          icon: "/icons/Food-Icons/tacos.png",
+          icon: "/icons/Food-Icons/Mexican.png",
           selected: false
         },   
         {
           name: 'Thai',
-          icon: "/icons/Food-Icons/thai-food.png",
+          icon: "/icons/Food-Icons/Thai.png",
           selected: false
         },
         {
           name: 'Vegetarian',
-          icon: "/icons/Food-Icons/vegetable.png",
+          icon: "/icons/Food-Icons/Vegetarian.png",
           selected: false
         },
         {
           name: 'Hotpot',
-          icon: "/icons/Food-Icons/hot-pot.png",
+          icon: "/icons/Food-Icons/Hotpot.png",
           selected: false
         }
-
       ],
   }
 })

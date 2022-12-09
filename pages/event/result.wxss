@@ -1,17 +1,25 @@
-.card-l {
-    width: 560rpx;
-    height: 900rpx;
-    border-radius: 50rpx;
-    background-color: #FAEBCD;
-    margin: auto;
-  }
+.container-result {
 
-.name {
-    font-size: large;
 }
 
+.card-l {
+    width: 560rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+  }
+
 .info {
-    font-size: medium;
+    padding: 30rpx;
+}
+
+.card-pic {
+    object-fit: cover;
+    width: 100%;
+}
+
+.name {
+    font-size: larger;
+    font-weight: 500;
 }
 
 .icon {
@@ -20,6 +28,24 @@
 }
 
 .info-row {
+    font-size: medium;
     display: flex;
-    align-content: center;
+    align-items: center;
+}
+
+.attendees {
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.person {
+    text-align: center;
+    margin: 8rpx 12rpx;
+}
+
+.person-icon {
+    width: 50rpx;
+    height: 50rpx;
 }
