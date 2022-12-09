@@ -27,7 +27,7 @@
     margin-top:40rpx;
     border:1px solid #434343;
     margin-bottom: 30rpx;
-    display:flex;
+    /* display:flex; */
 }
 
 .card-m2-info{
@@ -38,8 +38,8 @@ padding-bottom: 30rpx;
 
 .card-m2-info-line2{
    
-    margin: 40rpx auto;
-    display:flex;
+    margin: 10rpx auto;
+    /* display:flex; */
     justify-content: space-between;
     align-items: center;
 }

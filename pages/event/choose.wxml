@@ -16,24 +16,17 @@
     <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
     
         <!-- <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill"/> -->
+        <!-- <image src="/icons/Food-Icons/{{item.restaurant.cuisine}}.png" style="width: 100rpx; height: 100rpx;" mode=""/> -->
         <view class="card-m2-info">
-
-            <text style="font-size: 30rpx;">{{item.restaurant.name}}</text>
-
-            <view class="card-m2-info-line2">
-                <text style="font-size: 24rpx;">￥{{item.restaurant.ave_price}}/person</text>
-                <view class="stars" style="display:flex">
+            <text style="font-size: 30rpx; margin-bottom: 30rpx;">{{item.restaurant.name}}</text>
+            <view class="stars" style="display:flex">
+                    <view>rating</view>
                     <view wx:for="{{item.restaurant.rating}}">
-                        *
-                        <!-- <image scr="/icons/Page-icons/star_black.png"></image> -->
+                        <image src="/icons/Page-icons/star_black.png" style="width: 20rpx; height: 20rpx;"></image>
                     </view>
-                    <!-- <view wx:if="{{item.rating>=4.5}}">
-                        <view wx:for="{{5}}">
-                        *
-                            <image scr="/icons/Page-icons/star_black.png"></image>
-                        </view>
-                    </view> -->
                 </view> 
+            <view class="card-m2-info-line2">
+                <view style="font-size: 24rpx;">￥{{item.restaurant.ave_price}}/person</view>
             </view>
         
             <view class="card-m2-info-line2">
@@ -52,4 +45,4 @@
     </view>
 </view>
 
-<button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button" style="margin-top: 100rpx">Submit</button>
+<!-- <button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button" style="margin-top: 100rpx">Submit</button> -->

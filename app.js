@@ -18,7 +18,7 @@ App({
                 console.log("LOGIN RES", loginRes)
                 
                 page.globalData.user = loginRes.data.user;
-                if (wx.getStorageSync('user').length === 0) wx.setStorageSync('user', loginRes.data.user)
+                // if (wx.getStorageSync('user').length === 0) wx.setStorageSync('user', loginRes.data.user)
                 console.log("SET USER TO GLOBALDATA", page.globalData.user)
                 page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')
@@ -41,6 +41,60 @@ App({
 
   globalData: {
     // baseUrl: 'http://localhost:3000',
-    baseUrl: 'https://choosie-foodie.shanghaiwogeng.com'
+    baseUrl: 'https://choosie-foodie.shanghaiwogeng.com',
+    cuisines: [
+        {
+          name: 'Any',
+          icon: "/icons/Food-Icons/tteok.png",
+          selected: true
+        },
+        {
+          name: "Korean",
+          icon: "/icons/Food-Icons/bibimbap.png",
+          selected: false
+        },
+        {
+          name: 'Indian',
+          icon: "/icons/Food-Icons/masala-dosa.png",
+          selected: false
+
+        },
+        {
+          name: 'Italian',
+          icon: "/icons/Food-Icons/pasta.png",
+          selected: false
+        },   
+        {
+          name: 'Japanese',
+          icon: "/icons/Food-Icons/ramen.png",
+          selected: false
+        },     
+        {
+          name: 'Spanish',
+          icon: "/icons/Food-Icons/seafood.png",
+          selected: false
+        },   
+        {
+          name: 'Mexican',
+          icon: "/icons/Food-Icons/tacos.png",
+          selected: false
+        },   
+        {
+          name: 'Thai',
+          icon: "/icons/Food-Icons/thai-food.png",
+          selected: false
+        },
+        {
+          name: 'Vegetarian',
+          icon: "/icons/Food-Icons/vegetable.png",
+          selected: false
+        },
+        {
+          name: 'Hotpot',
+          icon: "/icons/Food-Icons/hot-pot.png",
+          selected: false
+        }
+
+      ],
   }
 })

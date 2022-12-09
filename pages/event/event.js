@@ -101,6 +101,9 @@ Page({
 
             }
             
+          },
+          fail(errors) {
+            console.log("ERROR", errors)
           }
 
         })
@@ -133,7 +136,8 @@ Page({
             const cuisine = app.globalData.event_info.cuisines
             page.setData({cuisine})
     
-            const user = wx.getStorageSync('user')
+            // const user = wx.getStorageSync('user')
+            const user = app.globalData.user
             page.setData({ user })
     
             page.setData({ event_name: `${user.name}'s choosie foodie event` })

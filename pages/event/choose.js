@@ -56,7 +56,9 @@ Page({
      */
     onLoad(options) {
         const page = this
+        page.setData({ cuisine: app.globalData.cuisines })        
         page.setData({ event_id: parseInt(options.id) })
+        console.log("CHOOSE JS PAGE DATA", page.data)
         wx.request({
           url: `${app.globalData.baseUrl}/api/v1/events/${options.id}/event_restaurants`,
           header: app.getHeader(),
@@ -128,7 +130,8 @@ Page({
         }
       })
 
-      const user = wx.getStorageSync('user')
+    //   const user = wx.getStorageSync('user')
+      const user = app.globalData.user
       const data = {
         user_id: user.id,
         event_id: this.data.event_id,

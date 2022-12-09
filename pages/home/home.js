@@ -172,7 +172,7 @@ Page({
           date: this.data.date,
           time: this.data.time, 
       }
-      app.globalData = ({ event_info })
+      app.globalData['event_info'] = event_info
       console.log("SENDING EVENT INFO", event_info)
       wx.switchTab({
         url: '/pages/event/event'
