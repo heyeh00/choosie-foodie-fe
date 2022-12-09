@@ -16,4 +16,5 @@
 
 .card-detail {
     margin-right: 5rpx;
+    transition: 0.3s;
 }

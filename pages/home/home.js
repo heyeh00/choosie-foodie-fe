@@ -12,12 +12,12 @@ Page({
       cuisines: [
         {
           name: 'Any',
-          icon: "/icons/Food Icons/food.png",
+          icon: "/icons/Food Icons/tteok.png",
           selected: true
         },
         {
           name: "Korean",
-          icon: "/icons/Food Icons/bibimbap.png",
+          icon: "/icons/Food Icons/bibimbap2.png",
           selected: false
         },
         {
@@ -62,7 +62,15 @@ Page({
           selected: false
         }
 
-      ]
+      ],
+
+      // cuisines: [
+      //     {
+      //       name: 'Any',
+      //       icon: "/icons/Food Icons/food.png",
+      //       selected: true
+      //     }
+      // ]
     },
     goToEvent(e) {
       wx.switchTab({
@@ -78,6 +86,8 @@ Page({
         event.on('tokenReady', page, page.getData);
         // requestData(`/cuisines`, {}, "GET").then((res) => {
         //     console.log('res from cuisines GET', res.data)
+        // let cuisines = this.data.cuisines
+        // cuisines = [,...res.data.cuisines]
         //     page.setData({ cuisines: res.data.cuisines })
         // })
         page.setData(
