@@ -12,20 +12,12 @@ Page({
       cuisines: [
         {
           name: 'Any',
-<<<<<<< HEAD
           icon: "/icons/Food-Icons/food.png",
-=======
-          icon: "/icons/Food Icons/tteok.png",
->>>>>>> xiaomei
           selected: true
         },
         {
           name: "Korean",
-<<<<<<< HEAD
           icon: "/icons/Food-Icons/bibimbap.png",
-=======
-          icon: "/icons/Food Icons/bibimbap2.png",
->>>>>>> xiaomei
           selected: false
         },
         {
