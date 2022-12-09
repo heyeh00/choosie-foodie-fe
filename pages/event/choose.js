@@ -10,45 +10,6 @@ Page({
      */
     data: {
         restaurants_choice: [],
-        restaurants: [
-            {
-                name: "毛头老爹饭店",
-                price: 113,
-                rating: 4.9,
-                rating_int: 5,
-                cuisine: "上海本帮菜",
-                location: "静安寺",
-                time: "December 22,2022 8pm"
-            },
-            {
-                name: "Azabuya 麻布屋",
-                price: 49,
-                rating: 4.2,
-                rating_int: 4,
-                cuisine: "日本料理",
-                location: "南京西路",
-                time: "December 22,2022 8pm"
-            },
-            {
-                name: "螺老爹螺狮煲火锅",
-                price: 94,
-                rating: 3.6,
-                rating_int: 4,
-                cuisine: "火锅",
-                location: "人民广场",
-                time: "December 22,2022 8pm"
-            },
-            {
-                name: "Piment",
-                price: 181,
-                rating: 4.4,
-                rating_int: 4,
-                cuisine: "西餐",
-                location: "衡山路",
-                time: "December 22,2022 8pm"
-            }
-        ]
-       
     },
 
     /**
@@ -58,13 +19,11 @@ Page({
         const page = this
         page.setData({ cuisine: app.globalData.cuisines })        
         page.setData({ event_id: parseInt(options.id) })
-        console.log("CHOOSE JS PAGE DATA", page.data)
         wx.request({
           url: `${app.globalData.baseUrl}/api/v1/events/${options.id}/event_restaurants`,
           header: app.getHeader(),
           success(res) {
             page.setData({ events: res.data.events })
-            console.log("GET EVENTS", page.data.events)
           },
         })
     },
@@ -85,14 +44,9 @@ Page({
     },
 
     chosenRestaurant(e) {
-      console.log(e.currentTarget)
-      console.log(e.currentTarget.dataset)
       let restaurants = this.data.events
-      console.log("EVENT RESTAURANTS", restaurants)
       let restaurants_choice = this.data.restaurants_choice
-      console.log(restaurants_choice)
       let restaurant = e.currentTarget.dataset.restaurantid
-      console.log(restaurant)
 
       // if you click on a restaurant add that array and any is deleted
       if (restaurant !== "Any" || restaurants_choice.length !== 0) {
@@ -111,10 +65,9 @@ Page({
         }
         // else add it
         this.setData({restaurants_choice})
-        console.log("FINAL RESTAURANTS CHOICE", this.data.restaurants_choice)
+        console.log("CHOSEN RESTAURANTS", this.data.restaurants_choice)
         this.setData({restaurants})
       }
-      console.log("troubleshooting clicks", this.data.events)
     },
 
     submitChoices(e) {
@@ -144,6 +97,7 @@ Page({
         data,
         method: "POST",
         success(res) {
+          console.log("CREATE RESPONSE", res.data)
           console.log("CREATE RES EVENT ID", res.data.restaurant_pick.event_id)
           wx.navigateTo({
             url: `/pages/event/result?id=${res.data.restaurant_pick.event_id}`,

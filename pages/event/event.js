@@ -23,6 +23,8 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
+        const page = this
+        console.log("EVENT JS", page.data)
     },
 
     revealForm(e) {

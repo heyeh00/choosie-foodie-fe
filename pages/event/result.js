@@ -22,6 +22,7 @@ Page({
         url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
         header: app.getHeader(),
         success(res) {
+            console.log("RESPONSE RESULT", res)
             page.setData({ restaurant: res.data.restaurant})
             console.log("RESULT", page.data.restaurant)
         }
