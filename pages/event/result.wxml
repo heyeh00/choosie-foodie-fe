@@ -1,25 +1,60 @@
-
-<view class="card-l">
-    <view class="name">
-        {{restaurant.name}}
-    </view>
-
-    <view class="info-row">
-        <image src="/icons/Food-icons/food.png" mode="" class="icon"/>
-        <view class="info">
-            {{restaurant.cuisine}}
+<view class="vh100 vw bg-dim pt100 fixed">
+    <view class="card-l pa50 vh65">
+        <image src="https://source.unsplash.com/random" mode="aspectFill" class="w100 radius30"/>
+        <view class="card-infos column-center">
+            
         </view>
-    </view>
+            <view class="fsheader mt30">
+                {{restaurant.name}}
+            </view>
 
-    <view class="info-row">
-        <image src="/icons/Page-icons/pin_white.png" mode="" class="icon"/>
-        <view class="info">
-            {{restaurant.address}}
-        </view>
-    </view>
+            <view class="fbody info-row">
+                <!-- <image src="/icons/Food-icons/food.png" mode="" class="icon"/> -->
+                <view class="info mt30">
+                    {{restaurant.cuisine}}
+                </view>
+            </view>
 
-    <view class="info">
-        {{restaurant.phone}}
-    </view>
+            <view class="fbodyinfo-row">
+                <!-- <image src="/icons/Page-icons/pin_white.png" mode="" class="icon"/> -->
+                <view class="info mt30">
+                    {{restaurant.address}}
+                </view>
+            </view>
 
+            <view class="fbody info-row">
+                {{restaurant.phone}}
+            </view>
+    </view>
+    <button class="our-button mt100" bindtap="sendSurvey">Finish!</button>  
 </view>
+
+
+
+<!-- <view class="vh100 vw bg-dim pt100 fixed" >
+    <view class="card-l vh75 column-center">
+        <image src="https://source.unsplash.com/random" mode="aspectFill" class="w100"/>
+        <view class="fheader">
+            {{restaurant.name}}
+        </view>
+
+        <view class="fbody info-row">
+            <image src="/icons/Food-icons/food.png" mode="" class="icon"/>
+            <view class="info">
+                {{restaurant.cuisine}}
+            </view>
+        </view>
+
+        <view class="fbodyinfo-row">
+            <image src="/icons/Page-icons/pin_white.png" mode="" class="icon"/>
+            <view class="info">
+                {{restaurant.address}}
+            </view>
+        </view>
+
+        <view class="fbody info-row">
+            {{restaurant.phone}}
+        </view>
+    </view>
+    <button class="our-button mt100" bindtap="sendSurvey">Finish!</button>
+</view> -->
