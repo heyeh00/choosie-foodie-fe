@@ -67,6 +67,10 @@ Page({
         })
     },
 
+    selected(e) {
+        console.log(e)
+    },
+
     restaurantAny(){
         let restaurants = this.data.events
   
@@ -108,6 +112,7 @@ Page({
         console.log("FINAL RESTAURANTS CHOICE", this.data.restaurants_choice)
         this.setData({restaurants})
       }
+      console.log("troubleshooting clicks", this.data.events)
     },
 
     submitChoices(e) {

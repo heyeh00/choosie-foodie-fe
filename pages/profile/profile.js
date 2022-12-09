@@ -66,32 +66,28 @@ Page({
     },
 
     login(e) {
-        const userId = wx.getStorageSync('user')
-        const avatarUrl  = e.detail.avatarUrl
-        this.setData({avatarUrl})
         const page = this
-        const user = { image_url: e.detail.avatarUrl }
-        wx.request({
-          url: `http://localhost:3000/api/v1/users/${userId.id}`,
-          headers: app.getHeader(),
-          method: "PUT",
-          data: { user },
-          success(res) {
-              this.setData({user: res.data.user})
-          }
+        wx.getUserProfile({
+            desc: 'need avatar',
+            success(res) {
+                console.log(res.userInfo)
+                const userInfo = page.data.user
+                const avatarUrl  = res.userInfo.avatarUrl
+                const user = { image_url: avatarUrl }
+                console.log(user)
+                wx.request({
+                    url: `http://localhost:3000/api/v1/users/${userInfo.id}`,
+                    headers: app.getHeader(),
+                    method: "PUT",
+                    data: { user },
+                    success(res) {
+                        console.log("REQUEST", res)
+                        app.globalData.user = res.data.user
+                        page.setData({user: res.data.user})
+                    }
+                })
+            }
         })
-
-        // requestData(`/users/${app.getUserId}`, { user }, "PUT").then((res) => {
-        //     console.log("POST PUT {DATA}", res)  
-        //     page.setData({ user: res.data.user })
-        //     app.globalData.user = res.data.user
-        //     console.log("PAGE DATA", page.data)
-        // })
-        //   },
-        //   fail(errors) {
-        //       console.log("LOGIN ERROR", errors)
-        //   }
-        // })
     },
 
     getData() {

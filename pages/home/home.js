@@ -114,7 +114,7 @@ Page({
     },
 
     editCuisines(e) {
-      console.log('haha1',e)
+      console.log('haha',e)
       console.log("THIS.DATA", this.data)
       let { cuisines } = this.data
       console.log("CUISINES", cuisines)
@@ -125,7 +125,6 @@ Page({
 
       // if you click on a cuisine add that array and any is deleted
       if (cuisine !== "Any" || cuisines_choice.length !== 0) {
-        console.log("CLEARED IF")
         // remove "any" from the array
         cuisines[0]['selected'] = false
         cuisines_choice = cuisines_choice.filter( item =>  item != "Any" )
