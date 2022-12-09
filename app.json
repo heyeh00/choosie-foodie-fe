@@ -28,11 +28,6 @@
       "text": "event",
       "iconPath": "/icons/TabBar-Icons/hexagon_white.png",
       "selectedIconPath": "/icons/TabBar-Icons/hexagon_black.png"
-    }, {
-      "pagePath": "pages/profile/profile",
-      "text": "profile",
-      "iconPath": "/icons/TabBar-Icons/profile_white.png",
-      "selectedIconPath": "/icons/TabBar-Icons/profile_black.png"
     }]
   },
   "style": "v2",

@@ -4,7 +4,7 @@
     background-color: #434343;
     }
 
-.btn-confirm{
+/* .btn-confirm{
     background-color: #FAEBCD;
     transition: 0.3s;
-}
+} */

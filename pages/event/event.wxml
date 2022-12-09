@@ -5,7 +5,7 @@
         <view class="card-l pa50 vh65 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">
-                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20"/>
+                    <!-- <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20"/> -->
                     <view class="card-info ml20">   
                         <view class="fbody mb20">
                             <!-- <view wx:if="{{reveal}}"> -->
@@ -17,7 +17,7 @@
                                  <!-- </view> -->
                             <!-- </view>
                             <view wx:else> -->
-                                <view class="fbody bold">{{user.name}}'s</view>
+                                <!-- <view class="fbody bold">{{user.name}}'s</view> -->
                             <!-- </view> -->
                         </view>
                         <view class="fbody">
@@ -69,7 +69,7 @@
                 
 
         <button wx:if="{{!eventCreated}}" class="our-button btn-confirm mt100" bindtap="submitEvent">Confirm</button>
-        <button wx:if="{{eventCreated}}" class="our-button mt100" open-type="share">Share</button>
+        <button wx:if="{{eventCreated}}" class="our-button-invert mt100" open-type="share">Share</button>
 
     </block>
     <!-- Direct user to home page to create event -->

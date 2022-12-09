@@ -141,7 +141,7 @@ Page({
             const user = app.globalData.user
             page.setData({ user })
     
-            page.setData({ event_name: `${user.name}'s choosie foodie event` })
+            page.setData({ event_name: `My choosie foodie event` })
         }
 
     },
