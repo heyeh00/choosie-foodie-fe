@@ -173,9 +173,10 @@ Page({
      * Called when user click on the top right corner to share
      */
     onShareAppMessage() {
+        console.log(this.options)
         return {
             title: this.data.event_name,
-            path: "pages/event/choose"
+            path: `pages/event/choose?id=${this.data.eventId}`
         }
     }
 })

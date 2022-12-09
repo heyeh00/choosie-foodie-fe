@@ -5,8 +5,8 @@
         <view class="card-l pa50 vh65 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">
-                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20 mr50"/>
-                    <view class="card-info">   
+                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20"/>
+                    <view class="card-info ml20">   
                         <view class="fbody mb20">
                             <!-- <view wx:if="{{reveal}}"> -->
                                 <!-- <view wx:if="{{event.name}}">
