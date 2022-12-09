@@ -12,53 +12,61 @@ Page({
       cuisines: [
         {
           name: 'Any',
+<<<<<<< HEAD
+          icon: "/icons/Food-Icons/food.png",
+=======
           icon: "/icons/Food Icons/tteok.png",
+>>>>>>> xiaomei
           selected: true
         },
         {
           name: "Korean",
+<<<<<<< HEAD
+          icon: "/icons/Food-Icons/bibimbap.png",
+=======
           icon: "/icons/Food Icons/bibimbap2.png",
+>>>>>>> xiaomei
           selected: false
         },
         {
           name: 'Indian',
-          icon: "/icons/Food Icons/masala-dosa.png",
+          icon: "/icons/Food-Icons/masala-dosa.png",
           selected: false
 
         },
         {
           name: 'Italian',
-          icon: "/icons/Food Icons/pasta.png",
+          icon: "/icons/Food-Icons/pasta.png",
           selected: false
         },   
         {
           name: 'Japanese',
-          icon: "/icons/Food Icons/ramen.png",
+          icon: "/icons/Food-Icons/ramen.png",
           selected: false
         },     
         {
           name: 'Spanish',
-          icon: "/icons/Food Icons/seafood.png",
+          icon: "/icons/Food-Icons/seafood.png",
           selected: false
         },   
         {
           name: 'Mexican',
-          icon: "/icons/Food Icons/tacos.png",
+          icon: "/icons/Food-Icons/tacos.png",
           selected: false
         },   
         {
           name: 'Thai',
-          icon: "/icons/Food Icons/thai-food.png",
+          icon: "/icons/Food-Icons/thai-food.png",
           selected: false
         },
         {
           name: 'Vegetarian',
-          icon: "/icons/Food Icons/vegetable.png",
+          icon: "/icons/Food-Icons/vegetable.png",
           selected: false
         },
         {
           name: 'Hotpot',
-          icon: "/icons/Food Icons/hot-pot.png",
+          icon: "/icons/Food-Icons/hot-pot.png",
           selected: false
         }
 
@@ -125,9 +133,11 @@ Page({
 
     editCuisines(e) {
       console.log('haha',e)
+      console.log("THIS.DATA", this.data)
       let { cuisines } = this.data
-
+      console.log("CUISINES", cuisines)
       let cuisines_choice = this.data.cuisines_choice
+      console.log("CUISINES CHOICE", cuisines_choice)
       let cuisine = e.currentTarget.dataset.cuisine
 
 
@@ -137,6 +147,7 @@ Page({
         cuisines[0]['selected'] = false
         cuisines_choice = cuisines_choice.filter( item =>  item != "Any" )
         let item = cuisines.find(item => item.name === cuisine)  
+        console.log("ITEM", item)
         // if the cuisine is in the array, remove it
         if (cuisines_choice.includes(cuisine)) {
           cuisines_choice = cuisines_choice.filter( item =>  item != cuisine ) 

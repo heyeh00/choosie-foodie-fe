@@ -1,2 +1,55 @@
-<!--pages/event/choose.wxml-->
-<text>pages/event/choose.wxml</text>
+
+<!-- <view class="container">
+    <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}" wx:for="{{events}}" wx:for-item="event" bindtap="chosenRestaurant" data-restaurantid="{{event.restaurant.id}}" data-eventid="{{event.id}}">
+        <view>{{event.restaurant.name}}</view>
+        <view>{{event.restaurant.address}}</view>
+        <view>Rating: {{event.restaurant.rating}}</view>
+        <view>{{event.restaurant.ave_price}}¥/person</view>
+    </view>
+    <view class="our-button" bindtap="submitChoices">
+        Submit
+    </view>
+</view> -->
+    
+
+<view wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
+    <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
+    
+        <!-- <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill"/> -->
+        <view class="card-m2-info">
+
+            <text style="font-size: 30rpx;">{{item.restaurant.name}}</text>
+
+            <view class="card-m2-info-line2">
+                <text style="font-size: 24rpx;">￥{{item.restaurant.ave_price}}/person</text>
+                <view class="stars" style="display:flex">
+                    <view wx:for="{{item.restaurant.rating}}">
+                        *
+                        <!-- <image scr="/icons/Page-icons/star_black.png"></image> -->
+                    </view>
+                    <!-- <view wx:if="{{item.rating>=4.5}}">
+                        <view wx:for="{{5}}">
+                        *
+                            <image scr="/icons/Page-icons/star_black.png"></image>
+                        </view>
+                    </view> -->
+                </view> 
+            </view>
+        
+            <view class="card-m2-info-line2">
+                <view>
+                    <image src="/icons/Food-Icons/cutlery.png" style="height: 30rpx; width:30rpx" mode="aspectFill"/>
+                    <text >{{item.restaurant.cuisine}}</text>
+                </view>
+                <!-- <view>
+                    <image src="/icons/Page-icons/pin_white.png" style="height: 30rpx; width:30rpx" mode="aspectFill"/>
+                    <text>{{item.location}}</text>   
+                </view> -->
+            </view>
+        
+        </view>
+    
+    </view>
+</view>
+
+<button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button" style="margin-top: 100rpx">Submit</button>

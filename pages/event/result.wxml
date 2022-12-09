@@ -1,2 +1,25 @@
-<!--pages/event/result.wxml-->
-<text>pages/event/result.wxml</text>
+
+<view class="card-l">
+    <view class="name">
+        {{restaurant.name}}
+    </view>
+
+    <view class="info-row">
+        <image src="/icons/Food-icons/food.png" mode="" class="icon"/>
+        <view class="info">
+            {{restaurant.cuisine}}
+        </view>
+    </view>
+
+    <view class="info-row">
+        <image src="/icons/Page-icons/pin_white.png" mode="" class="icon"/>
+        <view class="info">
+            {{restaurant.address}}
+        </view>
+    </view>
+
+    <view class="info">
+        {{restaurant.phone}}
+    </view>
+
+</view>

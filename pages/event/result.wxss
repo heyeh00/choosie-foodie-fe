@@ -1,1 +1,25 @@
-/* pages/event/result.wxss */
+.card-l {
+    width: 560rpx;
+    height: 900rpx;
+    border-radius: 50rpx;
+    background-color: #FAEBCD;
+    margin: auto;
+  }
+
+.name {
+    font-size: large;
+}
+
+.info {
+    font-size: medium;
+}
+
+.icon {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.info-row {
+    display: flex;
+    align-content: center;
+}

@@ -17,6 +17,7 @@
     border-radius: 50rpx;
     background-color: #FAEBCD;
     margin:auto;
+    border:1px solid #FAEBCD;
     margin-bottom: 30rpx;
     }
 
