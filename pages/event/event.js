@@ -61,19 +61,8 @@ Page({
     },
 
     submitEvent(e) {
-<<<<<<< HEAD
-        console.log(e)
-        console.log(e.detail)
-        console.log(e.detail.value)
-        this.setDateTime()
-        if (e.detail.value.event_name === undefined) {       
-        } else {
-            const event_name = e.detail.value.event_name
-            this.setData({ event_name })     
-        }
-=======
         wx.showLoading({
-          title: 'Creting Event',
+          title: 'Creating Event',
         })
         const page = this
         page.setDateTime()
@@ -83,7 +72,6 @@ Page({
         //     page.setData({ event_name })     
         // }
         console.log("FINAL EVENT CREATION INFO", page.data)
->>>>>>> xiaomei
         const event = {
             cuisine: page.data.cuisine,
             user_id: page.data.user.id,
@@ -94,19 +82,10 @@ Page({
         //     console.log(res)
         // })
         wx.request({
-          url: 'http://localhost:3000/api/v1/events',
+          url: `${app.globalData.baseUrl}/api/v1/events`,
           header: app.getHeader(),
           method: "POST",
           data: event,
-<<<<<<< HEAD
-          success(eventCreateRes) {
-            console.log(eventCreateRes)
-            console.log(eventCreateRes.data.event.id)
-            wx.navigateTo({
-                url: `/pages/event/choose?id=${eventCreateRes.data.event.id}`,
-            })
-          }
-=======
           success(res) {
             console.log('res from event CREATE: ',res)
             if (res.statusCode === 200) {
@@ -124,7 +103,6 @@ Page({
             
           }
 
->>>>>>> xiaomei
         })
         // wx.navigateTo({
         //   url: '/pages/event/choose',

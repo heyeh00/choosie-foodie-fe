@@ -19,7 +19,7 @@ Page({
       page.setData({ event_id: options.id })
       console.log("PAGE event_id", page.data.event_id)
       wx.request({
-        url: `http://localhost:3000/api/v1/events/${page.data.event_id}`,
+        url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
         header: app.getHeader(),
         success(res) {
             page.setData({ restaurant: res.data.restaurant})

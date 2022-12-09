@@ -58,7 +58,7 @@ Page({
         const page = this
         page.setData({ event_id: parseInt(options.id) })
         wx.request({
-          url: `http://localhost:3000/api/v1/events/${options.id}/event_restaurants`,
+          url: `${app.globalData.baseUrl}/api/v1/events/${options.id}/event_restaurants`,
           header: app.getHeader(),
           success(res) {
             page.setData({ events: res.data.events })
@@ -136,7 +136,7 @@ Page({
       }
       console.log("REQUEST DATA", data)
       wx.request({
-        url: `http://localhost:3000/api/v1/restaurant_picks`,
+        url: `${app.globalData.baseUrl}/api/v1/restaurant_picks`,
         header: app.getHeader(),
         data,
         method: "POST",

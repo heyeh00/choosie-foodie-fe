@@ -76,7 +76,7 @@ Page({
                 const user = { image_url: avatarUrl }
                 console.log(user)
                 wx.request({
-                    url: `http://localhost:3000/api/v1/users/${userInfo.id}`,
+                    url: `${app.globalData.baseUrl}/api/v1/users/${userInfo.id}`,
                     headers: app.getHeader(),
                     method: "PUT",
                     data: { user },
@@ -94,7 +94,7 @@ Page({
         this.setData({ user: app.globalData.user })
         const page = this
         wx.request({
-            url: 'http://localhost:3000/api/v1/restaurants',
+            url: `${app.globalData.baseUrl}/api/v1/restaurants`,
             success(res) {
                 console.log("get all restaurants", res)
                 if (res.statusCode !== 200) return

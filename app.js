@@ -11,7 +11,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         page.globalData.code = res.code;
         wx.request({
-            url: `${page.getUrl()}/login`,
+            url: `${this.globalData.baseUrl}/api/v1/login`,
             method: "POST",
             data: { code: res.code },
             success(loginRes) {
@@ -40,6 +40,7 @@ App({
   },
 
   globalData: {
-    baseUrl: 'http://localhost:3000/api/v1'
+    // baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://choosie-foodie.shanghaiwogeng.com'
   }
 })
