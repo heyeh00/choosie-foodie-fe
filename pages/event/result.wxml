@@ -33,7 +33,10 @@
             <view class="info-row">
                 <image class="icon" src="/icons/Page-icons/datetime.png" mode="" />
                 <view class="info">
-                    {{event.datetime}}
+                    {{date}}
+                </view>
+                <view class="info">
+                    {{time}}
                 </view>
             </view>
 
@@ -67,6 +70,12 @@
                     <view>name</view>
                 </view>
             </view>
+            <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
+                <view class="person">
+                    <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
+                    <view>{{attendee.name}}</view>
+                </view>
+            </wx:key>
         </view>
     </view>
 </view>
