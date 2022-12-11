@@ -44,32 +44,6 @@
             <view class="attendees" style="font-weight: 600; margin-top: 16rpx; margin-bottom: 24rpx;">
                 Attendees
             </view>
-            <view class="attendees">
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-            </view>
             <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
                 <view class="person">
                     <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
