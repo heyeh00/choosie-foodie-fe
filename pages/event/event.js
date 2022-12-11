@@ -82,9 +82,6 @@ Page({
             datetime: page.data.datetime,
             event_name: page.data.event_name
         }
-        // requestData(`/events`, { event }, "POST").then((res) => {
-        //     console.log(res)
-        // })
         wx.request({
           url: `${app.globalData.baseUrl}/api/v1/events`,
           header: app.getHeader(),

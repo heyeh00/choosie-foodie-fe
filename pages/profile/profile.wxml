@@ -1,16 +1,3 @@
-<!-- <view class="ma40 userinfo">
-    <block wx:if="{{user.image_url}}">
-        <image src="{{user.image_url}}" class="userinfo-avatar" mode="aspectFill" />
-        <text>{{user.name}}</text>
-    </block>
-    <block wx:else>
-        <image src="/icons/TabBar Icons/profile_white.png" class="userinfo-avatar" mode="aspectFill" />
-        <button bindtap="login" type="primary" plain="true" class="mb50 login-btn">Login</button>
-        <text>Somebody needs to login 🤔</text>
-    </block>
-</view> -->
-
-
 <view class="bg" style="display: flex; justify-content: center;">
 
 
@@ -19,19 +6,9 @@
             <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
         </view>
         <view class="bgcard">
-            <view wx:for="{{cards.s}}" wx:for-item="each" class="card-s">
-                <view class="card-s" wx:for="{{restaurants}}">
-                    <image src="/icons/images/maotou.jpg">
-                    </image>
-                    <view class="card.s-info">
-                        <text style="font-size: 15rpx;">{{item.name}}</text>
-                        <text style="font-size: 12rpx;">{{item.time}}</text>
-                    </view>
-                </view>
-                <view class="avatar">
-                    <image class="therealone" src="{{user.image_url}}" mode="aspectFit" />
-                </view>
-
+            <wx:key wx:for="{{user_events}}" wx:for-item="event" class="card-s">
+                {{event.event_name}}
+                {{event.datetime}}
                 <view class="card-s" wx:for="{{restaurants}}">
                     <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill" />
                     <view class="card-s-info">
@@ -39,7 +16,7 @@
                         <text style="font-size: 28rpx;">{{item.time}}</text>
                     </view>
                 </view>
-            </view>
+            </wx:key>
         </view>
     </block>
 

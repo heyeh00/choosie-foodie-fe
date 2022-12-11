@@ -66,7 +66,8 @@ Page({
         // else add it
         this.setData({restaurants_choice})
         console.log("CHOSEN RESTAURANTS", this.data.restaurants_choice)
-        this.setData({restaurants})
+        // REVIEW THIS FIX
+        this.setData({restaurants, events: restaurants})
       }
     },
 
