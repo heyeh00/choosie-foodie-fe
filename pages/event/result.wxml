@@ -1,4 +1,3 @@
-
 <view class="container-result">
     <view class="card-l">
         <view class="card-pic">
@@ -34,7 +33,7 @@
             <view class="info-row">
                 <image class="icon" src="/icons/Page-icons/datetime.png" mode="" />
                 <view class="info">
-                    INSERT EVENT DATE TIME
+                    {{event.datetime}}
                 </view>
             </view>
 

@@ -83,7 +83,6 @@ Page({
         }
       })
 
-    //   const user = wx.getStorageSync('user')
       const user = app.globalData.user
       const data = {
         user_id: user.id,
@@ -102,9 +101,6 @@ Page({
           wx.navigateTo({
             url: `/pages/event/result?id=${res.data.restaurant_pick.event_id}`,
           })
-        },
-        fail(errors) {
-          console.log("ERRORS", errors)
         }
       })
     },

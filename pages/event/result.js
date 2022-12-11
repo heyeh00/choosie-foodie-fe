@@ -19,12 +19,23 @@ Page({
       page.setData({ event_id: options.id })
       console.log("PAGE event_id", page.data.event_id)
       wx.request({
-        url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
+        url: `${app.globalData.baseUrl}/api/v1/event_result/${page.data.event_id}`,
         header: app.getHeader(),
         success(res) {
-            console.log("RESPONSE RESULT", res)
             page.setData({ restaurant: res.data.restaurant})
-            console.log("RESULT", page.data.restaurant)
+            console.log("RESULT RESTAURANT", page.data.restaurant)
+            wx.request({
+                url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
+                header: app.getHeader(),
+                success(res) {
+                    page.setData({ event: res.data.event})
+                    console.log("RESULT EVENT", page.data.event)
+                    const datetime = page.data.event.datetime
+                    console.log("DATETIME", datetime)
+                    streetaddress = datetime.substr(0, addy.indexOf('T'))
+                    console.log("TEST DATE", date)
+                }
+            })
         }
       })
     },
