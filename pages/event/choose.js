@@ -66,7 +66,8 @@ Page({
         // else add it
         this.setData({restaurants_choice})
         console.log("CHOSEN RESTAURANTS", this.data.restaurants_choice)
-        this.setData({restaurants})
+        // REVIEW THIS FIX
+        this.setData({restaurants, events: restaurants})
       }
     },
 
@@ -83,7 +84,6 @@ Page({
         }
       })
 
-    //   const user = wx.getStorageSync('user')
       const user = app.globalData.user
       const data = {
         user_id: user.id,
@@ -102,9 +102,6 @@ Page({
           wx.navigateTo({
             url: `/pages/event/result?id=${res.data.restaurant_pick.event_id}`,
           })
-        },
-        fail(errors) {
-          console.log("ERRORS", errors)
         }
       })
     },

@@ -8,7 +8,6 @@ App({
 
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
         page.globalData.code = res.code;
         wx.request({
             url: `${this.globalData.baseUrl}/api/v1/login`,
@@ -18,7 +17,7 @@ App({
                 console.log("LOGIN RES", loginRes)
                 
                 page.globalData.user = loginRes.data.user;
-                // if (wx.getStorageSync('user').length === 0) wx.setStorageSync('user', loginRes.data.user)
+
                 console.log("SET USER TO GLOBALDATA", page.globalData.user)
                 page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')

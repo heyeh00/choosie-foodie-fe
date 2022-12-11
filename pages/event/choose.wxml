@@ -1,18 +1,6 @@
-<wx:key wx:for="{{events}}" wx:for-item="event">
-    {{event.selected}}
-</wx:key>
-
-<view bindtap="test">
-    <button>TRIGGER</button>
-</view>
-<wx:key wx:if="{{test_item.selected}}">
-    <text>{{test_item}}</text>
-    <text>{{test_item.selected}}</text>
-</wx:key>
-
 <view class="container-choose">
     <wx:key wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
-        <!-- <view>{{item.selected}}</view> -->
+
         <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
             <image class="card-pic" src="/icons/Food-Icons/{{item.restaurant.cuisine}}.png" mode=""/>
             <view class="info">

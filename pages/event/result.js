@@ -17,14 +17,15 @@ Page({
     onLoad(options) {
       const page = this
       page.setData({ event_id: options.id })
-      console.log("PAGE event_id", page.data.event_id)
+      // GET ATTENDEES, EVENT DATE & TIME, AND WINNING RESTAURANT
       wx.request({
-        url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
+        url: `${app.globalData.baseUrl}/api/v1/event_result/${page.data.event_id}`,
         header: app.getHeader(),
         success(res) {
-            console.log("RESPONSE RESULT", res)
-            page.setData({ restaurant: res.data.restaurant})
-            console.log("RESULT", page.data.restaurant)
+            console.log("EVENT RESULT RESPONSE", res)
+            const { attendees, event, restaurant } = res.data
+            page.setData({ attendees, event, restaurant })
+            console.log("PAGE DATA", page.data)
         }
       })
     },

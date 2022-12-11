@@ -56,9 +56,11 @@ Page({
         if (time === null) {
             const datetime = date
             this.setData({ datetime })
+            console.log("SET EVENT DATE TIME", this.data.datetime)
         } else {
             const datetime = `${date} ${time}`
             this.setData({ datetime })
+            console.log("SET EVENT DATE TIME", this.data.datetime)
         }
     },
 
@@ -80,16 +82,17 @@ Page({
             datetime: page.data.datetime,
             event_name: page.data.event_name
         }
-        // requestData(`/events`, { event }, "POST").then((res) => {
-        //     console.log(res)
-        // })
         wx.request({
           url: `${app.globalData.baseUrl}/api/v1/events`,
           header: app.getHeader(),
           method: "POST",
           data: event,
           success(res) {
-            console.log('res from event CREATE: ',res)
+            console.log('res from event CREATE: ',res.data)
+            const { event } = res.data
+            console.log("CONST EVENT", event)
+            console.log("EVENT PUSHED TO GLOBAL DATA", app.globalData.event)
+            app.globalData['event'] = event
             if (res.statusCode === 200) {
                 wx.hideLoading()
                 wx.showToast({

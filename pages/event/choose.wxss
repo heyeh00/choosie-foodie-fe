@@ -17,12 +17,11 @@
 }
 
 .selected {
-    border: 1rpx #434343 solid;
-    border-radius: 20rpx;
+    border: 5rpx #646464 solid;
 }
 
 .not-selected{
-    border: 1rpx transparent solid;
+    border: 5rpx transparent solid;
 }
 
 .card-pic {

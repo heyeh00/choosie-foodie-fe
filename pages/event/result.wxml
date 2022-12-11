@@ -1,4 +1,3 @@
-
 <view class="container-result">
     <view class="card-l">
         <view class="card-pic">
@@ -34,7 +33,10 @@
             <view class="info-row">
                 <image class="icon" src="/icons/Page-icons/datetime.png" mode="" />
                 <view class="info">
-                    INSERT EVENT DATE TIME
+                    {{event.date}}
+                </view>
+                <view class="info">
+                    {{event.time}}
                 </view>
             </view>
 
@@ -42,32 +44,12 @@
             <view class="attendees" style="font-weight: 600; margin-top: 16rpx; margin-bottom: 24rpx;">
                 Attendees
             </view>
-            <view class="attendees">
+            <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
                 <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
+                    <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
+                    <view style="font-size: small;">{{attendee.name}}</view>
                 </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-                <view class="person">
-                    <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
-                    <view>name</view>
-                </view>
-            </view>
+            </wx:key>
         </view>
     </view>
 </view>

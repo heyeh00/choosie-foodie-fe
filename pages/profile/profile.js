@@ -11,40 +11,6 @@ Page({
      */
     data: {
         // user: app.globalData.user,
-        restaurants: [
-            {
-                name: "毛头老爹饭店",
-                price: 113,
-                rating: 3.9,
-                cuisine: "上海本帮菜",
-                location: "静安寺",
-                time: "December 22,2022 8pm"
-            },
-            {
-                name: "Azabuya 麻布屋",
-                price: 49,
-                rating: 4.2,
-                cuisine: "日本料理",
-                location: "南京西路",
-                time: "December 22,2022 8pm"
-            },
-            {
-                name: "螺老爹螺狮煲火锅",
-                price: 94,
-                rating: 3.6,
-                cuisine: "火锅",
-                location: "人民广场",
-                time: "December 22,2022 8pm"
-            },
-            {
-                name: "Piment",
-                price: 181,
-                rating: 4.4,
-                cuisine: "西餐",
-                location: "衡山路",
-                time: "December 22,2022 8pm"
-            }
-        ]
 
     },
 
@@ -70,21 +36,17 @@ Page({
         wx.getUserProfile({
             desc: 'need avatar',
             success(res) {
-                console.log("PROFILE REQUEST 1 USER", res.userInfo)
-                const userInfo = page.data.user.id
-                console.log("userInfo", userInfo)
+                const user_id = page.data.user.id
                 const user = {
                     name: res.userInfo.nickName,
                     image_url: res.userInfo.avatarUrl
                 }
-                console.log("PROFILE USER", user)
                 wx.request({
-                    url: `${app.globalData.baseUrl}/api/v1/users/${page.data.user.id}`,
+                    url: `${app.globalData.baseUrl}/api/v1/users/${user_id}`,
                     headers: app.getHeader(),
                     method: "PUT",
                     data: { user },
                     success(res) {
-                        console.log("PROFILE REQUEST 2 USER", res)
                         app.globalData.user = res.data.user
                         page.setData({user: res.data.user})
                     }
@@ -98,14 +60,21 @@ Page({
         console.log("PROFILE JS PAGE DATA", this.data)
         const page = this
         wx.request({
-            url: `${app.globalData.baseUrl}/api/v1/restaurants`,
+            url: `${app.globalData.baseUrl}/api/v1/users/${page.data.user.id}`,
+            headers: app.getHeader(),
             success(res) {
-                console.log("get all restaurants", res)
-                if (res.statusCode !== 200) return
+                const { user_events } = res.data
+                page.setData({ user_events })
+                console.log("USERS EVENTS", user_events)
+                
+                // if (res.statusCode !== 200) return
                 // 将获取到的数据保存在dataObject中
-                page.setData({ restaurants: res.data.restaurants.reverse() })
+                // page.setData({ restaurants: res.data.restaurants.reverse() })
                 // 设置marker
-                page.onSetMarkers(res.data.restaurants)
+                // page.onSetMarkers(res.data.restaurants)
+            },
+            fail(errors) {
+                console.log("ERROR", errors)
             }
         })
     },
