@@ -91,8 +91,8 @@ Page({
             console.log('res from event CREATE: ',res.data)
             const { event } = res.data
             console.log("CONST EVENT", event)
-            console.log("EVENT PUSHED TO GLOBAL DATA", app.globalData.event)
             app.globalData['event'] = event
+            console.log("EVENT PUSHED TO GLOBAL DATA", app.globalData.event)
             if (res.statusCode === 200) {
                 wx.hideLoading()
                 wx.showToast({
