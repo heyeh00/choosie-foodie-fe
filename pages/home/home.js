@@ -52,7 +52,7 @@ Page({
             selected: false
         },
         {
-            name: 'Vegetarian',
+            name: 'Veggies',
             icon: "/icons/Food-Icons/Vegetarian.png",
             selected: false
         },
@@ -85,7 +85,6 @@ Page({
         page.setData(
           {
             date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
-            time: `${new Date().getHours()}:${new Date().getMinutes()}`
           }
         )
 
