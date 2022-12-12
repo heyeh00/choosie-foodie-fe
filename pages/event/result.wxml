@@ -1,4 +1,24 @@
 <view class="container-result">
+    
+    <wx:key wx:if="{{event.closed}}"> 
+        <view class="in-progress-banner">
+            <view class="voting-text">
+                Voting Complete!
+            </view>
+        </view>
+    </wx:key>
+    <wx:key wx:else> 
+        <view class="in-progress-banner animate-pulse duration3">
+            <view>
+                <view class="voting-text">
+                    VOTING IS STILL OPEN. 
+                </view>
+                <view class="voting-text">
+                    Refresh results to see progress!
+                </view>
+            </view>
+        </view>
+    </wx:key>
     <view class="card-l">
         <view class="card-pic">
             <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="" />
@@ -46,10 +66,24 @@
             </view>
             <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
                 <view class="person">
-                    <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
+                    <wx:key wx:if="{{attendee.image_url}}">
+                        <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
+                    </wx:key>
+                    <wx:key wx:else>
+                        <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
+                    </wx:key>
                     <view style="font-size: small;">{{attendee.name}}</view>
                 </view>
             </wx:key>
         </view>
+    </view>
+    <view>
+        <wx:key wx:if="{{event.user_id === user.id}}" class="button-area">
+            <button class="our-button" bindtap="fetchResult">refresh results</button>
+            <button class="our-button" bindtap="endVoting">end voting</button>
+        </wx:key>
+        <wx:key wx:else>
+            <button class="our-button" bindtap="fetchResult">refresh results</button>
+        </wx:key>
     </view>
 </view>

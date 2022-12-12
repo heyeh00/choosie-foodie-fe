@@ -16,18 +16,45 @@ Page({
      */
     onLoad(options) {
       const page = this
+      const user = app.globalData.user
+      page.setData({ user })
       page.setData({ event_id: options.id })
       // GET ATTENDEES, EVENT DATE & TIME, AND WINNING RESTAURANT
-      wx.request({
-        url: `${app.globalData.baseUrl}/api/v1/event_result/${page.data.event_id}`,
-        header: app.getHeader(),
-        success(res) {
-            console.log("EVENT RESULT RESPONSE", res)
-            const { attendees, event, restaurant } = res.data
-            page.setData({ attendees, event, restaurant })
-            console.log("PAGE DATA", page.data)
-        }
-      })
+      page.fetchResult()
+      this.animate(".in-progress-banner", [
+          { opacity: 1.0, },
+          { opacity: 0.5, },
+          { opacity: 0.0, },
+        ], 100)
+    },
+
+    fetchResult() {
+        const page = this
+        wx.request({
+            url: `${app.globalData.baseUrl}/api/v1/event_result/${page.data.event_id}`,
+            header: app.getHeader(),
+            success(res) {
+                console.log("EVENT RESULT RESPONSE", res)
+                const { attendees, event, restaurant } = res.data
+                page.setData({ attendees, event, restaurant })
+                console.log("PAGE DATA", page.data)
+            }
+        })
+    },
+
+    endVoting() {
+        const page = this
+        const event = { closed: true }
+        wx.request({
+          url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
+          method: "PUT",
+          data: event,
+          header: app.getHeader(),
+          success(res) {
+            console.log("END VOTING", res)
+            page.setData({ event: res.data.event })
+          }
+        })
     },
 
     /**
