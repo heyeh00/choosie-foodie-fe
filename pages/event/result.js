@@ -53,6 +53,7 @@ Page({
           success(res) {
             console.log("END VOTING", res)
             page.setData({ event: res.data.event })
+            page.fetchResult()
           }
         })
     },
