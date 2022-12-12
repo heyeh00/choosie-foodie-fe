@@ -37,7 +37,7 @@
                     bindinput="setEventName"
                     />
                 </view>
-                <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx; margin-left: 30rpx;" />
+                <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 40rpx; width: 40rpx; margin-left: 30rpx;" />
             </view>
             <!-- Date -->
             <picker mode="date" value="{{date}}" bindchange="bindDateChange">
@@ -48,7 +48,7 @@
                                 <view class="picker">{{date}}</view>
                         </view>
                     </view>
-                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 40rpx; width: 40rpx;" />
                 </view>
             </picker>
 
@@ -63,7 +63,7 @@
                                 <view wx:else class="picker">Click here</view>
                         </view>
                     </view>
-                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 40rpx; width: 40rpx;" />
                 </view>
             </picker>
         </view>

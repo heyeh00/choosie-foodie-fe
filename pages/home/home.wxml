@@ -33,7 +33,7 @@
         <!-- <view class="section w100 h10 bg-white radius30 my40 py30 column-center">
         <view class="fbody">Select price range</view> -->
         <view>
-            <button class="our-button" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
+            <button class="our-button" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
         </view>
     </view>
 </view>
