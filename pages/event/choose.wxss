@@ -2,6 +2,7 @@
 
 .container-choose {
     padding: 50rpx 0;
+    
 }
 
 .card-m1 {
