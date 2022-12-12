@@ -20,7 +20,7 @@
     </wx:key>
     <view class="card-l">
         <view class="card-pic">
-            <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="" />
+            <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFit"  style="width: 500rpx; height: 350rpx;" class="radius20"/>
         </view>
 
         <view class="info">
@@ -77,11 +77,11 @@
     </view>
     <view>
         <wx:key wx:if="{{event.user_id === user.id}}" class="button-area">
-            <button class="our-button" bindtap="fetchResult">refresh results</button>
-            <button class="our-button" bindtap="endVoting">end voting</button>
+            <button class="our-button" bindtap="fetchResult" id="btn-1">Refresh result</button>
+            <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
         </wx:key>
         <wx:key wx:else>
-            <button class="our-button" bindtap="fetchResult">refresh results</button>
+            <button class="our-button" bindtap="fetchResult">Share</button>
         </wx:key>
     </view>
 </view>

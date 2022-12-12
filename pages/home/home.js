@@ -53,7 +53,7 @@ Page({
         },
         {
             name: 'Veggies',
-            icon: "/icons/Food-Icons/Vegetarian.png",
+            icon: "/icons/Food-Icons/Veggies.png",
             selected: false
         },
         {
