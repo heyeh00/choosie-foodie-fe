@@ -110,4 +110,23 @@
     color: #434343;
 }
 
+.in-progress-banner-reverse {
+    width: 100%;
+    height: 80rpx;
+    background-color: #434343;
+    padding: 8rpx;
+    margin-bottom: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voting-text-reverse {
+    font: normal 500 30rpx 'Raleway';
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+    color: #ffbb32;
+}
+
   

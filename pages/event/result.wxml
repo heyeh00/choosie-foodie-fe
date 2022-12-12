@@ -7,12 +7,12 @@
         </view>
     </wx:key>
     <wx:key wx:else> 
-        <view class="in-progress-banner animate-pulse duration7">
+        <view class="in-progress-banner-reverse animate-pulse duration7">
             <view>
-                <view class="voting-text">
+                <view class="voting-text-reverse">
                     VOTING IS STILL OPEN. 
                 </view>
-                <view class="voting-text">
+                <view class="voting-text-reverse">
                     Refresh results to see progress!
                 </view>
             </view>
@@ -20,7 +20,9 @@
     </wx:key>
     <view class="card-l">
         <view class="card-pic">
-            <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="" />
+            <wx:key wx:if="{{restaurant.cuisine}}">
+                <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFill" />
+            </wx:key>
         </view>
 
         <view class="info">
