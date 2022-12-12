@@ -88,6 +88,11 @@
       margin-right: 60rpx;
   }
 
+  .btn-class {
+    background-color: #F7C873 !important;
+  }
+  
+
   .our-button-inverse {
     text-align: center;
     border-radius: 40rpx;
