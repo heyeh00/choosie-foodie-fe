@@ -21,3 +21,7 @@
     margin-right: 5rpx;
     transition: 0.3s;
 }
+ .btn-class {
+    opacity: 0.9;
+    transform: scale(0.95, 0.95);
+ }
