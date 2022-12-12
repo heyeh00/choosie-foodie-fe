@@ -8,10 +8,13 @@
 .selected {
     border: 1rpx #434343 solid;
     border-radius: 20rpx;
+    padding-top: 10rpx;
+    transition: 0.3s;
 }
 
 .not-selected{
     border: 1rpx transparent solid;
+    padding: 10rpx;
 }
 
 .card-detail {

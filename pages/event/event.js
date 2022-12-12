@@ -186,7 +186,8 @@ Page({
         console.log(this.options)
         return {
             title: this.data.event_name,
-            path: `pages/event/choose?id=${this.data.eventId}`
+            path: `pages/event/choose?id=${this.data.eventId}`,
+            imageUrl: 'https://userblink.csdnimg.cn/2890438aecd14feb877ce4cae6c2c6d3.jpeg'
         }
     }
 })

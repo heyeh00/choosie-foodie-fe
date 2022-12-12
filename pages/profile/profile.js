@@ -36,6 +36,7 @@ Page({
         wx.getUserProfile({
             desc: 'need avatar',
             success(res) {
+                console.log('user', res)
                 const user_id = page.data.user.id
                 const user = {
                     name: res.userInfo.nickName,
