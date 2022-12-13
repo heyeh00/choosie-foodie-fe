@@ -9,8 +9,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "Choosie Foodie",
     "navigationBarTextStyle":"black"
   },
 

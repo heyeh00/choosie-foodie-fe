@@ -2,7 +2,7 @@
 
 .container-choose {
     padding: 50rpx 0;
-    background-color: var(--dim);
+    background-color: #F8F8F8;
 }
 
 .card-m1 {
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white !important;
+    background-color: #F8F8F8 !important;
     box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.34);
 }
 
@@ -77,10 +77,7 @@
 
 .our-button{
     position: fixed;
-    bottom: 0;
-    left: 0;
-    margin-left: 28% !important;
-    margin-top: 50rpx !important; 
-    /* margin-left: 25% !important;  */
-    margin-bottom:7% !important;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
