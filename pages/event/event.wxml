@@ -5,7 +5,7 @@
         <view class="card-l pa50 vh65 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">
-                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 150rpx; height: 150rpx;" class="radius20"/>
+                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 190rpx; height: 150rpx;" class="radius20"/>
                     <view class="card-info ml20">   
                         <view class="fbody mb20">
                             <!-- <view wx:if="{{reveal}}"> -->
@@ -37,31 +37,33 @@
                     bindinput="setEventName"
                     />
                 </view>
-                <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx; margin-left: 30rpx;" />
+                <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 40rpx; width: 40rpx; margin-left: 30rpx;" />
             </view>
             <!-- Date -->
             <picker mode="date" value="{{date}}" bindchange="bindDateChange">
                 <view class="flex justify-between items-center pa20">
                     <view class="flex justify-start items-center">
-                        <image src="/icons/Page-icons/calendar_white.png" mode="aspectFit" style="height: 67rpx; width: 67rpx;" />
+                        <image src="/icons/Page-icons/calendar_white.png" mode="aspectFit" style="height:50rpx; width: 50rpx;" />
                         <view class="fbody ml40">
                                 <view class="picker">{{date}}</view>
                         </view>
                     </view>
-                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 40rpx; width: 40rpx;" />
                 </view>
             </picker>
 
             <!-- Time -->
-            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindDateChange">
+            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
                 <view class="flex justify-between items-center pa20 mt50">
                     <view class="flex justify-start items-center">
-                        <image src="/icons/Page-icons/clock_white.png" mode="aspectFit" style="height: 70rpx; width: 70rpx;" />
+                        <image src="/icons/Page-icons/clock_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
                         <view class="fbody ml40">
-                                <view class="picker">{{time}}</view>
+                                <!-- <view class="picker">{{time}}</view> -->
+                                <view wx:if="{{time}}" class="picker">{{time}}</view>
+                                <view wx:else class="picker">Click here</view>
                         </view>
                     </view>
-                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 50rpx; width: 50rpx;" />
+                    <image src="/icons/Page-icons/edit_white.png" mode="aspectFit" style="height: 40rpx; width: 40rpx;" />
                 </view>
             </picker>
         </view>

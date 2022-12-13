@@ -1,11 +1,21 @@
 .container-result {
-
+    margin-top: 24rpx;
+    position: relative;
+    height: 100vh;
+    background-color: var(--dim);
 }
 
 .card-l {
     width: 560rpx;
     border-radius: 50rpx;
     background-color: #FAEBCD;
+    margin: auto;
+    height: 68vh;
+    padding: 50rpx !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 .info {
@@ -15,6 +25,8 @@
 .card-pic {
     object-fit: cover;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .name {
@@ -50,3 +62,79 @@
     height: 50rpx;
     border-radius: 50%;
 }
+
+.button-area {
+    margin-top: 32rpx;
+    display: flex;
+}
+
+.our-button {
+    /* text-align: center;
+    border-radius: 40rpx;
+    font: normal 500 30rpx 'Raleway';
+    background-color: #F7C873;
+    color: #434343;
+    border: 1rpx solid #434343;  */
+    width: 300rpx !important;
+    background-color: transparent;
+  }
+
+  #btn-1 {
+    margin-left: 56rpx;
+  }
+
+  #btn-2 {
+      background-color: #F7C873;
+      margin-right: 60rpx;
+  }
+
+  .btn-class {
+    background-color: #F7C873 !important;
+  }
+  
+
+  .our-button-inverse {
+    text-align: center;
+    border-radius: 40rpx;
+    font: normal 500 30rpx 'Raleway';
+    background-color: #434343;
+    color: #F7C873;
+    border: 1rpx solid #434343; 
+  }
+
+/* BANNER animation */
+
+.duration3 { transition: 0.3s; }
+.duration5 { transition: 0.5s; }
+.duration7 { transition: 0.7s; }
+
+@keyframes pulse {
+    50% {
+      opacity: .5;
+    }
+}
+
+.animate-pulse { animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+/* BANNER */
+
+.in-progress-banner {
+    width: 100%;
+    height: 80rpx;
+    background-color: #ffbb32;
+    padding: 8rpx;
+    margin-bottom: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voting-text {
+    font: normal 500 30rpx 'Raleway';
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+    color: #434343;
+}
+
+  

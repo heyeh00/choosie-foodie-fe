@@ -91,8 +91,8 @@ Page({
             console.log('res from event CREATE: ',res.data)
             const { event } = res.data
             console.log("CONST EVENT", event)
-            console.log("EVENT PUSHED TO GLOBAL DATA", app.globalData.event)
             app.globalData['event'] = event
+            console.log("EVENT PUSHED TO GLOBAL DATA", app.globalData.event)
             if (res.statusCode === 200) {
                 wx.hideLoading()
                 wx.showToast({
@@ -186,7 +186,8 @@ Page({
         console.log(this.options)
         return {
             title: this.data.event_name,
-            path: `pages/event/choose?id=${this.data.eventId}`
+            path: `pages/event/choose?id=${this.data.eventId}`,
+            imageUrl: 'https://userblink.csdnimg.cn/2890438aecd14feb877ce4cae6c2c6d3.jpeg'
         }
     }
 })

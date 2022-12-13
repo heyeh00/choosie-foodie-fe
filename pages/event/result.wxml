@@ -1,7 +1,26 @@
 <view class="container-result">
+    <wx:key wx:if="{{event.closed}}"> 
+        <view class="in-progress-banner animate-pulse duration7">
+            <view class="voting-text">
+                Voting Complete!
+            </view>
+        </view>
+    </wx:key>
+    <wx:key wx:else> 
+        <view class="in-progress-banner animate-pulse duration7">
+            <view>
+                <view class="voting-text">
+                    VOTING IS STILL OPEN. 
+                </view>
+                <view class="voting-text">
+                    Refresh results to see progress!
+                </view>
+            </view>
+        </view>
+    </wx:key>
     <view class="card-l">
         <view class="card-pic">
-            <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="" />
+            <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFit"  style="width: 500rpx; height: 350rpx;" class="radius20"/>
         </view>
 
         <view class="info">
@@ -40,16 +59,29 @@
                 </view>
             </view>
 
-
             <view class="attendees" style="font-weight: 600; margin-top: 16rpx; margin-bottom: 24rpx;">
                 Attendees
             </view>
             <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
                 <view class="person">
-                    <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
+                    <wx:key wx:if="{{attendee.image_url}}">
+                        <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
+                    </wx:key>
+                    <wx:key wx:else>
+                        <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
+                    </wx:key>
                     <view style="font-size: small;">{{attendee.name}}</view>
                 </view>
             </wx:key>
         </view>
+    </view>
+    <view>
+        <wx:key wx:if="{{event.user_id === user.id}}" class="button-area">
+            <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-1">Refresh result</button>
+            <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
+        </wx:key>
+        <wx:key wx:else>
+            <button class="our-button" bindtap="fetchResult">Share</button>
+        </wx:key>
     </view>
 </view>
