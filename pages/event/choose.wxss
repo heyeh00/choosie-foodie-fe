@@ -76,10 +76,7 @@
 
 .our-button{
     position: fixed;
-    bottom: 0;
-    left: 0;
-    margin-left: 25% !important;
-    margin-top: 50rpx !important; 
-    margin-left: 25% !important; 
-    margin-bottom:7% !important;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 }

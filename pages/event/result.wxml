@@ -81,7 +81,7 @@
             <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
         </wx:key>
         <wx:key wx:else>
-            <button class="our-button" bindtap="fetchResult">Share</button>
+            <button class="our-button-inverse mt30" open-type="share" bindtap="fetchResult">Share</button>
         </wx:key>
     </view>
 </view>
