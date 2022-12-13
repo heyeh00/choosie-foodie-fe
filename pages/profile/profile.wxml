@@ -1,3 +1,4 @@
+// FIFI CODE
 <view class="container-profile">
 
     <block wx:if="{{user.image_url}}">
@@ -11,20 +12,43 @@
                     <view class="info">
                         <text class = "info-restaurantname"> {{event.restaurant.name}} </text> 
                         <text class = "info-eventtime"> {{event.event.datetime}}</text>
+
+// HENRY CODE
+<view class="container">
+    <view class="background-card">
+        <block wx:if="{{avatar}}">
+            <view class="login" style="left: 270rpx;">
+                <view class="avatar-wrapper">
+                    <image class="avatar" src="{{avatar}}" mode="" />
+                    <view class="nickname">
+                        {{user.name}}
+
                     </view>
                 </view>
-            </wx:key>
-        </view>
-    </block>
-
-
-    <block wx:else>
-        <view class="background">
-            <text class="login-message">Somebody needs to login🤔</text>
-            <button bind:chooseavatar="login" open-type="chooseAvatar" class="our-button" bindtap="login">Login</button>
-        </view>
-        <view class="avatar">
-            <image src="/icons/TabBar-Icons/profile_white.png" class="userinfo-avatar" mode="aspectFill" />
-        </view>
-    </block>
+            </view>
+            <view class="card">
+                <view wx:for="{{user_events}}" wx:key="index">
+                    {{item.restaurant.name}}
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="login">
+                <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                    <image class="avatar" src="{{avatarUrl}}"></image>
+                </button>
+                <view class="nickname">
+                    {{user.name}}
+                </view>
+                <view class="form">
+                    <form bindsubmit="setNickname">
+                        <input class="input" style="margin: 16rpx;" name="input" placeholder="Change name. Then pic." />
+                        <view>
+                            <button class="our-button" formType="submit">Submit</button>
+                        </view>
+                    </form>
+                </view>
+            </view>
+        </block>
+    </view>
 </view>

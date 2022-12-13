@@ -12,53 +12,52 @@ Page({
     cuisines: [
         {
             name: 'Any',
-            icon: "/icons/Food-Icons/Any.png",
+            icon: "/icons/Food-Icons/any.png",
             selected: true
         },
         {
             name: "Korean",
-            icon: "/icons/Food-Icons/Korean.png",
+            icon: "/icons/Food-Icons/korean.png",
             selected: false
         },
         {
             name: 'Indian',
-            icon: "/icons/Food-Icons/Indian.png",
+            icon: "/icons/Food-Icons/indian.png",
             selected: false
-
         },
         {
             name: 'Italian',
-            icon: "/icons/Food-Icons/Italian.png",
+            icon: "/icons/Food-Icons/italian.png",
             selected: false
         },   
         {
             name: 'Japanese',
-            icon: "/icons/Food-Icons/Japanese.png",
+            icon: "/icons/Food-Icons/japanese.png",
             selected: false
         },     
         {
             name: 'Spanish',
-            icon: "/icons/Food-Icons/Spanish.png",
+            icon: "/icons/Food-Icons/spanish.png",
             selected: false
         },   
         {
             name: 'Mexican',
-            icon: "/icons/Food-Icons/Mexican.png",
+            icon: "/icons/Food-Icons/mexican.png",
             selected: false
         },   
         {
             name: 'Thai',
-            icon: "/icons/Food-Icons/Thai.png",
+            icon: "/icons/Food-Icons/thai.png",
             selected: false
         },
         {
             name: 'Veggies',
-            icon: "/icons/Food-Icons/Veggies.png",
+            icon: "/icons/Food-Icons/veggies.png",
             selected: false
         },
         {
             name: 'Hotpot',
-            icon: "/icons/Food-Icons/Hotpot.png",
+            icon: "/icons/Food-Icons/hotpot.png",
             selected: false
         }
 
@@ -70,24 +69,25 @@ Page({
       })
   },
 
-    /**
-     * Lifecycle function--Called when page load
-     */
     onLoad(options) {
         const page = this
         event.on('tokenReady', page, page.getData);
-        // requestData(`/cuisines`, {}, "GET").then((res) => {
-        //     console.log('res from cuisines GET', res.data)
-        // let cuisines = this.data.cuisines
-        // cuisines = [,...res.data.cuisines]
-        //     page.setData({ cuisines: res.data.cuisines })
-        // })
         page.setData(
           {
             date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
           }
         )
+        event.on('tokenReady', page, page.checkAvatar);
+    },
 
+    checkAvatar() {
+        const page = this
+        if (app.globalData.avatar) {
+            page.setData({ avatar: app.globalData.avatar })
+            console.log("GLOBAL AVATAR DATA", page.data.avatar)
+        } else {
+            console.log("NO GLOBAL AVATAR")
+        }
     },
 
     getData() {
@@ -164,6 +164,30 @@ Page({
       wx.switchTab({
         url: '/pages/event/event'
       })
+    },
+
+    onChooseAvatar(e) {
+        const page = this
+        const { avatarUrl } = e.detail
+        page.setData({avatarUrl})
+        const user_id = page.data.user.id
+        wx.uploadFile({
+          filePath: avatarUrl,
+          name: 'avatar',
+          url: `${app.globalData.baseUrl}/api/v1/users/${user_id}/attach_avatar`,
+          headers: app.getHeader(),
+          success(res) {
+              const data = (JSON.parse(res.data))
+              page.setData({ avatar: data.avatar })
+              app.globalData['avatar'] = page.data.avatar
+              page.setData({ user: data.user})
+              console.log("CHECK SET DATA", page.data)
+              page.submitEvent()
+          },
+          fail(errors) {
+              console.log("UPLOAD FILE ERROR", errors)
+          }
+        })
     },
 
     /**

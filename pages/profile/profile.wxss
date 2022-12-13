@@ -1,11 +1,72 @@
-/* pages/profile/profile.wxss */
-
-.container-profile{
+.container {
     background-color:#FAEBCD;
     height: 100vh;
     display: flex; 
     justify-content: center;
+  }
+
+.background-card {
+    background-color: #F8F8F8;
+    background-size: cover;
+    padding-top: 200rpx;
+    height: 1100rpx;
+    width: 100vw;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+    display:flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* justify-items: center; */
 }
+
+.avatar-wrapper {
+    padding: 0;
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50%;
+    border: 12rpx rgb(255, 255, 255) solid;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+
+  .nickname {
+      margin: 16rpx;
+      font-size: large;
+      font-weight: 500;
+      text-align: center;
+  }
+  
+  .form {
+      justify-content: center;
+  }
+  
+  .login {
+      justify-content: center;
+      position: absolute;
+      top: 100rpx;
+      left: 220rpx;
+  }
+
+  .card {
+    width: 90%;
+    height: 250rpx;
+    border-radius: 50rpx;
+    margin-top:30rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white !important;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.34);
+  }
+
+  /* 
 
 .background{
     background-color: #F8F8F8;
@@ -78,9 +139,13 @@
     margin-bottom: 200rpx; 
     font-weight:bold; 
     font-size:large
+
+
   }
     
   .info {
     margin: 16rpx;
     width: 50%;
 }
+
+  } */
