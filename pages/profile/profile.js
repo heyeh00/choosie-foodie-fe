@@ -48,6 +48,7 @@ Page({
                     method: "PUT",
                     data: { user },
                     success(res) {
+                        console.log(res)
                         app.globalData.user = res.data.user
                         page.setData({user: res.data.user})
                     }
