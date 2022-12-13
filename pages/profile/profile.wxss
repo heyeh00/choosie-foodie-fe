@@ -1,8 +1,14 @@
-.container {
+.container-profile {
     background-color:#FAEBCD;
     height: 100vh;
     display: flex; 
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
   }
 
 .background-card {
@@ -13,11 +19,9 @@
     width: 100vw;
     border-top-left-radius: 8%;
     border-top-right-radius: 8%;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* justify-items: center; */
+    align-items: center;
 }
 
 .avatar-wrapper {
@@ -57,14 +61,68 @@
     width: 90%;
     height: 250rpx;
     border-radius: 50rpx;
-    margin-top:30rpx;
-    margin-bottom: 30rpx;
+    margin-top:15rpx;
+    margin-bottom: 15rpx;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     background-color: white !important;
     box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.34);
   }
+
+  .card-pic {
+    width: 140rpx;
+    height: 140rpx;
+    margin: 16rpx;
+}
+
+.info {
+    margin: 16rpx;
+    width: 65%;
+}
+
+.info-text {
+    font-size: medium;
+    margin: 8rpx;
+}
+
+.title {
+    font-size: large;
+}
+
+.rating {
+    display: flex;
+    align-items: baseline;
+    margin-top: 8rpx;
+}
+
+.star-pic {
+    height: 28rpx;
+    width: 28rpx;
+}
+
+.last-info-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuisine {
+    display: flex;
+    align-items: center;
+}
+
+.cuisine-pic {
+    height: 30rpx;
+    width: 30rpx;
+}
+
+.our-button{
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
   /* 
 
