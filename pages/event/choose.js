@@ -26,7 +26,44 @@ Page({
             page.setData({ events: res.data.events })
           },
         })
+        event.on('tokenReady', page, page.checkAvatar)
     },
+
+    checkAvatar() {
+        const page = this
+        if (app.globalData.avatar) {
+            page.setData({ avatar: app.globalData.avatar })
+            console.log("GLOBAL AVATAR DATA", page.data.avatar)
+        } else {
+            console.log("NO GLOBAL AVATAR")
+        }
+    },
+
+    onChooseAvatar(e) {
+        const page = this
+        const { avatarUrl } = e.detail
+        page.setData({avatarUrl})
+        const user_id = page.data.user.id
+        wx.uploadFile({
+          filePath: avatarUrl,
+          name: 'avatar',
+          url: `${app.globalData.baseUrl}/api/v1/users/${user_id}/attach_avatar`,
+          headers: app.getHeader(),
+          success(res) {
+              const data = (JSON.parse(res.data))
+              page.setData({ avatar: data.avatar })
+              app.globalData['avatar'] = page.data.avatar
+              page.setData({ user: data.user})
+              console.log("CHECK SET DATA", page.data)
+              page.submitEvent()
+          },
+          fail(errors) {
+              console.log("UPLOAD FILE ERROR", errors)
+          }
+        })
+    },
+
+
 
     selected(e) {
         console.log(e)

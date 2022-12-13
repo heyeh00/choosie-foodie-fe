@@ -22,5 +22,10 @@
         </view>
     </wx:key>
 
-    <button bind:chooseavatar="login" bindtap="submitChoices" open-type="chooseAvatar" class="our-button">Submit</button>
+    <block wx:if="{{avatar}}">
+        <button class="our-button" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitChoices">Submit</button>
+    </block>
+    <block wx:else>
+        <button class="our-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-class" style="margin-top: 15vh;">Submit</button>
+    </block>
 </view>

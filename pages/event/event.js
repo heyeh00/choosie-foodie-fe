@@ -25,6 +25,12 @@ Page({
     onLoad(options) {
         const page = this
         console.log("EVENT JS", page.data)
+        if (app.globalData.avatar) {
+            page.setData({ avatar: app.globalData.avatar })
+            console.log("GLOBAL AVATAR DATA", page.data.avatar)
+        } else {
+            console.log("No global avatar, user needs to login")
+        }
     },
 
     revealForm(e) {

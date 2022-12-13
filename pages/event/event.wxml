@@ -5,7 +5,7 @@
         <view class="card-l pa50 vh65 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">
-                    <image src="{{user.image_url}}" mode="aspectFill" style="width: 190rpx; height: 150rpx;" class="radius20"/>
+                    <image src="{{avatar}}" mode="aspectFill" style="width: 190rpx; height: 150rpx;" class="radius20"/>
                     <view class="card-info ml20">   
                         <view class="fbody mb20">
                             <!-- <view wx:if="{{reveal}}"> -->
