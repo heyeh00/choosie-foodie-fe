@@ -32,8 +32,11 @@
         <!-- price range -->
         <!-- <view class="section w100 h10 bg-white radius30 my40 py30 column-center">
         <view class="fbody">Select price range</view> -->
-        <view>
-            <button class="our-button" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
-        </view>
+        <block wx:if="{{avatar}}">
+            <button class="our-button" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
+        </block>
+        <block wx:else>
+            <button class="our-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-class" style="margin-top: 15vh;">Confirm</button>
+        </block>
     </view>
 </view>

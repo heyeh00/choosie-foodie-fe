@@ -17,6 +17,8 @@ App({
                 console.log("LOGIN RES", loginRes)
                 
                 page.globalData.user = loginRes.data.user;
+                page.globalData.avatar = loginRes.data.avatar;
+                console.log("APP JS AVATAR", page.globalData.avatar)
 
                 console.log("SET USER TO GLOBALDATA", page.globalData.user)
                 page.globalData.header = loginRes.header['Authorization']
@@ -44,53 +46,52 @@ App({
     cuisines: [
         {
           name: 'Any',
-          icon: "/icons/Food-Icons/Any.png",
+          icon: "/icons/Food-Icons/any.png",
           selected: true
         },
         {
           name: "Korean",
-          icon: "/icons/Food-Icons/Korean.png",
+          icon: "/icons/Food-Icons/korean.png",
           selected: false
         },
         {
           name: 'Indian',
-          icon: "/icons/Food-Icons/Indian.png",
+          icon: "/icons/Food-Icons/indian.png",
           selected: false
-
         },
         {
           name: 'Italian',
-          icon: "/icons/Food-Icons/Italian.png",
+          icon: "/icons/Food-Icons/italian.png",
           selected: false
         },   
         {
           name: 'Japanese',
-          icon: "/icons/Food-Icons/Japanese.png",
+          icon: "/icons/Food-Icons/japanese.png",
           selected: false
         },     
         {
           name: 'Spanish',
-          icon: "/icons/Food-Icons/Spanish.png",
+          icon: "/icons/Food-Icons/spanish.png",
           selected: false
         },   
         {
           name: 'Mexican',
-          icon: "/icons/Food-Icons/Mexican.png",
+          icon: "/icons/Food-Icons/mexican.png",
           selected: false
         },   
         {
           name: 'Thai',
-          icon: "/icons/Food-Icons/Thai.png",
+          icon: "/icons/Food-Icons/thai.png",
           selected: false
         },
         {
           name: 'Veggies',
-          icon: "/icons/Food-Icons/Veggies.png",
+          icon: "/icons/Food-Icons/veggies.png",
           selected: false
         },
         {
           name: 'Hotpot',
-          icon: "/icons/Food-Icons/Hotpot.png",
+          icon: "/icons/Food-Icons/hotpot.png",
           selected: false
         }
       ],
