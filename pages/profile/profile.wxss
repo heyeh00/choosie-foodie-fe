@@ -26,7 +26,7 @@
     background-color: white;
     top: 0rpx;
     left: 50%;
-    border: 6 solid white;
+    border: 12rpx solid white;
     transform: translate(-50%, 50%);
     height: 200rpx;
     width: 200rpx;

@@ -1,9 +1,9 @@
 <view class="bg" style="display: flex; justify-content: center;">
 
-
     <block wx:if="{{user.image_url}}">
         <view>
             <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
+            <view>{{user.name}}</view>
         </view>
         <view class="bgcard">
             <wx:key wx:for="{{user_events}}" wx:for-item="event" class="card-s">

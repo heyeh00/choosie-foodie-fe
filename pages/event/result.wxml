@@ -20,13 +20,9 @@
     </wx:key>
     <view class="card-l">
         <view class="card-pic">
-<<<<<<< HEAD
             <wx:key wx:if="{{restaurant.cuisine}}">
                 <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFill" />
             </wx:key>
-=======
-            <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFit"  style="width: 500rpx; height: 350rpx;" class="radius20"/>
->>>>>>> 6b1988ed9082dde1524a689a680b0516c1746ee1
         </view>
 
         <view class="info">
