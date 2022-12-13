@@ -51,7 +51,7 @@ Page({
 
     endVoting() {
         const page = this
-        // const event = { closed: true }
+        const event = { closed: true }
         wx.request({
           url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
           method: "PUT",
@@ -77,7 +77,7 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
-        // page.setData({ eventClosed: false})
+       
     },
 
     /**

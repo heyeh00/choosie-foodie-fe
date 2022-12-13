@@ -20,21 +20,43 @@
 <view class="container">
     <view class="background-card">
         <block wx:if="{{avatar}}">
-            <view class="login" style="left: 270rpx;">
-                <view class="avatar-wrapper">
-                    <image class="avatar" src="{{avatar}}" mode="" />
-                    <view class="nickname">
-                        {{user.name}}
+            <view class="user-info">
+                <view class="login" style="left: 270rpx;">
+                    <view class="avatar-wrapper">
+                        <image class="avatar" src="{{avatar}}" mode="" />
+                        <view class="nickname">
+                            {{user.name}}
 
+                        </view>
                     </view>
                 </view>
             </view>
-            <view class="card">
-                <view wx:for="{{user_events}}" wx:key="index">
-                    {{item.restaurant.name}}
+            <!-- Display event restaurants -->
+            <view
+                wx:for="{{user_events}}" 
+                wx:for-item="user_event"
+                wx:key="index"
+                data-id="{{user_events.id}}"
+             >
+                <view class="card">
+                    <image src="https://source.unsplash.com/random" mode="aspectFill" class="card-img"/>
+                    <view class="card-info">
+                        <view class="card-name">
+                            {{user_event.event.event_name}}
+                        </view>
+                        <view class="card-detail">
+                            <view>
+                                {{user_event.restaurant.name}}
+                            </view>
+                            <view>
+                                {{user_event.event.datetime}}
+                            </view>
+                        </view>
+                    </view>
                 </view>
             </view>
         </block>
+
         <block wx:else>
             <view class="login">
                 <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">

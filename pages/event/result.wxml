@@ -78,17 +78,17 @@
         </view>
     </view>
     <view>
-
-        <!-- <button wx:if="{{!eventCreated}}" class="our-button mt100" bindtap="submitEvent">Confirm</button>
-        <button wx:if="{{eventCreated}}" class="our-button-inverse mt100" open-type="share">Share</button> -->
-
-
-        <view wx:if="{{!eventClosed}}" class="button-area">
-            <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-1">Refresh result</button>
-            <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
-        </view>
-        <view wx:if="{{eventClosed}}">
-            <button class="our-button-inverse mt30" open-type="share" bindtap="fetchResult">Share</button>
-        </view>
+    <!-- Identify if host or attendees -->
+        <wx:key wx:if="{{event.user_id === user.id}}">
+            <view wx:if="{{event.closed === false}}" class="button-area">
+                <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-1">Refresh result</button>
+                <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
+            </view>
+            <view wx:if="{{event.closed === true}}">
+                <button class="our-button-inverse mt30" open-type="share" bindtap="fetchResult">Share</button>
+            </view>
+        </wx:key>
+        <wx:key wx:else>
+        </wx:key>
     </view>
 </view>
