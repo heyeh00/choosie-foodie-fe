@@ -18,6 +18,7 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
+        console.log("any")
         if (getApp().globalData.header) {
             this.getData();
         } else {

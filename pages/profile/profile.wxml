@@ -3,15 +3,14 @@
     <block wx:if="{{user.image_url}}">
         <view>
             <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
-            <view>{{user.name}}</view>
         </view>
         <view class="background">
             <wx:key wx:for="{{user_events}}" wx:for-item="event" class="card-s">
-                <view class="card-s" wx:for="{{restaurants}}">
-                    <image src="" class="card-pic" mode="aspectFill" />
+                <view class="card-s">
+                    <image src="/icons/Food-icons/{{event.restaurant.cuisine}}.png" class="card-pic" mode="aspectFill" />
                     <view class="info">
-                        <text class = "info-restaurantname"> {{item.name}} </text> 
-                        <text class = "info-eventtime"> {{item.time}}</text>
+                        <text class = "info-restaurantname"> {{event.restaurant.name}} </text> 
+                        <text class = "info-eventtime"> {{event.event.datetime}}</text>
                     </view>
                 </view>
             </wx:key>
