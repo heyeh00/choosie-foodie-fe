@@ -62,18 +62,14 @@ Page({
         console.log("PROFILE JS PAGE DATA", this.data)
         const page = this
         wx.request({
-            url: `${app.globalData.baseUrl}/api/v1/users/${page.data.user.id}`,
+            url: `${app.globalData.baseUrl}/api/v1/events/users/${page.data.user.id}`,
             headers: app.getHeader(),
             success(res) {
+                console.log("PROFILE RESQUEST RES", res)
                 const { user_events } = res.data
                 page.setData({ user_events })
                 console.log("USERS EVENTS", user_events)
-                
-                // if (res.statusCode !== 200) return
-                // 将获取到的数据保存在dataObject中
-                // page.setData({ restaurants: res.data.restaurants.reverse() })
-                // 设置marker
-                // page.onSetMarkers(res.data.restaurants)
+            
             },
             fail(errors) {
                 console.log("ERROR", errors)

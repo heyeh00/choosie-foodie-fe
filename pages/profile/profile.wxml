@@ -1,9 +1,9 @@
 <view class="container-profile">
 
-
     <block wx:if="{{user.image_url}}">
         <view>
             <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
+            <view>{{user.name}}</view>
         </view>
         <view class="background">
             <wx:key wx:for="{{user_events}}" wx:for-item="event" class="card-s">
