@@ -21,7 +21,7 @@
     <view class="card-l">
         <view class="card-pic">
             <wx:key wx:if="{{restaurant.cuisine}}">
-                <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFill" />
+                <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFit" class="card-img"/>
             </wx:key>
         </view>
 
@@ -78,12 +78,17 @@
         </view>
     </view>
     <view>
-        <wx:key wx:if="{{event.user_id === user.id}}" class="button-area">
+
+        <!-- <button wx:if="{{!eventCreated}}" class="our-button mt100" bindtap="submitEvent">Confirm</button>
+        <button wx:if="{{eventCreated}}" class="our-button-inverse mt100" open-type="share">Share</button> -->
+
+
+        <view wx:if="{{!eventClosed}}" class="button-area">
             <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-1">Refresh result</button>
             <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
-        </wx:key>
-        <wx:key wx:else>
+        </view>
+        <view wx:if="{{eventClosed}}">
             <button class="our-button-inverse mt30" open-type="share" bindtap="fetchResult">Share</button>
-        </wx:key>
+        </view>
     </view>
 </view>

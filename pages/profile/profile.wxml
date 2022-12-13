@@ -1,19 +1,22 @@
-// FIFI CODE
-<view class="container-profile">
+<!-- FIFI CODE -->
+<!-- <view class="container-profile">
 
     <block wx:if="{{user.image_url}}">
         <view>
             <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
         </view>
-        <view class="background">
-            <wx:key wx:for="{{user_events}}" wx:for-item="event" class="card-s">
-                <view class="card-s">
-                    <image src="/icons/Food-icons/{{event.restaurant.cuisine}}.png" class="card-pic" mode="aspectFill" />
-                    <view class="info">
-                        <text class = "info-restaurantname"> {{event.restaurant.name}} </text> 
-                        <text class = "info-eventtime"> {{event.event.datetime}}</text>
+        <view class="background" wx:key wx:for="{{user_events}}" wx:for-item="event">
+            <view class="card-s">
+                <image src="/icons/Food-icons/{{event.restaurant.cuisine}}.png" class="card-pic" mode="aspectFill" />
+                <view class="info">
+                    <text class = "info-restaurantname"> {{event.restaurant.name}} </text> 
+                    <text class = "info-eventtime"> {{event.event.datetime}}</text>
+                </view>
+            </view>
+        </view>
+    </block> -->
 
-// HENRY CODE
+<!-- HENRY CODE -->
 <view class="container">
     <view class="background-card">
         <block wx:if="{{avatar}}">
@@ -52,3 +55,4 @@
         </block>
     </view>
 </view>
+<!-- </view> -->

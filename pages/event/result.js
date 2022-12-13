@@ -51,7 +51,7 @@ Page({
 
     endVoting() {
         const page = this
-        const event = { closed: true }
+        // const event = { closed: true }
         wx.request({
           url: `${app.globalData.baseUrl}/api/v1/events/${page.data.event_id}`,
           method: "PUT",
@@ -60,6 +60,7 @@ Page({
           success(res) {
             console.log("END VOTING", res)
             page.setData({ event: res.data.event })
+            // page.setData({ eventClosed: true})
             page.fetchResult()
           }
         })
@@ -76,7 +77,7 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
-
+        // page.setData({ eventClosed: false})
     },
 
     /**
@@ -111,6 +112,5 @@ Page({
      * Called when user click on the top right corner to share
      */
     onShareAppMessage() {
-
     }
 })
