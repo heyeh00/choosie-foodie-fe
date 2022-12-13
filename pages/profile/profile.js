@@ -12,6 +12,7 @@ Page({
     },
 
     onLoad(options) {
+        console.log("any")
         if (getApp().globalData.header) {
             this.getData();
         } else {

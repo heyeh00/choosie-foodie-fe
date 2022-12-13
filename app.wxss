@@ -38,7 +38,11 @@
     background-color: #FAEBCD;
     margin:auto;
     margin-bottom: 30rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     }
+    
 
 .our-button {
   text-align: center;
