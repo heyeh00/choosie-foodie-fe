@@ -1,4 +1,5 @@
 // pages/event/result.js
+import event from '@codesmiths/event';
 const app = getApp()
 
 
@@ -21,11 +22,17 @@ Page({
       page.setData({ event_id: options.id })
       // GET ATTENDEES, EVENT DATE & TIME, AND WINNING RESTAURANT
       page.fetchResult()
-      this.animate(".in-progress-banner", [
-          { opacity: 1.0, },
-          { opacity: 0.5, },
-          { opacity: 0.0, },
-        ], 100)
+      event.on('tokenReady', page, page.checkAvatar)
+    },
+
+    checkAvatar() {
+        const page = this
+        if (app.globalData.avatar) {
+            page.setData({ avatar: app.globalData.avatar })
+            console.log("GLOBAL AVATAR DATA", page.data.avatar)
+        } else {
+            console.log("NO GLOBAL AVATAR")
+        }
     },
 
     fetchResult() {
