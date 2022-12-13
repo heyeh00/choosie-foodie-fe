@@ -134,7 +134,6 @@ Page({
         data,
         method: "POST",
         success(res) {
-          console.log("CREATE RESPONSE", res.data)
           console.log("CREATE RES EVENT ID", res.data.restaurant_pick.event_id)
           wx.navigateTo({
             url: `/pages/event/result?id=${res.data.restaurant_pick.event_id}`,

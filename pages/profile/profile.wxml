@@ -1,5 +1,6 @@
-// FIFI CODE
-<view class="container-profile">
+<!-- 
+    // FIFI CODE
+    <view class="container-profile">
 
     <block wx:if="{{user.image_url}}">
         <view>
@@ -11,10 +12,9 @@
                     <image src="/icons/Food-icons/{{event.restaurant.cuisine}}.png" class="card-pic" mode="aspectFill" />
                     <view class="info">
                         <text class = "info-restaurantname"> {{event.restaurant.name}} </text> 
-                        <text class = "info-eventtime"> {{event.event.datetime}}</text>
+                        <text class = "info-eventtime"> {{event.event.datetime}}</text> -->
 
-// HENRY CODE
-<view class="container">
+<view class="container-profile">
     <view class="background-card">
         <block wx:if="{{avatar}}">
             <view class="login" style="left: 270rpx;">
@@ -26,10 +26,21 @@
                     </view>
                 </view>
             </view>
-            <view class="card">
-                <view wx:for="{{user_events}}" wx:key="index">
-                    {{item.restaurant.name}}
+            <view class="card" wx:for="{{user_events}}" wx:key="index" bindtap="eventCard" data-event_id="{{item.event.id}}">
+                <image class="card-pic" src="/icons/Food-icons/{{item.restaurant.cuisine}}.png" mode=""/>
+                <view class="info">
+                <view class="title">{{item.event.event_name}}</view>
+                <view class="rating">
+                    <view class="info-text">{{item.restaurant.name}}</view>
+                </view> 
+                <view class="last-info-row">
+                    <view class="info-text">{{item.event.datetime}}</view>
+                    <view class="cuisine">
+                        <image class="cuisine-pic" src="/icons/Food-Icons/Any.png" mode=""/>
+                        <text class="info-text">{{item.restaurant.cuisine}}</text>
+                    </view>
                 </view>
+            </view>
             </view>
         </block>
         <block wx:else>
