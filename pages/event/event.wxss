@@ -8,3 +8,7 @@
     background-color: #FAEBCD;
     transition: 0.3s;
 }
+
+.vh100 {
+    background-color: #F8F8F8;
+}

@@ -1,5 +1,5 @@
 <view class="container-form">
-    <view class="vh100 bg-dim pa50">
+    <view class="vh100 pa50">
         <!-- 暂定9种菜系 -->
         <view class="section mt50" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
             <view wx:for="{{cuisines}}" wx:for-item="cuisine" wx:key="key" bindtap="editCuisines" class="w20 text-center mb30" data-cuisine="{{cuisine.name}}">
@@ -33,7 +33,7 @@
         <!-- <view class="section w100 h10 bg-white radius30 my40 py30 column-center">
         <view class="fbody">Select price range</view> -->
         <view>
-            <button class="our-button" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
+            <button class="our-button" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
         </view>
     </view>
 </view>
