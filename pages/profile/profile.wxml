@@ -1,19 +1,17 @@
-<view class="bg" style="display: flex; justify-content: center;">
-
+<view class="container-profile">
 
     <block wx:if="{{user.image_url}}">
         <view>
             <image src="{{user.image_url}}" class="avatar" mode="aspectFill" />
+            <view>{{user.name}}</view>
         </view>
-        <view class="bgcard">
+        <view class="background">
             <wx:key wx:for="{{user_events}}" wx:for-item="event" class="card-s">
-                {{event.event_name}}
-                {{event.datetime}}
                 <view class="card-s" wx:for="{{restaurants}}">
-                    <image src="/icons/images/maotou.jpg" class="respic" mode="aspectFill" />
-                    <view class="card-s-info">
-                        <text style="font-weight: bold; font-size: 32rpx;">{{item.name}}</text>
-                        <text style="font-size: 28rpx;">{{item.time}}</text>
+                    <image src="" class="card-pic" mode="aspectFill" />
+                    <view class="info">
+                        <text class = "info-restaurantname"> {{item.name}} </text> 
+                        <text class = "info-eventtime"> {{item.time}}</text>
                     </view>
                 </view>
             </wx:key>
@@ -22,8 +20,8 @@
 
 
     <block wx:else>
-        <view class="bgcard">
-            <text style="margin-top: 100rpx; margin-bottom: 200rpx; font-weight:bold; font-size:large">Somebody needs to login🤔</text>
+        <view class="background">
+            <text class="login-message">Somebody needs to login🤔</text>
             <button bind:chooseavatar="login" open-type="chooseAvatar" class="our-button" bindtap="login">Login</button>
         </view>
         <view class="avatar">

@@ -15,12 +15,13 @@
     justify-content: flex-start;
     align-items: center;
     background-color: white !important;
-    /* box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.34); */
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.34);
 }
 
 .selected {
     background-color: #FAEBCD !important;
-    /* border: 5rpx #646464 solid; */
+    /* border: 5rpx transparent solid; */
+    border: 5rpx #646464 solid;
 }
 
 .not-selected{
@@ -76,7 +77,16 @@
 
 .our-button{
     position: fixed;
+<<<<<<< HEAD
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+=======
+    bottom: 0;
+    left: 0;
+    margin-left: 28% !important;
+    margin-top: 50rpx !important; 
+    /* margin-left: 25% !important;  */
+    margin-bottom:7% !important;
+>>>>>>> master
 }

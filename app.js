@@ -84,7 +84,7 @@ App({
           selected: false
         },
         {
-          name: 'Vegetarian',
+          name: 'Veggies',
           icon: "/icons/Food-Icons/Veggies.png",
           selected: false
         },
