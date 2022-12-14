@@ -112,7 +112,11 @@ Page({
     },
 
     onShow() {
-
+        if (getApp().globalData.header) {
+            this.getData();
+        } else {
+            event.on('tokenReady', this, this.getData);
+        }
     },
   
     onHide() {

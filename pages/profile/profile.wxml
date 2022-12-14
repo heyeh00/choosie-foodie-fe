@@ -59,14 +59,15 @@
                 <view class="nickname">
                     {{user.name}}
                 </view>
-                <view class="form">
+                <input type="text" placeholder="name" bindblur="setNickname"/>
+                <!-- <view class="form">
                     <form bindsubmit="setNickname">
                         <input class="input" style="margin: 16rpx;" name="input" placeholder="Change name. Then pic." />
                         <view>
                             <button class="our-button" formType="submit">Submit</button>
                         </view>
                     </form>
-                </view>
+                </view> -->
             </view>
         </block>
     </view>
