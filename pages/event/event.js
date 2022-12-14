@@ -10,7 +10,7 @@ Page({
      */
     data: {
         reveal: false,
-        // eventCreated: false,
+        eventCreated: false,
     },
 
     goToHome(e) {
@@ -107,7 +107,7 @@ Page({
                 })
                 page.setData({
                     eventCreated: true,
-                    eventId: res.data.event.id
+                    eventId: res.data.event.id,
                 })
 
             }
@@ -133,7 +133,7 @@ Page({
 
     onShow() {
         const page = this
-        page.setData({ eventCreated: false})
+        // page.setData({ eventCreated: false})
         console.log(app.globalData)
         const myEvent = app.globalData.event_info;
 
@@ -190,7 +190,9 @@ Page({
      * Called when user click on the top right corner to share
      */
     onShareAppMessage(res) {
-        console.log(res)
+        console.log("ON SHARE", res)
+        this.setData({ eventShare: true })
+        console.log("POST SHARE", this.data.eventShare)
         console.log(this.options)
         return {
             title: this.data.event_name,

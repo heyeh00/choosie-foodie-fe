@@ -203,7 +203,11 @@ Page({
     onShow() {
       this.cuisineAny()
       const page = this
-      event.on('tokenReady', page, page.getData);
+      if (app.globalData.user) {
+        page.getData()
+      } else {
+        event.on('tokenReady', page, page.getData);
+      }
       page.setData(
         {
           date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
