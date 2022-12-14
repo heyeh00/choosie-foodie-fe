@@ -26,7 +26,6 @@
                         <image class="avatar" src="{{avatar}}" mode="" />
                         <view class="nickname">
                             {{user.name}}
-
                         </view>
                     </view>
                 </view>
