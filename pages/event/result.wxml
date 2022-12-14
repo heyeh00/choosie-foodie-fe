@@ -21,7 +21,7 @@
     <view class="card-l">
         <view class="card-pic">
             <wx:key wx:if="{{restaurant.cuisine}}">
-                <image src="/icons/Food-icons/{{restaurant.cuisine}}.png" mode="aspectFit" class="card-img"/>
+                <image src="/icons/food-icons/{{restaurant.cuisine}}.png" mode="aspectFit" class="card-img"/>
             </wx:key>
         </view>
 
@@ -31,28 +31,28 @@
             </view>
 
             <view class="info-row">
-                <image class="icon" src="/icons/Food-icons/Any.png" mode="" />
+                <image class="icon" src="/icons/food-icons/Any.png" mode="" />
                 <view class="info">
                     {{restaurant.cuisine}}
                 </view>
             </view>
 
             <view class="info-row">
-                <image class="icon" src="/icons/Page-icons/pin_white.png" mode="" />
+                <image class="icon" src="/icons/page-icons/pin_white.png" mode="" />
                 <view class="info">
                     {{restaurant.address}}
                 </view>
             </view>
 
             <view class="info-row">
-                <image class="icon" src="/icons/Page-icons/phone_white.png" mode="" />
+                <image class="icon" src="/icons/page-icons/phone_white.png" mode="" />
                 <view class="info">
                     {{restaurant.phone_number}}
                 </view>
             </view>
 
             <view class="info-row">
-                <image class="icon" src="/icons/Page-icons/datetime.png" mode="" />
+                <image class="icon" src="/icons/page-icons/datetime.png" mode="" />
                 <view class="info">
                     {{event.date}}
                 </view>
@@ -70,7 +70,7 @@
                         <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
                     </wx:key>
                     <wx:key wx:else>
-                        <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
+                        <image src="/icons/tabbar-icons/profile_white.png" mode="" class="person-icon"/>
                     </wx:key>
                     <view style="font-size: small;">{{attendee.name}}</view>
                 </view>

@@ -7,7 +7,7 @@
         </view>
         <view class="background" wx:key wx:for="{{user_events}}" wx:for-item="event">
             <view class="card-s">
-                <image src="/icons/Food-icons/{{event.restaurant.cuisine}}.png" class="card-pic" mode="aspectFill" />
+                <image src="/icons/food-icons/{{event.restaurant.cuisine}}.png" class="card-pic" mode="aspectFill" />
                 <view class="info">
                     <text class = "info-restaurantname"> {{event.restaurant.name}} </text> 
                     <text class = "info-eventtime"> {{event.event.datetime}}</text>
@@ -33,7 +33,7 @@
             <!-- Display event restaurants -->
             <view wx:for="{{user_events}}" wx:for-item="user_event" wx:key="index" data-id="{{user_events.id}}">
                 <view class="card">
-                    <image src="/icons/Food-icons/{{user_event.restaurant.cuisine}}.png" mode="aspectFill" class="card-img" />
+                    <image src="/icons/food-icons/{{user_event.restaurant.cuisine}}.png" mode="aspectFill" class="card-img" />
                     <view class="card-info">
                         <view class="card-name">
                             {{user_event.event.event_name}}

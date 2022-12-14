@@ -12,52 +12,52 @@ Page({
     cuisines: [
         {
             name: 'Any',
-            icon: "/icons/Food-Icons/any.png",
+            icon: "/icons/food-icons/any.png",
             selected: true
         },
         {
             name: "Korean",
-            icon: "/icons/Food-Icons/korean.png",
+            icon: "/icons/food-icons/korean.png",
             selected: false
         },
         {
             name: 'Indian',
-            icon: "/icons/Food-Icons/indian.png",
+            icon: "/icons/food-icons/indian.png",
             selected: false
         },
         {
             name: 'Italian',
-            icon: "/icons/Food-Icons/italian.png",
+            icon: "/icons/food-icons/italian.png",
             selected: false
         },   
         {
             name: 'Japanese',
-            icon: "/icons/Food-Icons/japanese.png",
+            icon: "/icons/food-icons/japanese.png",
             selected: false
         },     
         {
             name: 'Spanish',
-            icon: "/icons/Food-Icons/spanish.png",
+            icon: "/icons/food-icons/spanish.png",
             selected: false
         },   
         {
             name: 'Mexican',
-            icon: "/icons/Food-Icons/mexican.png",
+            icon: "/icons/food-icons/mexican.png",
             selected: false
         },   
         {
             name: 'Thai',
-            icon: "/icons/Food-Icons/thai.png",
+            icon: "/icons/food-icons/thai.png",
             selected: false
         },
         {
             name: 'Veggies',
-            icon: "/icons/Food-Icons/veggies.png",
+            icon: "/icons/food-icons/veggies.png",
             selected: false
         },
         {
             name: 'Hotpot',
-            icon: "/icons/Food-Icons/hotpot.png",
+            icon: "/icons/food-icons/hotpot.png",
             selected: false
         }
 
@@ -70,14 +70,15 @@ Page({
   },
 
     onLoad(options) {
-        const page = this
-        event.on('tokenReady', page, page.getData);
-        page.setData(
-          {
-            date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
-          }
-        )
-        event.on('tokenReady', page, page.checkAvatar);
+        // const page = this
+        // event.on('tokenReady', page, page.getData);
+        // page.setData(
+        //   {
+        //     date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
+        //   }
+        // )
+        // event.on('tokenReady', page, page.checkAvatar);
+        // console.log("I am in unload")
     },
 
     checkAvatar() {
@@ -202,6 +203,16 @@ Page({
      */
     onShow() {
       this.cuisineAny()
+      console.log("I am in onshow")
+      const page = this
+      event.on('tokenReady', page, page.getData);
+      page.setData(
+        {
+          date: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`,
+        }
+      )
+      event.on('tokenReady', page, page.checkAvatar);
+      console.log("I am in unload")
     },
 
     /**
