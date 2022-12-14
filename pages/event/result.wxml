@@ -70,7 +70,7 @@
                         <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
                     </wx:key>
                     <wx:key wx:else>
-                        <image src="/icons/TabBar-Icons/profile_white.png" mode="" class="person-icon"/>
+                        <image src="/icons/tabbar-icons/profile_white.png" mode="" class="person-icon"/>
                     </wx:key>
                     <view style="font-size: small;">{{attendee.name}}</view>
                 </view>
