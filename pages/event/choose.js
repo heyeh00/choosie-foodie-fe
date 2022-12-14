@@ -154,12 +154,25 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
+
         console.log("I'm in ONSHOW")
         if (app.globalData.user) {
             page.setData({ user: app.globalData.user })
         } else {
             event.on('tokenReady', this, this.setUser)
         }
+        const page = this
+        page.setData({ cuisine: app.globalData.cuisines })        
+        page.setData({ event_id: parseInt(this.options.id) })
+        wx.request({
+          url: `${app.globalData.baseUrl}/api/v1/events/${this.options.id}/event_restaurants`,
+          header: app.getHeader(),
+          success(res) {
+            page.setData({ events: res.data.events })
+          },
+        })
+        event.on('tokenReady', page, page.checkAvatar)
+        console.log("I'm in ONLOAD")
     },
 
     setUser() {
