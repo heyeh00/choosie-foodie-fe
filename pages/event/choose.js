@@ -154,6 +154,7 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
+        const page = this
 
         console.log("I'm in ONSHOW")
         if (app.globalData.user) {
@@ -162,7 +163,6 @@ Page({
             event.on('tokenReady', this, this.setUser)
         }
         // copied from onLoad
-        const page = this
         page.setData({ cuisine: app.globalData.cuisines })        
         page.setData({ event_id: parseInt(this.options.id) })
         wx.request({

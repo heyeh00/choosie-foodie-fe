@@ -12,11 +12,11 @@ Page({
     },
 
     onLoad(options) {
-        if (getApp().globalData.header) {
-            this.getData();
-        } else {
-            event.on('tokenReady', this, this.getData);
-        }
+        // if (getApp().globalData.header) {
+        //     this.getData();
+        // } else {
+        //     event.on('tokenReady', this, this.getData);
+        // }
     },
 
     eventCard(e) {
