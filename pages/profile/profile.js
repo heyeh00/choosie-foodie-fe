@@ -76,7 +76,10 @@ Page({
             }
         })
     },
-
+    // goToEventDetail(e) {
+    //     console.log('RES', e)
+    // },
+    
     getData() {
         this.setData({ user: app.globalData.user })
         console.log("PROFILE JS PAGE DATA", this.data)

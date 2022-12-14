@@ -2,7 +2,7 @@
     margin-top: 24rpx;
     position: relative;
     height: 100vh;
-    background-color: #F8F8F8;
+    background-color: #F8F8F8 !important;
 }
 
 .card-l {
@@ -24,9 +24,12 @@
 
 .card-pic {
     object-fit: cover;
-    width: 100%;
     display: flex;
     justify-content: center;
+}
+.card-img {
+    width: 500rpx;
+    height: 350rpx;
 }
 
 .name {
@@ -77,6 +80,7 @@
     border: 1rpx solid #434343;  */
     width: 300rpx !important;
     background-color: transparent;
+    transition: 0.3s;
   }
 
   #btn-1 {
