@@ -92,8 +92,7 @@ Page({
     },
 
     getData() {
-        this.setData({ user: app.globalData.user })
-        // console.log("HOME USER INFO", this.data.user)
+      this.setData({ user: app.globalData.user })
     },
 
     bindDateChange(e) {
@@ -154,7 +153,6 @@ Page({
     },
 
     submitEvent(e) {
-    //   console.log(this.data.cuisines_choice.value)
       const event_info = {
           cuisines: this.data.cuisines_choice,
           date: this.data.date,
@@ -171,6 +169,7 @@ Page({
         const page = this
         const { avatarUrl } = e.detail
         page.setData({avatarUrl})
+        // console.log("CHOOSE AVATAR", page.data)
         const user_id = page.data.user.id
         wx.uploadFile({
           filePath: avatarUrl,
@@ -203,7 +202,6 @@ Page({
      */
     onShow() {
       this.cuisineAny()
-      console.log("I am in onshow")
       const page = this
       event.on('tokenReady', page, page.getData);
       page.setData(
@@ -212,7 +210,6 @@ Page({
         }
       )
       event.on('tokenReady', page, page.checkAvatar);
-      console.log("I am in unload")
     },
 
     /**

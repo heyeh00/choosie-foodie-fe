@@ -64,17 +64,24 @@
             <view class="attendees" style="font-weight: 600; margin-top: 16rpx; margin-bottom: 24rpx;">
                 Attendees
             </view>
-            <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
-                <view class="person">
-                    <wx:key wx:if="{{attendee.image_url}}">
-                        <image src="{{attendee.image_url}}" mode="" class="person-icon"/>
-                    </wx:key>
-                    <wx:key wx:else>
-                        <image src="/images/tabbar-icons/profile_white.png" mode="" class="person-icon"/>
-                    </wx:key>
-                    <view style="font-size: small;">{{attendee.name}}</view>
-                </view>
-            </wx:key>
+            <view class="attendees">
+                <wx:key wx:for="{{attendees}}" wx:for-item="attendee" class="attendees">
+                    <view class="person">
+                        <wx:key wx:if="{{attendee.image_url}}">
+                            <image src="{{attendee.image_url}}" mode="" class="person-icon" />
+                        </wx:key>
+                        <wx:key wx:else>
+                            <image src="/images/tabbar-icons/profile_white.png" mode="" class="person-icon" />
+                        </wx:key>
+                        <block wx:if="{{attendee.name}}">
+                            <view style="font-size: small;">{{attendee.name}}</view>
+                        </block>
+                        <block wx:else>
+                            <view style="font-size: small;">微信用户</view>
+                        </block>
+                    </view>
+                </wx:key>
+            </view>
         </view>
     </view>
     <view>
