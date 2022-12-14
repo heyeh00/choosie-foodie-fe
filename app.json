@@ -21,18 +21,18 @@
     "list": [{
       "pagePath": "pages/home/home",
       "text": "home",
-      "iconPath": "/icons/tabbar-icons/home_white.png",
-      "selectedIconPath": "/icons/tabbar-icons/home_black.png"
+      "iconPath": "/images/tabbar-icons/home_white.png",
+      "selectedIconPath": "/images/tabbar-icons/home_black.png"
     }, {
       "pagePath": "pages/event/event",
       "text": "event",
-      "iconPath": "/icons/tabbar-icons/hexagon_white.png",
-      "selectedIconPath": "/icons/tabbar-icons/hexagon_black.png"
+      "iconPath": "/images/tabbar-icons/hexagon_white.png",
+      "selectedIconPath": "/images/tabbar-icons/hexagon_black.png"
     }, {
       "pagePath": "pages/profile/profile",
       "text": "profile",
-      "iconPath": "/icons/tabbar-icons/profile_white.png",
-      "selectedIconPath": "/icons/tabbar-icons/profile_black.png"
+      "iconPath": "/images/tabbar-icons/profile_white.png",
+      "selectedIconPath": "/images/tabbar-icons/profile_black.png"
     }]
   },
   "style": "v2",

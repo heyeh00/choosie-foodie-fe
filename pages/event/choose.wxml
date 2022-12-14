@@ -2,19 +2,19 @@
     <wx:key wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
 
         <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
-            <image class="card-pic" src="/icons/food-icons/{{item.restaurant.cuisine}}.png" mode=""/>
+            <image class="card-pic" src="/images/food-icons/{{item.restaurant.cuisine}}.png" mode=""/>
             <view class="info">
                 <view class="title">{{item.restaurant.name}}</view>
                 <view class="rating">
                     <view class="info-text">rating</view>
                     <wx:key wx:for="{{item.restaurant.rating}}">
-                        <image class="star-pic" src="/icons/page-icons/star_black.png"></image>
+                        <image class="star-pic" src="/images/page-icons/star_black.png"></image>
                     </wx:key>
                 </view> 
                 <view class="last-info-row">
                     <view class="info-text">￥{{item.restaurant.ave_price}} person</view>
                     <view class="cuisine">
-                        <image class="cuisine-pic" src="/icons/food-icons/Any.png" mode=""/>
+                        <image class="cuisine-pic" src="/images/food-icons/Any.png" mode=""/>
                         <text class="info-text">{{item.restaurant.cuisine}}</text>
                     </view>
                 </view>

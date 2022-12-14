@@ -12,52 +12,52 @@ Page({
     cuisines: [
         {
             name: 'Any',
-            icon: "/icons/food-icons/any.png",
+            icon: "/images/food-icons/any.png",
             selected: true
         },
         {
             name: "Korean",
-            icon: "/icons/food-icons/korean.png",
+            icon: "/images/food-icons/korean.png",
             selected: false
         },
         {
             name: 'Indian',
-            icon: "/icons/food-icons/indian.png",
+            icon: "/images/food-icons/indian.png",
             selected: false
         },
         {
             name: 'Italian',
-            icon: "/icons/food-icons/italian.png",
+            icon: "/images/food-icons/italian.png",
             selected: false
         },   
         {
             name: 'Japanese',
-            icon: "/icons/food-icons/japanese.png",
+            icon: "/images/food-icons/japanese.png",
             selected: false
         },     
         {
             name: 'Spanish',
-            icon: "/icons/food-icons/spanish.png",
+            icon: "/images/food-icons/spanish.png",
             selected: false
         },   
         {
             name: 'Mexican',
-            icon: "/icons/food-icons/mexican.png",
+            icon: "/images/food-icons/mexican.png",
             selected: false
         },   
         {
             name: 'Thai',
-            icon: "/icons/food-icons/thai.png",
+            icon: "/images/food-icons/thai.png",
             selected: false
         },
         {
             name: 'Veggies',
-            icon: "/icons/food-icons/veggies.png",
+            icon: "/images/food-icons/veggies.png",
             selected: false
         },
         {
             name: 'Hotpot',
-            icon: "/icons/food-icons/hotpot.png",
+            icon: "/images/food-icons/hotpot.png",
             selected: false
         }
 
