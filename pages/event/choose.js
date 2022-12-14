@@ -160,6 +160,18 @@ Page({
         } else {
             event.on('tokenReady', this, this.setUser)
         }
+        const page = this
+        page.setData({ cuisine: app.globalData.cuisines })        
+        page.setData({ event_id: parseInt(options.id) })
+        wx.request({
+          url: `${app.globalData.baseUrl}/api/v1/events/${options.id}/event_restaurants`,
+          header: app.getHeader(),
+          success(res) {
+            page.setData({ events: res.data.events })
+          },
+        })
+        event.on('tokenReady', page, page.checkAvatar)
+        console.log("I'm in ONLOAD")
     },
 
     setUser() {
