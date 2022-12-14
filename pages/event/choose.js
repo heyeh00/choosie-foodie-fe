@@ -159,6 +159,7 @@ Page({
         console.log("I'm in ONSHOW")
         if (app.globalData.user) {
             page.setData({ user: app.globalData.user })
+            console.log("BUG REPORT", page.data.user)
         } else {
             event.on('tokenReady', this, this.setUser)
         }
