@@ -32,7 +32,7 @@
         <!-- price range -->
         <!-- <view class="section w100 h10 bg-white radius30 my40 py30 column-center">
         <view class="fbody">Select price range</view> -->
-        <block wx:if="{{avatar}}">
+        <block wx:if="{{user.image_url}}">
             <button class="our-button" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitEvent">Confirm</button>
         </block>
         <block wx:else>

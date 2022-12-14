@@ -12,12 +12,23 @@ Page({
     },
 
     onLoad(options) {
-        console.log("any")
         if (getApp().globalData.header) {
             this.getData();
         } else {
             event.on('tokenReady', this, this.getData);
         }
+    },
+
+    eventCard(e) {
+        console.log("EVENT CARD", e.currentTarget.dataset.event_id)
+        const event_id = e.currentTarget.dataset.event_id
+        // wx.navigateTo({
+        //   url: `/pages/event/result`,
+        //   success(res) {
+        //       console.log("EVENT CARD RESULT", res)
+        //       res.eventChannel.emit('acceptDataFromOpenerPage', { data: event_id })
+        //   }
+        // })
     },
 
     onChooseAvatar(e){
@@ -80,9 +91,15 @@ Page({
             success(res) {
                 console.log("PROFILE RESQUEST RES", res)
                 const { user_events } = res.data
-                page.setData({ user_events })
-                console.log("USERS EVENTS", user_events)
-            
+                const formattedEvents = user_events.map((user_event) => ({
+                    ...user_event, 
+                    event: {
+                        ...user_event.event,
+                        datetime: new Date(user_event.event.datetime).toLocaleDateString()
+                    }
+                }))
+                console.log("=====FORMATTED EVENTS=======", formattedEvents)
+                page.setData({ user_events: formattedEvents })
             },
             fail(errors) {
                 console.log("ERROR", errors)

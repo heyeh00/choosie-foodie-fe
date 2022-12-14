@@ -31,14 +31,9 @@
                 </view>
             </view>
             <!-- Display event restaurants -->
-            <view
-                wx:for="{{user_events}}" 
-                wx:for-item="user_event"
-                wx:key="index"
-                data-id="{{user_events.id}}"
-             >
+            <view wx:for="{{user_events}}" wx:for-item="user_event" wx:key="index" data-id="{{user_events.id}}">
                 <view class="card">
-                    <image src="https://source.unsplash.com/random" mode="aspectFill" class="card-img"/>
+                    <image src="/icons/Food-icons/{{user_event.restaurant.cuisine}}.png" mode="aspectFill" class="card-img" />
                     <view class="card-info">
                         <view class="card-name">
                             {{user_event.event.event_name}}
@@ -58,8 +53,8 @@
 
         <block wx:else>
             <view class="login">
-                <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-                    <image class="avatar" src="{{avatarUrl}}"></image>
+                <button class="btn-unset radius-full" style="height: 220rpx; width: 220rpx !important; padding: 0; margin: unset;" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                    <image class="w100 h100" src="{{avatarUrl}}"></image>
                 </button>
                 <view class="nickname">
                     {{user.name}}
