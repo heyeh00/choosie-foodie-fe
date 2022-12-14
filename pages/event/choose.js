@@ -27,6 +27,7 @@ Page({
           },
         })
         event.on('tokenReady', page, page.checkAvatar)
+        console.log("I'm in ONLOAD")
     },
 
     checkAvatar() {
@@ -153,7 +154,16 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
+        console.log("I'm in ONSHOW")
+        if (app.globalData.user) {
+            page.setData({ user: app.globalData.user })
+        } else {
+            event.on('tokenReady', this, this.setUser)
+        }
+    },
 
+    setUser() {
+        this.setData({user: app.globalData.user})
     },
 
     /**
