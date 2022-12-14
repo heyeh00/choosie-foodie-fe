@@ -1,3 +1,5 @@
+@import "/app";
+
 .container-profile {
     background-color:#FAEBCD;
     height: 100vh;
@@ -6,7 +8,7 @@
     display: inherit;
   }
 
-  .user-info {
+.user-info {
     margin-bottom: 20rpx;
   }
 .background-card {
@@ -31,14 +33,14 @@
     align-items: center;
   }
   
-  .avatar {
+.avatar {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    /* position: fixed;
-    left: 50%;
-    transform: translateX(-50%, 50%); */
-  }
+    /* position: fixed; */
+    /* left: 260rpx; */
+    /* transform: translateX(-50%, 50%); */
+}
 
   .nickname {
       margin: 16rpx;
@@ -52,7 +54,9 @@
   }
   
   .login {
-      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       position: absolute;
       top: 100rpx;
       left: 220rpx;
