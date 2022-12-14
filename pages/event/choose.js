@@ -154,6 +154,7 @@ Page({
      * Lifecycle function--Called when page show
      */
     onShow() {
+
         console.log("I'm in ONSHOW")
         if (app.globalData.user) {
             page.setData({ user: app.globalData.user })
@@ -162,9 +163,9 @@ Page({
         }
         const page = this
         page.setData({ cuisine: app.globalData.cuisines })        
-        page.setData({ event_id: parseInt(options.id) })
+        page.setData({ event_id: parseInt(this.options.id) })
         wx.request({
-          url: `${app.globalData.baseUrl}/api/v1/events/${options.id}/event_restaurants`,
+          url: `${app.globalData.baseUrl}/api/v1/events/${this.options.id}/event_restaurants`,
           header: app.getHeader(),
           success(res) {
             page.setData({ events: res.data.events })
