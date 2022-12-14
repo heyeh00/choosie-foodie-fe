@@ -12,12 +12,23 @@ Page({
     },
 
     onLoad(options) {
-        console.log("any")
         if (getApp().globalData.header) {
             this.getData();
         } else {
             event.on('tokenReady', this, this.getData);
         }
+    },
+
+    eventCard(e) {
+        console.log("EVENT CARD", e.currentTarget.dataset.event_id)
+        const event_id = e.currentTarget.dataset.event_id
+        // wx.navigateTo({
+        //   url: `/pages/event/result`,
+        //   success(res) {
+        //       console.log("EVENT CARD RESULT", res)
+        //       res.eventChannel.emit('acceptDataFromOpenerPage', { data: event_id })
+        //   }
+        // })
     },
 
     onChooseAvatar(e){

@@ -1,4 +1,4 @@
-.container {
+.container-profile {
     background-color:#FAEBCD;
     height: 100vh;
     display: flex; 
@@ -85,6 +85,59 @@
     font: normal 500 30rpx 'Raleway';
     margin-top: 30rpx;
   }
+  .card-pic {
+    width: 140rpx;
+    height: 140rpx;
+    margin: 16rpx;
+}
+
+.info {
+    margin: 16rpx;
+    width: 65%;
+}
+
+.info-text {
+    font-size: medium;
+    margin: 8rpx;
+}
+
+.title {
+    font-size: large;
+}
+
+.rating {
+    display: flex;
+    align-items: baseline;
+    margin-top: 8rpx;
+}
+
+.star-pic {
+    height: 28rpx;
+    width: 28rpx;
+}
+
+.last-info-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuisine {
+    display: flex;
+    align-items: center;
+}
+
+.cuisine-pic {
+    height: 30rpx;
+    width: 30rpx;
+}
+
+.our-button{
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
   /* 
 
 .background{
