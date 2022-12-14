@@ -161,6 +161,7 @@ Page({
         } else {
             event.on('tokenReady', this, this.setUser)
         }
+        // copied from onLoad
         const page = this
         page.setData({ cuisine: app.globalData.cuisines })        
         page.setData({ event_id: parseInt(this.options.id) })
