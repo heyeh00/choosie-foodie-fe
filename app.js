@@ -41,8 +41,8 @@ App({
   },
 
   globalData: {
-    // baseUrl: 'http://localhost:3000',
-    baseUrl: 'https://choosie-foodie.wogengapp.cn',
+    baseUrl: 'http://localhost:3000',
+    // baseUrl: 'https://choosie-foodie.wogengapp.cn',
     cuisines: [
         {
           name: 'Any',

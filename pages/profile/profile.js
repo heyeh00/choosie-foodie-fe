@@ -76,7 +76,10 @@ Page({
             }
         })
     },
-
+    // goToEventDetail(e) {
+    //     console.log('RES', e)
+    // },
+    
     getData() {
         this.setData({ user: app.globalData.user })
         console.log("PROFILE JS PAGE DATA", this.data)
@@ -88,8 +91,15 @@ Page({
             success(res) {
                 console.log("PROFILE RESQUEST RES", res)
                 const { user_events } = res.data
-                page.setData({ user_events })
-                console.log("USERS EVENTS", user_events)
+                const formattedEvents = user_events.map((user_event) => ({
+                    ...user_event, 
+                    event: {
+                        ...user_event.event,
+                        datetime: new Date(user_event.event.datetime).toLocaleDateString()
+                    }
+                }))
+                console.log("=====FORMATTED EVENTS=======", formattedEvents)
+                page.setData({ user_events: formattedEvents })
             },
             fail(errors) {
                 console.log("ERROR", errors)
