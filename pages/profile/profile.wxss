@@ -1,6 +1,6 @@
 @import "/app";
 
-.container-profile {
+.container {
     background-color:#FAEBCD;
     height: 100vh;
     display: flex; 
@@ -15,7 +15,7 @@
     background-color: #F8F8F8;
     background-size: cover;
     padding-top: 200rpx;
-    height: 1100rpx;
+    height: 85vh;
     width: 100vw;
     border-top-left-radius: 50rpx;
     border-top-right-radius: 50rpx;
