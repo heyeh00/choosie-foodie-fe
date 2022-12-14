@@ -155,6 +155,7 @@ Page({
      */
     onShow() {
         const page = this
+
         console.log("I'm in ONSHOW")
         if (app.globalData.user) {
             page.setData({ user: app.globalData.user })

@@ -31,7 +31,7 @@
             </view>
 
             <view class="info-row">
-                <image class="icon" src="/icons/food-icons/Any.png" mode="" />
+                <image class="icon" src="/icons/food-icons/any.png" mode="" />
                 <view class="info">
                     {{restaurant.cuisine}}
                 </view>
