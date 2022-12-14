@@ -90,7 +90,6 @@ Page({
                 const { user_events } = res.data
                 page.setData({ user_events })
                 console.log("USERS EVENTS", user_events)
-            
             },
             fail(errors) {
                 console.log("ERROR", errors)
