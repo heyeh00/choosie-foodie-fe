@@ -31,7 +31,7 @@
     }, {
       "pagePath": "pages/profile/profile",
       "text": "profile",
-      "iconPath": "/icons/tabBar-icons/profile_white.png",
+      "iconPath": "/icons/tabbar-icons/profile_white.png",
       "selectedIconPath": "/icons/tabbar-icons/profile_black.png"
     }]
   },
