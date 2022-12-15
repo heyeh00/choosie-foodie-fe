@@ -24,6 +24,9 @@ App({
                 page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')
             },
+            fail(errors) {
+                console.log("LOGIN ERROR", errors)
+            }
         })
       }
     })
@@ -41,7 +44,7 @@ App({
   },
 
   globalData: {
-    baseUrl: 'http://localhost:3000',
-    // baseUrl: 'https://choosie-foodie.wogengapp.cn',
+    // baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://choosie-foodie.wogengapp.cn',
   }
 })

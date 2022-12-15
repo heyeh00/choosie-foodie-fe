@@ -26,13 +26,6 @@
     background-color: #F8F8F8;
 }
 
-.hint {
-    background-color: #F7C873;
-    border-radius: 16rpx;
-    font-size: large;
-    padding: 16rpx;
-    text-align: center;
-}
 
  /* .section {
      box-shadow: dimgray;

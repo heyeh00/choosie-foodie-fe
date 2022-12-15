@@ -21,12 +21,10 @@
     <view class="background-card">
         <block wx:if="{{avatar}}">
             <view class="user-info">
-                <view class="login" style="left: 270rpx;">
+                <view class="login">
                     <view class="avatar-wrapper">
                         <image class="avatar" src="{{avatar}}" mode="" />
-                        <view class="nickname">
-                            {{user.name}}
-                        </view>
+                        <input type="text" style="text-align: center; font-size: large;" placeholder="{{user.name ? user.name : 'Add name'}}" bindblur="setNickname"/>
                     </view>
                 </view>
             </view>
@@ -53,21 +51,15 @@
 
         <block wx:else>
             <view class="login">
-                <button class="btn-unset radius-full" style="height: 220rpx; width: 220rpx !important; padding: 0; margin: unset;" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                <button class="btn-unset radius-full avatar-wrapper" style="height: 220rpx; width: 220rpx !important; padding: 0; margin: unset;" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
                     <image class="w100 h100" src="{{avatarUrl}}"></image>
                 </button>
-                <view class="nickname">
+                <view wx:if="{{user.name}}" class="nickname">
                     {{user.name}}
                 </view>
-                <input type="text" placeholder="name" bindblur="setNickname"/>
-                <!-- <view class="form">
-                    <form bindsubmit="setNickname">
-                        <input class="input" style="margin: 16rpx;" name="input" placeholder="Change name. Then pic." />
-                        <view>
-                            <button class="our-button" formType="submit">Submit</button>
-                        </view>
-                    </form>
-                </view> -->
+                <block wx:else>
+                    <input type="text" style="text-align: center; font-size: large;" placeholder="{{user.name ? user.name : 'Add name'}}" bindblur="setNickname"/>
+                </block>
             </view>
         </block>
     </view>

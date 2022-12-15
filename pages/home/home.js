@@ -169,7 +169,6 @@ Page({
         const page = this
         const { avatarUrl } = e.detail
         page.setData({avatarUrl})
-        // console.log("CHOOSE AVATAR", page.data)
         const user_id = page.data.user.id
         wx.uploadFile({
           filePath: avatarUrl,
@@ -178,14 +177,11 @@ Page({
           headers: app.getHeader(),
           success(res) {
               const data = (JSON.parse(res.data))
-              page.setData({ avatar: data.avatar })
-              app.globalData['avatar'] = page.data.avatar
+              console.log("CHOOSE AVATAR RES", data.user)
+            //   page.setData({ avatar: data.avatar })
               page.setData({ user: data.user})
-              console.log("CHECK SET DATA", page.data)
+              app.globalData['user'] = page.data.user
               page.submitEvent()
-          },
-          fail(errors) {
-              console.log("UPLOAD FILE ERROR", errors)
           }
         })
     },

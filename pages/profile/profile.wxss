@@ -15,13 +15,13 @@
     background-color: #F8F8F8;
     background-size: cover;
     padding-top: 200rpx;
-    /* height: 100vh; */
+    height: 100%;
     width: 100vw;
     border-top-left-radius: 50rpx;
     border-top-right-radius: 50rpx;
     display:flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .avatar-wrapper {
@@ -59,7 +59,8 @@
       align-items: center;
       position: absolute;
       top: 100rpx;
-      left: 220rpx;
+      left: 50%;
+      transform: translateX(-50%);
   }
 
   .card {
