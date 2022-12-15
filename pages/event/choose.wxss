@@ -41,17 +41,19 @@
 
 .info-text {
     font-size: medium;
-    margin: 8rpx;
 }
 
 .title {
-    font-size: larger;
+    font: normal 500 36rpx 'Raleway';
 }
 
 .rating {
     display: flex;
     align-items: baseline;
     margin-top: 8rpx;
+    font: normal 350 36rpx 'Raleway';
+    margin-top: 15rpx;
+    /* color: #434343; */
 }
 
 .star-pic {
@@ -61,8 +63,15 @@
 
 .last-info-row {
     width: 100%;
-    display: flex;
+    display: flex; 
     justify-content: space-between;
+    font: normal 350 36rpx 'Raleway';
+    /* display: flex;
+    justify-content: flex-start; */
+}
+
+.info-text {
+    font: normal 300 30rpx 'Raleway';
 }
 
 .cuisine {
@@ -97,4 +106,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.fbody {
+    font: normal 500 36rpx 'Raleway';
+}
+
+.mt30 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40rpx;
+    font: normal 500 36rpx 'Raleway';
+    background-color: #F7C873;
+    color: #434343;
+    border: 1rpx solid #434343; 
+    height: 96rpx;
+    
 }
