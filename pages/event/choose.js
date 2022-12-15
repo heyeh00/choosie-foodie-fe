@@ -12,11 +12,13 @@ Page({
         restaurants_choice: [],
     },
     goToResult(e) {
+      const { id }= e.currentTarget.dataset;
+      console.log("ID",id)
       wx.navigateTo({
-        url: `/pages/event/result?id=${event_id}`,
+        url: `/pages/event/result?id=${id}`,
         success(res) {
             console.log("EVENT CARD RESULT", res)
-            res.eventChannel.emit('acceptDataFromOpenerPage', { data: event_id })
+            res.eventChannel.emit('acceptDataFromOpenerPage', { data: id })
         }
       })
     },

@@ -21,7 +21,6 @@
                     </view>
                 </view>
             </view>
-        </view>
     </wx:key>
 
         <block wx:if="{{user.image_url}}">
@@ -35,13 +34,12 @@
 </block>
 
 <block wx:if="{{event.closed}}">
-    <view class="vh100 px50">
+    <view class="vh100 vw bg-dim fixed">
         <view style="margin-top: 40%; margin-left: 20%;">
             <view class="fbody">
                 Event voting is completed! 
             </view>
         </view>
-    </view>
-    <button class="mt30" bindtap="goToResult">OK!</button>      
-</view>
+        <button class="mt30" bindtap="goToResult" data-id="{{event.id}}">OK!</button>      
+    </view>    
 </block>
