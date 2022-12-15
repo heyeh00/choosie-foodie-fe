@@ -2,7 +2,12 @@
     <view class="vh100 pa50">
         <view class="hint">
             <view>
-                Choose your favorite cuisines. Set a date and time for your event!
+                <view>
+                    Choose your favorite cuisines.
+                </view>
+                <view>
+                    Set a date and time for your event!
+                </view>
             </view>
         </view>
         <!-- 暂定9种菜系 -->

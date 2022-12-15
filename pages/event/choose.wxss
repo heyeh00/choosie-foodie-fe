@@ -21,7 +21,7 @@
 .selected {
     background-color: #FAEBCD !important;
     /* border: 5rpx transparent solid; */
-    border: 2rpx solid #434343 !important; 
+    border: 5rpx solid #434343 !important; 
 }
 
 .not-selected{
@@ -41,7 +41,8 @@
 
 .info-text {
     font-size: medium;
-    margin: 8rpx;
+    margin-top: 8rpx;
+    /* margin: 8rpx; */
 }
 
 .title {

@@ -39,8 +39,8 @@ Page({
 
     checkAvatar() {
         const page = this
-        if (app.globalData.avatar) {
-            page.setData({ avatar: app.globalData.avatar })
+        if (app.globalData.user.image_url) {
+            page.setData({ avatar: app.globalData.user.image_url })
             console.log("GLOBAL AVATAR DATA", page.data.avatar)
         } else {
             console.log("NO GLOBAL AVATAR")
