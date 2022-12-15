@@ -1,16 +1,15 @@
 <!--pages/event/event.wxml-->
 <view class="vh100 vw bg-dim fixed">
-    <view>
-        <view wx:if="{{eventShare}}" class="hint mb50 mt50 animate-pulse duration7">
-            Go to the share page to begin voting!
-        </view>
-        <view wx:else class="hint mb50 mt50">
-            Share with your friends!
-        </view>
-    </view>
     <!-- Show event confirmation page if event exist -->
     <block wx:if="{{date || time || cuisine}}">
-        
+        <view>
+            <view wx:if="{{eventShare}}" class="hint mb50 mt50 animate-pulse duration7">
+                Go to the share page to begin voting!
+            </view>
+            <view wx:else class="hint mb50 mt50">
+                Share with your friends!
+            </view>
+        </view>
         <view class="card-l pa50 vh50 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">

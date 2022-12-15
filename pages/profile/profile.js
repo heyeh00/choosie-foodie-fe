@@ -78,7 +78,7 @@ Page({
     getData() {
         this.setData({ user: app.globalData.user })
         console.log("PROFILE JS PAGE DATA", this.data)
-        this.setData({ avatar: app.globalData.avatar })
+        this.setData({ avatar: app.globalData.user.image_url })
         const page = this
         wx.request({
             url: `${app.globalData.baseUrl}/api/v1/events/users/${page.data.user.id}`,
