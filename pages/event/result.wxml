@@ -31,7 +31,7 @@
             </view>
 
             <view class="info-row">
-                <image class="icon" src="/images/food-icons/any.png" mode="" />
+                <image class="icon" src="/images/page-icons/cuisine.png" mode="" />
                 <view class="info">
                     {{restaurant.cuisine}}
                 </view>
@@ -56,9 +56,13 @@
                 <view class="info">
                     {{event.date}}
                 </view>
-                <view class="info">
-                    {{event.time}}
-                </view>
+                <block wx:if="{{event.time === '00:00'}}">
+                </block>
+                <block wx:else="">
+                    <view class="info">
+                        {{event.time}}
+                    </view>
+                </block>
             </view>
 
             <view class="attendees" style="font-weight: 600; margin-top: 16rpx; margin-bottom: 24rpx;">
@@ -73,12 +77,6 @@
                         <wx:key wx:else>
                             <image src="/images/tabbar-icons/profile_white.png" mode="" class="person-icon" />
                         </wx:key>
-                        <block wx:if="{{attendee.name}}">
-                            <view style="font-size: small;">{{attendee.name}}</view>
-                        </block>
-                        <block wx:else>
-                            <view style="font-size: small;">微信用户</view>
-                        </block>
                     </view>
                 </wx:key>
             </view>
@@ -88,7 +86,7 @@
     <!-- Identify if host or attendees -->
         <wx:key wx:if="{{event.user_id === user.id}}">
             <view wx:if="{{event.closed === false}}" class="button-area">
-                <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-1">Refresh result</button>
+                <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-1">Refresh</button>
                 <button class="our-button" bindtap="endVoting" id="btn-2">End voting!</button>
             </view>
             <view wx:if="{{event.closed === true}}">
@@ -96,6 +94,9 @@
             </view>
         </wx:key>
         <wx:key wx:else>
+            <view wx:if="{{event.closed === false}}" class="button-area">
+                <button class="our-button" hover-class="btn-class" bindtap="fetchResult" id="btn-3">Refresh</button>
+            </view>
         </wx:key>
     </view>
 </view>

@@ -24,13 +24,13 @@
             </wx:key>
 
             <block wx:if="{{user.image_url}}">
-                
                 <button class="{{restaurants_choice.length ? 'our-button' : 'our-button-grey'}}" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitChoices">Submit</button>
             </block>
             <block wx:else>
                 <button class="our-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-class" style="margin-top: 15vh;">Submit</button>
             </block>
-        </view>       
+        </view>     
+        <view style="height: 200rpx; background-color: #F8F8F8;"></view>  
     </block>
     <block wx:if="{{event.closed}}">
         <view class="vh100 px50">

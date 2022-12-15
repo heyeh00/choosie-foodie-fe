@@ -63,7 +63,7 @@ Page({
               app.globalData['avatar'] = page.data.avatar
               page.setData({ user: data.user})
               console.log("CHECK SET DATA", page.data)
-              page.submitEvent()
+              page.submitChoices()
           },
           fail(errors) {
               console.log("UPLOAD FILE ERROR", errors)
