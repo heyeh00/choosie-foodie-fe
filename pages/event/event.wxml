@@ -1,7 +1,16 @@
 <!--pages/event/event.wxml-->
-<view class="vh100 vw bg-dim pt100 fixed" >
+<view class="vh100 vw bg-dim fixed">
     <!-- Show event confirmation page if event exist -->
     <block wx:if="{{date || time || cuisine}}">
+        <view style="display: flex; justify-content: center;">
+            <view wx:if="{{eventShare}}" class="hint mb50 mt50 animate-pulse duration7" style="width: 590rpx;">
+                Go to the share page to begin voting!
+            </view>
+            <view wx:else class="hint mb50 mt50" style="width: 590rpx;">
+                Share with your friends!
+            </view>
+        </view>
+        
         <view class="card-l pa50 vh65 column-center">
             <view>
                 <view class="card-product px20 mb50 flex items-center">
@@ -68,11 +77,9 @@
             </picker>
         </view>
     </view>
-                
-
-        <button wx:if="{{!eventCreated}}" class="our-button mt100" bindtap="submitEvent">Confirm</button>
-        <button wx:if="{{eventCreated}}" class="our-button-inverse mt100" open-type="share">Share</button>
-
+                           
+        <button wx:if="{{!eventCreated}}" class="our-button mt50" bindtap="submitEvent">Confirm</button>
+        <button wx:if="{{eventCreated}}" class="our-button-inverse mt50" open-type="share">Share</button>
 
     </block>
     <!-- Direct user to home page to create event -->

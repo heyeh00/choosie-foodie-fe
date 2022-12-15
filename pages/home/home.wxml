@@ -1,5 +1,13 @@
 <view class="container-form">
     <view class="vh100 pa50">
+        <view class="hint">
+            <view>
+                Choose your favorite cuisines.
+            </view>
+            <view>
+                Set a date and time for your event!
+            </view>
+        </view>
         <!-- 暂定9种菜系 -->
         <view class="section mt50" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
             <view wx:for="{{cuisines}}" wx:for-item="cuisine" wx:key="key" bindtap="editCuisines" class="w20 text-center mb30" data-cuisine="{{cuisine.name}}">

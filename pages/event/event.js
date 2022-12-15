@@ -149,7 +149,6 @@ Page({
             const cuisine = app.globalData.event_info.cuisines
             page.setData({cuisine})
     
-            // const user = wx.getStorageSync('user')
             const user = app.globalData.user
             page.setData({ user })
     
