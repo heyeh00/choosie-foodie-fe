@@ -59,6 +59,10 @@ Page({
           header: app.getHeader(),
           success(res) {
             console.log("END VOTING", res)
+            wx.showToast({
+                title: 'Share result!',
+                duration: 2000
+              })
             page.setData({ event: res.data.event })
             // page.setData({ eventClosed: true})
             page.fetchResult()

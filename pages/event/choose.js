@@ -87,7 +87,7 @@ Page({
       let restaurant = e.currentTarget.dataset.restaurantid
 
       // if you click on a restaurant add that array and any is deleted
-      if (restaurant !== "Any" || restaurants_choice.length !== 0) {
+      // if (restaurant !== "Any" || restaurants_choice.length !== 0) {
         // remove "any" from the array
 
         let item = restaurants.find(item => item.restaurant.id === restaurant)
@@ -95,7 +95,7 @@ Page({
         if (restaurants_choice.includes(restaurant)) {
             restaurants_choice = restaurants_choice.filter( item =>  item != restaurant ) 
             item.selected = false
-            if (restaurants_choice.length === 0) this.restaurantAny()
+            // if (restaurants_choice.length === 0) this.restaurantAny()
         }
         else {
             item.selected = true
@@ -106,12 +106,16 @@ Page({
         console.log("CHOSEN RESTAURANTS", this.data.restaurants_choice)
         // REVIEW THIS FIX
         this.setData({restaurants, events: restaurants})
-      }
+      // }
     },
 
     submitChoices(e) {
       const submitEvents = []
       const choices = this.data.restaurants_choice
+      if (choices.length === 0) return wx.showToast({
+        title: 'Please select restaurant',
+        icon: 'none'
+      })
       console.log("CHOICES", choices)
       const events = this.data.events
       console.log("EVENTS", events)

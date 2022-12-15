@@ -101,9 +101,17 @@ Page({
             console.log("EVENT PUSHED TO GLOBAL DATA", app.globalData.event)
             if (res.statusCode === 200) {
                 wx.hideLoading()
+                // wx.showModal({
+                //     title: 'Event is ready to share!',
+                //     success (res) {
+                //         if (res.confirm) {
+                //             console.log('User confirmed')
+                //         }
+                //     }
+                // })
                 wx.showToast({
-                  title: 'Created',
-                  duration: 1000
+                  title: 'Share event!',
+                  duration: 1500
                 })
                 page.setData({
                     eventCreated: true,
