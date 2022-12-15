@@ -84,11 +84,16 @@
 }
 
 .hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #F7C873;
     border-radius: 16rpx;
-    font-size: large;
-    padding: 16rpx;
+    font-size: medium;
+    padding: 16rpx 50rpx;
     text-align: center;
+    width: 560rpx;
+    margin: auto;
 }
 
 /* Animations */

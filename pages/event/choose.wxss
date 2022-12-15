@@ -12,7 +12,7 @@
     margin-top:30rpx;
     margin-bottom: 30rpx;
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     align-items: center;
     background-color: #F8F8F8 !important;
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.34);
@@ -21,7 +21,7 @@
 .selected {
     background-color: #FAEBCD !important;
     /* border: 5rpx transparent solid; */
-    border: 2rpx solid #434343 !important; 
+    border: 5rpx solid #434343 !important; 
 }
 
 .not-selected{
@@ -36,11 +36,13 @@
 
 .info {
     margin: 16rpx;
-    width: 50%;
+    width: 56%;
 }
 
 .info-text {
     font-size: medium;
+    margin-top: 8rpx;
+    /* margin: 8rpx; */
 }
 
 .title {

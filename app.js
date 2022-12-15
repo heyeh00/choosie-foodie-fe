@@ -24,6 +24,9 @@ App({
                 page.globalData.header = loginRes.header['Authorization']
                 event.emit('tokenReady')
             },
+            fail(errors) {
+                console.log("LOGIN ERROR", errors)
+            }
         })
       }
     })

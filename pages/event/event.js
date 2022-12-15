@@ -20,14 +20,15 @@ Page({
     },
 
     onLoad(options) {
-        const page = this
-        console.log("EVENT JS", page.data)
-        if (app.globalData.avatar) {
-            page.setData({ avatar: app.globalData.avatar })
-            console.log("GLOBAL AVATAR DATA", page.data.avatar)
-        } else {
-            console.log("No global avatar, user needs to login")
-        }
+        // const page = this
+        // console.log("EVENT JS", page.data)
+        // if (app.globalData.user.image_url) {
+        //     page.setData({ avatar: app.globalData.user.image_url })
+        //     console.log("GLOBAL AVATAR DATA", page.data.avatar)
+        // } else {
+        //     console.log("No global avatar, user needs to login")
+        // }
+        
     },
 
     revealForm(e) {
@@ -139,8 +140,6 @@ Page({
 
     onShow() {
         const page = this
-        // page.setData({ eventCreated: false})
-        console.log(app.globalData)
         const myEvent = app.globalData.event_info;
 
         page.setData({myEvent})
@@ -157,8 +156,12 @@ Page({
     
             const user = app.globalData.user
             page.setData({ user })
-    
-            page.setData({ event_name: `${user.name}'s choosie foodie event` })
+            
+            if (page.data.user.name) {
+                page.setData({ event_name: `${user.name}'s choosie foodie event` })
+            } else {
+                page.setData({ event_name: `My choosie foodie event` })
+            }
         }
 
     },

@@ -19,17 +19,6 @@ Page({
         // }
     },
 
-    eventCard(e) {
-        console.log("EVENT CARD", e.currentTarget.dataset.event_id)
-        const event_id = e.currentTarget.dataset.event_id
-        wx.navigateTo({
-          url: `/pages/event/result?id=${event_id}`,
-          success(res) {
-              console.log("EVENT CARD RESULT", res)
-              res.eventChannel.emit('acceptDataFromOpenerPage', { data: event_id })
-          }
-        })
-    },
 
     onChooseAvatar(e){
         const page = this
@@ -48,17 +37,14 @@ Page({
               app.globalData['avatar'] = page.data.avatar
               page.setData({ user: data.user})
               console.log("CHECK SET DATA", page.data)
-          },
-          fail(errors) {
-              console.log("UPLOAD FILE ERROR", errors)
           }
         })
     },
 
     setNickname(e) {
         const page = this
-        console.log('CHOOSING NICKNAME', e)
-        const nickname = e.detail.value.input
+        const nickname = e.detail.value
+        console.log('CHOOSING NICKNAME', nickname)
         page.setData({nickname})
         const user_id = page.data.user.id
         const user = {
@@ -76,20 +62,29 @@ Page({
             }
         })
     },
-    // goToEventDetail(e) {
-    //     console.log('RES', e)
-    // },
+
+    eventCard(e) {
+        console.log("EVENT CARD", e.currentTarget.dataset.event_id)
+        const event_id = e.currentTarget.dataset.event_id
+        wx.navigateTo({
+          url: `/pages/event/result?id=${event_id}`,
+          success(res) {
+              console.log("EVENT CARD RESULT", res)
+              res.eventChannel.emit('acceptDataFromOpenerPage', { data: event_id })
+          }
+        })
+    },
     
     getData() {
         this.setData({ user: app.globalData.user })
         console.log("PROFILE JS PAGE DATA", this.data)
-        this.setData({ avatar: app.globalData.avatar })
+        this.setData({ avatar: app.globalData.user.image_url })
         const page = this
         wx.request({
             url: `${app.globalData.baseUrl}/api/v1/events/users/${page.data.user.id}`,
             headers: app.getHeader(),
             success(res) {
-                console.log("PROFILE RESQUEST RES", res)
+                console.log("PROFILE RESQUEST RES", res.data)
                 const { user_events } = res.data
                 const formattedEvents = user_events.map((user_event) => ({
                     ...user_event, 
@@ -98,7 +93,6 @@ Page({
                         datetime: new Date(user_event.event.datetime).toLocaleDateString()
                     }
                 }))
-                console.log("=====FORMATTED EVENTS=======", formattedEvents)
                 page.setData({ user_events: formattedEvents })
             },
             fail(errors) {
