@@ -46,17 +46,25 @@
 
 .our-button {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 40rpx;
-  font: normal 500 30rpx 'Raleway';
+  font: normal 500 36rpx 'Raleway';
   background-color: #F7C873;
   color: #434343;
   border: 1rpx solid #434343; 
+  height: 96rpx;
 }
 
 .our-button-inverse {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 40rpx;
-    font: normal 500 30rpx 'Raleway';
+    font: normal 500 36rpx 'Raleway';
+    height: 96rpx;
     background-color: #434343;
     color: #F7C873;
     border: 1rpx solid #434343; 
@@ -74,3 +82,25 @@
   font: normal 500 30rpx 'Raleway'; 
   color: #434343;
 }
+
+.hint {
+    background-color: #F7C873;
+    border-radius: 16rpx;
+    font-size: large;
+    padding: 16rpx;
+    text-align: center;
+}
+
+/* Animations */
+
+.duration3 { transition: 0.3s; }
+.duration5 { transition: 0.5s; }
+.duration7 { transition: 0.7s; }
+
+@keyframes pulse {
+    50% {
+      opacity: .5;
+    }
+}
+
+.animate-pulse { animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
