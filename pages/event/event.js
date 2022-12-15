@@ -108,7 +108,8 @@ Page({
                 //     }
                 // })
                 wx.showToast({
-                  title: 'Share event!',
+                  title: 'Share your event now!',
+                  icon: 'none',
                   duration: 1500
                 })
                 page.setData({

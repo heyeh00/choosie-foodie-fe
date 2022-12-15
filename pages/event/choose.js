@@ -11,12 +11,19 @@ Page({
     data: {
         restaurants_choice: [],
     },
+    goToHome(e) {
+      wx.switchTab({
+          url: '/pages/home/home'
+      })
+    },
 
     /**
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
         const page = this
+        // cosnt eventStatus =  this.data.event.closed
+        // page.setData({ eventStatus: app.globalData.event.closed })
         page.setData({ cuisine: app.globalData.cuisines })        
         page.setData({ event_id: parseInt(options.id) })
         wx.request({
@@ -112,10 +119,23 @@ Page({
     submitChoices(e) {
       const submitEvents = []
       const choices = this.data.restaurants_choice
-      if (choices.length === 0) return wx.showToast({
-        title: 'Please select restaurant',
-        icon: 'none'
-      })
+      // Ask user to choose restaurant before submit
+      if (choices.length === 0) return  wx.showModal({
+      // wx.showToast({
+      //     title: 'Please select restaurant',
+      //     icon: 'none'
+      //   })
+       
+          title: 'Tips',
+          content: 'Please choose at least one restaurant',
+          showCancel: false,
+          success (res) {
+            if (res.confirm) {
+              console.log('User clicks confirm')
+            }
+          }
+        })
+        
       console.log("CHOICES", choices)
       const events = this.data.events
       console.log("EVENTS", events)

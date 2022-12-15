@@ -1,32 +1,46 @@
-<view class="container-choose">
-    <wx:key wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
+<view class="vh100 vw bg-dim fixed">
+    <block wx:if="{{ !event.closed }}">
+        <view class="container-choose">
+            <wx:key wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
 
-        <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
-            <image class="card-pic" src="/images/food-icons/{{item.restaurant.cuisine}}.png" mode=""/>
-            <view class="info">
-                <view class="title">{{item.restaurant.name}}</view>
-                <view class="rating">
-                    <view class="info-text">rating</view>
-                    <wx:key wx:for="{{item.restaurant.rating}}">
-                        <image class="star-pic" src="/images/page-icons/star_black.png"></image>
-                    </wx:key>
-                </view> 
-                <view class="last-info-row">
-                    <view class="info-text">￥{{item.restaurant.ave_price}} person</view>
-                    <view class="cuisine">
-                        <image class="cuisine-pic" src="/images/food-icons/any.png" mode=""/>
-                        <text class="info-text">{{item.restaurant.cuisine}}</text>
+                <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
+                    <image class="card-pic" src="/images/food-icons/{{item.restaurant.cuisine}}.png" mode=""/>
+                    <view class="info">
+                        <view class="title">{{item.restaurant.name}}</view>
+                        <view class="rating">
+                            <view class="info-text">rating</view>
+                            <wx:key wx:for="{{item.restaurant.rating}}">
+                                <image class="star-pic" src="/images/page-icons/star_black.png"></image>
+                            </wx:key>
+                        </view> 
+                        <view class="last-info-row">
+                            <view class="info-text">￥{{item.restaurant.ave_price}} person</view>
+                            <view class="cuisine">
+                                <image class="cuisine-pic" src="/images/food-icons/any.png" mode=""/>
+                                <text class="info-text">{{item.restaurant.cuisine}}</text>
+                            </view>
+                        </view>
                     </view>
                 </view>
-            </view>
-        </view>
-    </wx:key>
+            </wx:key>
 
-    <block wx:if="{{user.image_url}}">
-        
-        <button class="{{restaurants_choice.length ? 'our-button' : 'our-button-grey'}}" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitChoices">Submit</button>
+            <block wx:if="{{user.image_url}}">
+                
+                <button class="{{restaurants_choice.length ? 'our-button' : 'our-button-grey'}}" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitChoices">Submit</button>
+            </block>
+            <block wx:else>
+                <button class="our-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-class" style="margin-top: 15vh;">Submit</button>
+            </block>
+        </view>       
     </block>
-    <block wx:else>
-        <button class="our-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-class" style="margin-top: 15vh;">Submit</button>
+    <block wx:if="{{event.closed}}">
+        <view class="vh100 px50">
+            <view style="margin-top: 40%; margin-left: 20%;">
+                <view class="fbody">
+                    Event voting is completed! 
+                </view>
+            </view>
+            <button class="our-button mt30" bindtap="goToHome">OK!</button>      
+        </view>
     </block>
 </view>
