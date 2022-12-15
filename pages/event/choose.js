@@ -163,6 +163,14 @@ Page({
         } else {
             event.on('tokenReady', this, this.setUser)
         }
+        // Added Dec 15th
+        wx.request({
+            url: `${app.globalData.baseUrl}/api/v1/events/${this.options.id}`,
+            header: app.getHeader(),
+            success(res) {
+                page.setData({ event: res.data.event })
+            },
+        })
         // copied from onLoad
         page.setData({ cuisine: app.globalData.cuisines })        
         page.setData({ event_id: parseInt(this.options.id) })
