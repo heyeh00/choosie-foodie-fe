@@ -1,7 +1,7 @@
 /* pages/event/choose.wxss */
 
 .container-choose {
-    padding: 50rpx 0;
+    padding: 20rpx 0;
     background-color: #F8F8F8;
 }
 
@@ -80,4 +80,12 @@
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.our-button-grey {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: dimgray;
 }

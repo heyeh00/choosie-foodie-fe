@@ -14,7 +14,7 @@
                 <view class="last-info-row">
                     <view class="info-text">￥{{item.restaurant.ave_price}} person</view>
                     <view class="cuisine">
-                        <image class="cuisine-pic" src="/images/food-icons/Any.png" mode=""/>
+                        <image class="cuisine-pic" src="/images/food-icons/any.png" mode=""/>
                         <text class="info-text">{{item.restaurant.cuisine}}</text>
                     </view>
                 </view>
@@ -23,7 +23,8 @@
     </wx:key>
 
     <block wx:if="{{user.image_url}}">
-        <button class="our-button" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitChoices">Submit</button>
+        
+        <button class="{{restaurants_choice.length ? 'our-button' : 'our-button-grey'}}" hover-class="btn-class" style="margin-top: 15vh;" bindtap="submitChoices">Submit</button>
     </block>
     <block wx:else>
         <button class="our-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" hover-class="btn-class" style="margin-top: 15vh;">Submit</button>
