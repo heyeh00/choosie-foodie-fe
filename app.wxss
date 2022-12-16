@@ -13,7 +13,7 @@
 
 .card-m1 {
     width: 90%;
-    height: 250rpx;
+    /* height: 250rpx; */
     border-radius: 50rpx;
     background-color: #FAEBCD;
     margin:auto;
