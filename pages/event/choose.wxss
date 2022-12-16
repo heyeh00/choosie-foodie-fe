@@ -29,9 +29,10 @@
 }
 
 .card-pic {
-    width: 180rpx;
-    height: 180rpx;
+    width: 200rpx;
+    height: 200rpx;
     margin: 24rpx;
+    border-radius: 16rpx;
 }
 
 .info {

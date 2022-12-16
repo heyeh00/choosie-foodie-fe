@@ -4,7 +4,7 @@
         <wx:key wx:for="{{events}}" bindtap="chosenRestaurant" data-restaurantid="{{item.restaurant.id}}" data-eventid="{{item.id}}">
 
             <view class="card-m1 {{item.selected ? 'selected' : 'not-selected'}}">
-                <image class="card-pic" src="/images/food-icons/{{item.restaurant.cuisine}}.png" mode=""/>
+                <image class="card-pic" src="{{item.restaurant.image_url}}" mode="aspectFill"/>
                 <view class="info">
                     <view class="title">{{item.restaurant.name}}</view>
                     <view class="rating" style="margin-top: 12rpx;">

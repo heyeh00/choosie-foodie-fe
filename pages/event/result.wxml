@@ -19,11 +19,9 @@
         </view>
     </wx:key>
     <view class="card-l">
-        <view class="card-pic">
-            <wx:key wx:if="{{restaurant.cuisine}}">
-                <image src="/images/food-icons/{{restaurant.cuisine}}.png" mode="aspectFit" class="card-img"/>
-            </wx:key>
-        </view>
+        <wx:key wx:if="{{restaurant.cuisine}}">
+            <image src="{{restaurant.image_url}}" mode="aspectFill" class="card-l-img"/>
+        </wx:key>
 
         <view class="info">
             <view class="name">
@@ -44,12 +42,14 @@
                 </view>
             </view>
 
-            <view class="info-row">
-                <image class="icon" src="/images/page-icons/phone_white.png" mode="" />
-                <view class="info">
-                    {{restaurant.phone_number}}
+            <block wx:if="{{restaurant.phone_number}}">
+                <view class="info-row">
+                    <image class="icon" src="/images/page-icons/phone_white.png" mode="" />
+                    <view class="info">
+                        {{restaurant.phone_number}}
+                    </view>
                 </view>
-            </view>
+            </block>
 
             <view class="info-row">
                 <image class="icon" src="/images/page-icons/datetime.png" mode="" />

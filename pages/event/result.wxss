@@ -9,13 +9,21 @@
     width: 560rpx;
     border-radius: 50rpx;
     background-color: #FAEBCD;
-    margin: auto;
-    height: 68vh;
+    /* margin: auto; */
+    /* height: 68vh; */
     padding: 50rpx !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+  }
+
+  .card-l-img {
+    height: 200px;
+    width: 560rpx;
+    object-fit: cover;
+    border-radius: 24rpx;
   }
 
 .info {
@@ -30,6 +38,7 @@
 .card-img {
     width: 500rpx;
     height: 350rpx;
+    object-fit: cover;
 }
 
 .name {
