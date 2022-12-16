@@ -19,7 +19,7 @@
         </view>
     </wx:key>
     <view class="card-l">
-        <wx:key wx:if="{{restaurant.cuisine}}">
+        <wx:key wx:if="{{restaurant.image_url}}">
             <image src="{{restaurant.image_url}}" mode="aspectFill" class="card-l-img"/>
         </wx:key>
 
