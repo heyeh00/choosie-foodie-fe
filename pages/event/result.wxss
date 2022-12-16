@@ -27,7 +27,7 @@
   }
 
 .info {
-    padding: 30rpx;
+    padding: 16rpx;
 }
 
 .card-pic {
@@ -49,6 +49,7 @@
 .icon {
     width: 50rpx;
     height: 50rpx;
+    flex-shrink: 0;
 }
 
 .info-row {
