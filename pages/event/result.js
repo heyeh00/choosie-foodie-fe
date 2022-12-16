@@ -16,6 +16,7 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad(options) {
+      console.log("options",options)
       const page = this
       const user = app.globalData.user
       page.setData({ user })

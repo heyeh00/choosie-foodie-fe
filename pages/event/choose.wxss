@@ -110,10 +110,6 @@
     justify-content: center;
 }
 
-.fbody {
-    font: normal 500 36rpx 'Raleway';
-}
-
 .mt30 {
     text-align: center;
     display: flex;
