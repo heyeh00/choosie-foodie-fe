@@ -31,7 +31,7 @@
             <!-- Display event restaurants -->
             <view wx:for="{{user_events}}" wx:for-item="user_event" wx:key="index" data-id="{{user_events.id}}">
                 <view class="card" bindtap="eventCard" data-event_id="{{user_event.event.id}}">
-                    <image src="/images/food-icons/{{user_event.restaurant.cuisine}}.png" mode="aspectFill" class="card-img" />
+                    <image src="{{user_event.restaurant.image_url}}" mode="aspectFill" class="card-img" />
                     <view class="card-info">
                         <view class="card-name">
                             {{user_event.event.event_name}}
