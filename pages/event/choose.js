@@ -11,9 +11,15 @@ Page({
     data: {
         restaurants_choice: [],
     },
-    goToHome(e) {
-      wx.switchTab({
-          url: '/pages/home/home'
+    goToResult(e) {
+      const { id }= e.currentTarget.dataset;
+      console.log("ID",id)
+      wx.navigateTo({
+        url: `/pages/event/result?id=${id}`,
+        success(res) {
+            console.log("EVENT CARD RESULT", res)
+            res.eventChannel.emit('acceptDataFromOpenerPage', { data: id })
+        }
       })
     },
 
@@ -30,7 +36,7 @@ Page({
           url: `${app.globalData.baseUrl}/api/v1/events/${options.id}/event_restaurants`,
           header: app.getHeader(),
           success(res) {
-            page.setData({ events: res.data.events })
+            page.setData({ events: res.data.events});
           },
         })
         event.on('tokenReady', page, page.checkAvatar)
@@ -192,7 +198,7 @@ Page({
             url: `${app.globalData.baseUrl}/api/v1/events/${this.options.id}`,
             header: app.getHeader(),
             success(res) {
-                page.setData({ event: res.data.event })
+              page.setData({ event: res.data.event })
             },
         })
         // copied from onLoad
@@ -202,7 +208,13 @@ Page({
           url: `${app.globalData.baseUrl}/api/v1/events/${this.options.id}/event_restaurants`,
           header: app.getHeader(),
           success(res) {
-            page.setData({ events: res.data.events })
+            let { events } = res.data;
+            events.forEach((event, index) => {
+              let { cuisine } = event.restaurant;
+              cuisine = cuisine.charAt(0).toUpperCase() + cuisine.slice(1);
+              events[index].restaurant.cuisine = cuisine;
+            })
+            page.setData({ events })
           },
         })
         event.on('tokenReady', page, page.checkAvatar)
