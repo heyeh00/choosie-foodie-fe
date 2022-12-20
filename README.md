@@ -1,3 +1,3 @@
 # choosie-foodie-fe
 
-![bibimbap](https://user-images.githubusercontent.com/95343944/208678327-a0df81b9-9338-46e3-ba49-182d38ceca80.png)
+![choosie-foodie 010](https://user-images.githubusercontent.com/95343944/208679042-2f060901-a837-404d-ba9a-22cb0338effa.png)
