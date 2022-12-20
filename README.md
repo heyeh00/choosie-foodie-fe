@@ -1,3 +1,3 @@
 # choosie-foodie-fe
 
-![choosie-foodie 010](https://user-images.githubusercontent.com/95343944/208679042-2f060901-a837-404d-ba9a-22cb0338effa.png)
+![Untitled-1](https://user-images.githubusercontent.com/95343944/208679675-ac63283b-c757-40c4-8084-fdf68f73e2e1.png)
