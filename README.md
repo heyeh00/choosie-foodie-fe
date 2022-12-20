@@ -4,7 +4,7 @@
 
 Choosie Foodie (front end) is a chinese mini program built with love at Le Wagon, three members of Batch #1029. 
 
-## Without further ado, here's the pitch:
+## The pitch
 
 We all want to hang out with friends. But no one wants to deal with organizing and triple checking everyone’s time and tastes.
 
