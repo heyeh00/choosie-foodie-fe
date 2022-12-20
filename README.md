@@ -29,4 +29,4 @@ Easy, simple decision-making that really shows its value the more friends you ha
 - Implement one swipable card per restaurant a la Tinder rather than twenty cards on one page. 
 
 ### Postface
-Choosie Foodie is the culmination of ten weeks of training at Le Wagon's fullstack bootcamp. The app was made with focus and dedication over the course of two weeks. It's API only backend is also available on Github.
+Choosie Foodie is the culmination of ten weeks of training at Le Wagon's fullstack bootcamp. The app was made with focus and dedication over the course of two weeks. Its API only backend is also available on Github.
